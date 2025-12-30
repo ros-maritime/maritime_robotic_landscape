@@ -1,5 +1,3 @@
---8<-- "README.md::4"
-
 ## Welcome to Marine Robotics!
 
 Whether you're a curious student, experienced roboticist, or somewhere in between - this site has resources for you:
