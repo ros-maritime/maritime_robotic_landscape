@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <!-- Title -->
+  <text x="300" y="30" font-size="22" font-weight="bold" text-anchor="middle" fill="#1e88e5">
+    Underwater Glider - Buoyancy-Driven Vehicle
+  </text>
+
+  <!-- Water surface -->
+  <line x1="50" y1="70" x2="550" y2="70" stroke="#00acc1" stroke-width="3" stroke-dasharray="10,5"/>
+  <text x="560" y="75" font-size="12" fill="#00acc1">Surface</text>
+
+  <!-- Underwater gradient background -->
+  <defs>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#b3e5fc;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#0277bd;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+  <rect x="50" y="70" width="500" height="210" fill="url(#waterGrad)"/>
+
+  <!-- Sawtooth depth profile path -->
+  <path d="M 100 100 L 180 240 L 260 100 L 340 240 L 420 100 L 500 240"
+        fill="none" stroke="#1e88e5" stroke-width="3" stroke-dasharray="5,5" opacity="0.6"/>
+  <text x="510" y="170" font-size="10" fill="#1e88e5" transform="rotate(45 510 170)">Flight path</text>
+
+  <!-- Glider body at angle (descending) -->
+  <g transform="translate(320,180) rotate(45)">
+    <!-- Main body (torpedo shape) -->
+    <ellipse cx="0" cy="0" rx="60" ry="15" fill="#1e88e5" stroke="#0d47a1" stroke-width="3"/>
+
+    <!-- Nose -->
+    <path d="M -60 0 Q -75 0, -80 0 L -75 -8 L -60 -8 Z" fill="#0d47a1" stroke="#0d47a1" stroke-width="2"/>
+    <path d="M -60 0 Q -75 0, -80 0 L -75 8 L -60 8 Z" fill="#0d47a1" stroke="#0d47a1" stroke-width="2"/>
+
+    <!-- Tail fin -->
+    <polygon points="55,0 70,-10 75,-10 60,0" fill="#0d47a1" stroke="#0d47a1" stroke-width="2"/>
+    <polygon points="55,0 70,10 75,10 60,0" fill="#0d47a1" stroke="#0d47a1" stroke-width="2"/>
+
+    <!-- Wings (adjustable for buoyancy control) -->
+    <ellipse cx="-10" cy="0" rx="5" ry="35" fill="#0d47a1" stroke="#0d47a1" stroke-width="2" opacity="0.8"/>
+    <ellipse cx="10" cy="0" rx="5" ry="35" fill="#0d47a1" stroke="#0d47a1" stroke-width="2" opacity="0.8"/>
+
+    <!-- Antenna (GPS when surfaced) -->
+    <line x1="0" y1="-15" x2="0" y2="-25" stroke="#ff6f00" stroke-width="2"/>
+    <circle cx="0" cy="-27" r="3" fill="#ff6f00"/>
+
+    <!-- CTD sensor -->
+    <rect x="-25" y="-5" width="15" height="10" rx="2" fill="#ff6f00" stroke="#e65100" stroke-width="1.5"/>
+  </g>
+
+  <!-- Buoyancy engine annotation (separate) -->
+  <rect x="140" y="200" width="80" height="50" rx="5" fill="white" stroke="#1e88e5" stroke-width="2"/>
+  <text x="180" y="215" font-size="11" font-weight="bold" text-anchor="middle" fill="#1e88e5">Buoyancy Engine</text>
+  <text x="180" y="230" font-size="9" text-anchor="middle" fill="#666">Oil bladder ±</text>
+  <text x="180" y="242" font-size="9" text-anchor="middle" fill="#666">→ Density change</text>
+  <line x1="220" y1="225" x2="290" y2="200" stroke="#1e88e5" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Depth indicators -->
+  <text x="55" y="100" font-size="10" fill="#666">0m</text>
+  <text x="55" y="150" font-size="10" fill="#666">500m</text>
+  <text x="55" y="200" font-size="10" fill="#666">1000m</text>
+
+  <!-- Annotations -->
+  <g id="annotations">
+    <text x="50" y="295" font-size="14" font-weight="bold" fill="#1e88e5">Key Features:</text>
+    <text x="50" y="315" font-size="12" fill="#666">✓ No thrusters (buoyancy-driven)</text>
+    <text x="50" y="333" font-size="12" fill="#666">✓ Extremely long endurance (months)</text>
+    <text x="50" y="351" font-size="12" fill="#666">✓ Sawtooth depth profile</text>
+    <text x="50" y="369" font-size="12" fill="#666">✓ Very low power consumption</text>
+
+    <text x="320" y="295" font-size="14" font-weight="bold" fill="#1e88e5">Navigation:</text>
+    <text x="320" y="315" font-size="12" fill="#666">• GPS (surface only)</text>
+    <text x="320" y="333" font-size="12" fill="#666">• Dead reckoning underwater</text>
+    <text x="320" y="351" font-size="12" fill="#666">• CTD for water properties</text>
+    <text x="320" y="369" font-size="12" fill="#666">• No DVL (too power hungry)</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="300" y="390" font-size="11" text-anchor="middle" fill="#999">
+    Typical Missions: Ocean monitoring, climate research, long-range surveys (weeks to months)
+  </text>
+
+  <!-- Arrow marker for annotation -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#1e88e5"/>
+    </marker>
+  </defs>
+</svg>
