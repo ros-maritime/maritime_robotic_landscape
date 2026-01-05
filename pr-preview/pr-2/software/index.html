@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Software - Maritime Robotics Landscape</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Software";
+        var mkdocs_page_input_path = "software.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Maritime Robotics Landscape
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Getting Started</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../glossary/">Glossary</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../vehicle_types/">Vehicle Types</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../autonomy_stacks/">Autonomy Stacks</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../simulation/">Simulation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../hardware/">Hardware</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Software</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#thrust-allocation-and-control">Thrust Allocation and Control</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#theory">Theory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#packages">Packages</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#mvp-control">MVP-Control</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#centralenantes-thruster-manager">CentraleNantes Thruster Manager</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#robotic-decision-making-lab-controllers">Robotic Decision Making Lab Controllers</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#known-issues-thrust-allocation">Known Issues: Thrust Allocation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#motion-control">Motion Control</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#dynamic-positioning-dp-station-keeping">Dynamic Positioning (DP) / Station Keeping</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#path-following-and-guidance">Path Following and Guidance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#low-level-controllers">Low-Level Controllers</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#localization">Localization</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#dvl-based-navigation">DVL-Based Navigation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#acoustic-positioning">Acoustic Positioning</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sensor-fusion">Sensor Fusion</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#known-issues-localization">Known Issues: Localization</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#perception">Perception</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#sonar-processing">Sonar Processing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#underwater-vision">Underwater Vision</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#object-detection">Object Detection</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#communication">Communication</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#acoustic-communication">Acoustic Communication</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#whoi-ros_acomms">WHOI ros_acomms ⭐</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#known-issues-acoustic-communication">Known Issues: Acoustic Communication</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ns-3-uan-simulation-only">ns-3 UAN (Simulation Only)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#network-protocols">Network Protocols</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mapping-and-slam">Mapping and SLAM</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#underwater-slam">Underwater SLAM</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#seafloor-mapping">Seafloor Mapping</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tools-and-utilities">Tools and Utilities</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#geographic-conversions">Geographic Conversions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#visualization">Visualization</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data-processing">Data Processing</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sources">Sources</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../drivers/">Drivers</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../datasets/">Datasets</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../education_and_tutorials/">Education & Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../expert_reference/">Expert Reference</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../operations/">Operations</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../integration_examples/">Integration Examples</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Maritime Robotics Landscape</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Software</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="software-packages-and-libraries">Software Packages and Libraries</h1>
+<p>This page covers ROS packages and software libraries for maritime robotics control, localization, perception, communication, and utilities.</p>
+<h2 id="thrust-allocation-and-control">Thrust Allocation and Control</h2>
+<p>Thrust allocation is a critical component for marine vehicles with multiple thrusters. These modules determine how to distribute control forces across actuators to achieve desired vehicle motion.</p>
+<h3 id="theory">Theory</h3>
+<p>Thrust allocation solves the problem: given a desired force/torque $\tau$ on the vehicle, determine actuator commands (forces $f$ or utilizations $u$) that best satisfy:</p>
+<p>$$ \tau = T(\alpha)f(u) $$</p>
+<p>Where $T$ is the thrust allocation matrix and $\alpha$ represents actuator orientations.</p>
+<h3 id="packages">Packages</h3>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Method</th>
+<th>ROS Version</th>
+<th>Last Update</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/uri-ocean-robotics/mvp_control">MVP-Control</a></td>
+<td>Quadratic Programming</td>
+<td>ROS/ROS 2</td>
+<td>11/2025</td>
+</tr>
+<tr>
+<td><a href="https://github.com/CentraleNantesROV/thruster_manager">thruster_manager (CNR)</a></td>
+<td>Pseudo-inverse</td>
+<td>ROS</td>
+<td>04/2025</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Robotic-Decision-Making-Lab/auv_controllers/tree/main/thruster_allocation_matrix_controller">thruster_allocation_matrix_controller</a></td>
+<td>Pseudo-inverse</td>
+<td>ROS 2</td>
+<td>07/2025</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table last updated on <strong>January 05th, 2026 at 03:15:15 AM UTC</strong></em></p>
+<h4 id="mvp-control">MVP-Control</h4>
+<p>Implements control allocation using quadratic programming (QP) optimization.</p>
+<p><strong>Features:</strong>
+- Handles thruster saturation
+- Accounts for thruster dead zones
+- Supports azimuth thrusters
+- ROS and ROS 2 compatible</p>
+<h4 id="centralenantes-thruster-manager">CentraleNantes Thruster Manager</h4>
+<p>Uses URDF to extract thruster configuration and computes the pseudo-inverse of the thrust allocation matrix.</p>
+<p><strong>Features:</strong>
+- URDF-based configuration
+- Simple inverse method: $f = T^{-1} \tau$
+- Well-documented
+- ROS 1</p>
+<h4 id="robotic-decision-making-lab-controllers">Robotic Decision Making Lab Controllers</h4>
+<p>Modern ROS 2 controller using predefined inverse of thrust allocation matrix.</p>
+<p><strong>Features:</strong>
+- ROS 2 native
+- Integration with ros2_control
+- Clean architecture</p>
+<h3 id="known-issues-thrust-allocation">Known Issues: Thrust Allocation</h3>
+<p><strong>⚠️ Pseudo-inverse methods (thruster_manager, thruster_allocation_matrix_controller):</strong></p>
+<ol>
+<li><strong>No Saturation Handling</strong></li>
+<li><strong>Issue:</strong> Commanded forces can exceed thruster limits</li>
+<li><strong>Symptom:</strong> Some thrusters saturate while others underutilized</li>
+<li><strong>Impact:</strong> Poor control performance, vehicle instability</li>
+<li>
+<p><strong>Solution:</strong> Use QP-based allocator (MVP-Control) or implement soft limits</p>
+</li>
+<li>
+<p><strong>Singular Configurations</strong></p>
+</li>
+<li><strong>Issue:</strong> Matrix becomes singular when thrusters are aligned</li>
+<li><strong>Symptom:</strong> Division by zero, NaN outputs</li>
+<li><strong>Impact:</strong> Control failure</li>
+<li>
+<p><strong>Solution:</strong> Check allocation matrix condition number, reposition thrusters</p>
+</li>
+<li>
+<p><strong>Dead Zone Ignored</strong></p>
+</li>
+<li><strong>Issue:</strong> Many thrusters have dead zones at low thrust</li>
+<li><strong>Symptom:</strong> Small commanded thrusts produce zero output</li>
+<li><strong>Impact:</strong> Poor low-speed control, limit cycles</li>
+<li><strong>Solution:</strong> Use allocator with dead zone compensation (MVP-Control)</li>
+</ol>
+<p><strong>⚠️ QP-based methods (MVP-Control):</strong></p>
+<ol>
+<li><strong>Computational Cost</strong></li>
+<li><strong>Issue:</strong> Solve time can spike under heavy constraints</li>
+<li><strong>Symptom:</strong> Control loop jitter, occasional delays</li>
+<li><strong>Impact:</strong> Reduced control bandwidth</li>
+<li>
+<p><strong>Solution:</strong> Monitor solve time, use a faster QP solver (e.g., OSQP), reduce control rate if needed</p>
+</li>
+<li>
+<p><strong>Configuration Complexity</strong></p>
+</li>
+<li><strong>Issue:</strong> More parameters to tune (weights, constraints)</li>
+<li><strong>Symptom:</strong> Unexpected allocation behavior</li>
+<li><strong>Impact:</strong> Time to tune system</li>
+<li><strong>Solution:</strong> Start with default weights, tune incrementally</li>
+</ol>
+<p><strong>Decision Guide:</strong>
+- <strong>Use pseudo-inverse if:</strong> Square allocation matrix, known unsaturated operation, and you need very low solver latency
+- <strong>Use QP if:</strong> Non-square matrix, saturation inevitable (real vehicles), need optimal allocation</p>
+<h2 id="motion-control">Motion Control</h2>
+<h3 id="dynamic-positioning-dp-station-keeping">Dynamic Positioning (DP) / Station Keeping</h3>
+<p>Systems for maintaining position and heading, commonly used for:
+- ROV operations
+- Survey missions
+- Intervention tasks</p>
+<p><strong>Approaches:</strong>
+- PID control with feed-forward
+- Model Predictive Control (MPC)
+- Sliding mode control</p>
+<h3 id="path-following-and-guidance">Path Following and Guidance</h3>
+<p>Algorithms for following desired trajectories:</p>
+<p><strong>Line-of-Sight (LOS):</strong>
+- Classic marine control approach
+- Handles cross-track error
+- Works well with currents</p>
+<p><strong>Path Following:</strong>
+- Carrot-following
+- Pure pursuit
+- Vector field methods</p>
+<p><strong>Packages:</strong>
+* <a href="https://github.com/uri-ocean-robotics/mvp_mission">MVP-Mission</a>: Behavior-based mission planner with guidance behaviors</p>
+<h3 id="low-level-controllers">Low-Level Controllers</h3>
+<p>Integration with ROS 2 control framework:</p>
+<ul>
+<li><a href="https://control.ros.org/master/index.html">ros2_control</a>: Standard ROS 2 controller framework</li>
+<li>Hardware abstraction</li>
+<li>Controller lifecycle management</li>
+<li>Standard interfaces</li>
+</ul>
+<h2 id="localization">Localization</h2>
+<p>Localization is challenging in maritime environments due to lack of GPS underwater and environmental factors.</p>
+<h3 id="dvl-based-navigation">DVL-Based Navigation</h3>
+<p>Doppler Velocity Log integration for dead-reckoning:</p>
+<p><strong>Approaches:</strong>
+- DVL + IMU fusion (Extended Kalman Filter)
+- DVL bottom-track for position updates
+- Water-track for mid-water navigation</p>
+<h3 id="acoustic-positioning">Acoustic Positioning</h3>
+<p><strong>USBL/LBL Integration:</strong>
+- Acoustic position fixes
+- Outlier rejection
+- Integration with INS</p>
+<h3 id="sensor-fusion">Sensor Fusion</h3>
+<p>Multi-sensor integration for robust localization:</p>
+<p><strong>Common Sensor Combinations:</strong>
+- DVL + IMU + Depth: Standard AUV setup
+- GPS + IMU + Compass: Surface vehicle navigation
+- USBL + DVL + IMU: High-accuracy underwater positioning</p>
+<p><strong>Packages:</strong>
+* <a href="https://github.com/uos/mesh_navigation">Mesh Navigation</a>: Mesh-based localization and navigation
+* <a href="https://docs.ros.org/en/melodic/api/robot_localization/html/index.html">robot_localization</a>: EKF and UKF implementations for sensor fusion</p>
+<h3 id="known-issues-localization">Known Issues: Localization</h3>
+<p><strong>⚠️ DVL Integration:</strong></p>
+<ol>
+<li><strong>Bottom-Lock Failures</strong></li>
+<li><strong>Issue:</strong> Bottom lock can fail at higher altitudes or over soft sediment</li>
+<li><strong>Symptoms:</strong> DVL reports invalid velocity or switches to water-track</li>
+<li><strong>Impact:</strong> Position estimate degrades to IMU-only dead-reckoning (poor)</li>
+<li>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Operate within bottom-lock range when possible</li>
+<li>Reduce altitude for critical maneuvers</li>
+<li>Surface for GPS fix if bottom-lock lost</li>
+</ul>
+</li>
+<li>
+<p><strong>Acoustic Interference</strong></p>
+</li>
+<li><strong>Issue:</strong> DVL interferes with sonar, acoustic modems</li>
+<li><strong>Symptoms:</strong> Corrupted sonar images, modem packet loss</li>
+<li><strong>Impact:</strong> Can't use DVL + sonar simultaneously</li>
+<li>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Stagger ping timing (DVL then sonar)</li>
+<li>Use different frequencies if possible</li>
+<li>Time-multiplex: DVL during transit, sonar during survey stops</li>
+</ul>
+</li>
+<li>
+<p><strong>Thruster Cavitation Noise</strong></p>
+</li>
+<li><strong>Issue:</strong> Thruster bubbles mask DVL acoustic returns</li>
+<li><strong>Symptoms:</strong> Erratic velocity readings during high thrust</li>
+<li><strong>Impact:</strong> Poor navigation during aggressive maneuvers</li>
+<li>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Mount DVL away from thrusters</li>
+<li>Use vibration damping mounts</li>
+<li>Reduce thruster noise via PWM frequency tuning</li>
+</ul>
+</li>
+<li>
+<p><strong>Water-Track Inaccuracy</strong></p>
+</li>
+<li><strong>Issue:</strong> Water-track assumes no current (rarely true)</li>
+<li><strong>Symptoms:</strong> Position drift when using water-track</li>
+<li><strong>Impact:</strong> Significant velocity error in currents</li>
+<li><strong>Solution:</strong> Avoid water-track mode; surface for GPS fix instead</li>
+</ol>
+<p><strong>⚠️ Sensor Fusion (robot_localization):</strong></p>
+<ol>
+<li><strong>EKF Divergence</strong></li>
+<li><strong>Root Causes:</strong><ul>
+<li>Sensor timestamp mismatch (using wall time instead of ROS time)</li>
+<li>Incorrect covariances (too confident in bad sensor)</li>
+<li>Bad initial state</li>
+<li>TF tree broken or missing transforms</li>
+</ul>
+</li>
+<li><strong>Symptoms:</strong><ul>
+<li>Position estimate jumps</li>
+<li>High innovation values</li>
+<li>Covariance growing unbounded</li>
+</ul>
+</li>
+<li>
+<p><strong>Debug:</strong>
+     ```bash
+     # Check TF tree
+     ros2 run tf2_tools view_frames</p>
+<p># Monitor EKF diagnostics
+ ros2 topic echo /diagnostics</p>
+<p># Verify sensor timestamps
+ ros2 topic echo /dvl/velocity --field header.stamp
+ ros2 topic echo /imu/data --field header.stamp
+ <code>``
+   - **Solutions:**
+ - Ensure all sensors use</code>node.get_clock().now()<code>not</code>time.time()`
+ - Reduce sensor covariance (increase uncertainty)
+ - Increase process noise
+ - Reset EKF and reinitialize
+ - Disable faulty sensor temporarily</p>
+</li>
+<li>
+<p><strong>Discontinuous Measurements (GPS, USBL)</strong></p>
+</li>
+<li><strong>Issue:</strong> GPS only available at surface; USBL updates are intermittent</li>
+<li><strong>Symptoms:</strong> Position jumps when measurement arrives</li>
+<li><strong>Impact:</strong> Control instability if not handled properly</li>
+<li>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Use <code>pose1_relative: false</code> for absolute measurements</li>
+<li>Tune covariance higher for USBL (reflects uncertainty)</li>
+<li>Enable outlier rejection for USBL</li>
+<li>Consider separate EKF for global vs local frame</li>
+</ul>
+</li>
+<li>
+<p><strong>Covariance Tuning Difficulty</strong></p>
+</li>
+<li><strong>Issue:</strong> Process noise and sensor covariances non-intuitive</li>
+<li><strong>Symptoms:</strong> EKF trusts wrong sensor, or diverges</li>
+<li><strong>Impact:</strong> Weeks of tuning time</li>
+<li><strong>Approach:</strong><ol>
+<li>Start with manufacturer sensor covariances</li>
+<li>Set process noise conservatively high</li>
+<li>Tune one sensor at a time</li>
+<li>Monitor innovation (should be zero-mean)</li>
+<li>Use <code>rqt_multiplot</code> to visualize</li>
+</ol>
+</li>
+</ol>
+<p><strong>⚠️ Acoustic Positioning (USBL):</strong></p>
+<ol>
+<li><strong>Outlier Measurements</strong></li>
+<li><strong>Issue:</strong> Multipath, biologics cause bad USBL fixes</li>
+<li><strong>Symptoms:</strong> Large position jumps</li>
+<li><strong>Impact:</strong> EKF divergence if outlier accepted</li>
+<li>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Enable Mahalanobis distance outlier rejection in EKF</li>
+<li>Pre-filter USBL with median filter</li>
+<li>Use appropriately conservative covariance for USBL</li>
+</ul>
+</li>
+<li>
+<p><strong>Shadow Zones</strong></p>
+</li>
+<li><strong>Issue:</strong> Thermoclines bend sound, create shadow zones</li>
+<li><strong>Symptoms:</strong> No USBL fixes in certain locations</li>
+<li><strong>Impact:</strong> Fall back to DVL+IMU-only navigation (drift)</li>
+<li><strong>Solutions:</strong><ul>
+<li>Plan missions to avoid known thermoclines</li>
+<li>Use LBL instead of USBL for critical areas</li>
+<li>Monitor USBL signal strength</li>
+</ul>
+</li>
+</ol>
+<p><strong>Decision Guide:</strong>
+- <strong>Pure Underwater (no surface):</strong> DVL + IMU + Depth is standard; add USBL for long-range missions
+- <strong>Shallow Water:</strong> Can surface frequently for GPS, DVL less critical
+- <strong>Survey Missions:</strong> USBL or LBL essential for georeferenced data
+- <strong>ROV (Tethered):</strong> IMU + Depth sufficient, topside provides position</p>
+<h2 id="perception">Perception</h2>
+<p>Processing sensor data to understand the environment.</p>
+<h3 id="sonar-processing">Sonar Processing</h3>
+<p><strong>Point Cloud Generation:</strong>
+- Convert sonar data to 3D point clouds
+- Registration and mapping
+- Object detection</p>
+<p><strong>Imaging Sonar:</strong>
+- Feature extraction
+- Target classification
+- SLAM with imaging sonar</p>
+<h3 id="underwater-vision">Underwater Vision</h3>
+<p><strong>Challenges:</strong>
+- Color correction
+- Enhancement in turbid water
+- Lighting compensation</p>
+<p><strong>Approaches:</strong>
+- Deep learning for object detection
+- Stereo vision for 3D reconstruction
+- Visual odometry (in clear water)</p>
+<h3 id="object-detection">Object Detection</h3>
+<p><strong>Maritime-Specific Targets:</strong>
+- Buoys and markers
+- Pipelines and cables
+- Marine structures (wrecks, platforms)
+- Docking stations</p>
+<h2 id="communication">Communication</h2>
+<h3 id="acoustic-communication">Acoustic Communication</h3>
+<p>Underwater acoustic communication is essential for commanding and monitoring submerged vehicles.</p>
+<h4 id="whoi-ros_acomms">WHOI ros_acomms ⭐</h4>
+<p><strong><a href="https://git.whoi.edu/acomms/ros_acomms">ros_acomms</a></strong> | <a href="https://acomms.pages.whoi.edu/ros_acomms/overview.html">Documentation</a></p>
+<p>Woods Hole Oceanographic Institution's ROS-based acoustic communication stack. See the project documentation for deployment history and supported configurations.</p>
+<p><strong>Core Features:</strong>
+- Transport ROS messages over underwater acoustic links
+- Efficient message marshalling (manual configuration or automatic introspection)
+- Modular modem driver architecture
+- Message queue management for link optimization
+- Media Access Control (MAC) engines
+- Acoustic link simulator with ray-tracing model for development</p>
+<p><strong>Supported Hardware:</strong>
+- WHOI Micro-Modem family (primary target)
+- Iridium satellite links (low-throughput mode)
+- Extensible to other acoustic modems via modular driver interface</p>
+<p><strong>Real-World Applications:</strong>
+- Remote redirection of deployed AUVs
+- Near real-time vehicle telemetry streaming
+- Sensor data transmission from underwater vehicles
+- Multi-vehicle coordination and swarm operations</p>
+<p><strong>Performance:</strong>
+- Acoustic throughput and latency vary widely by modem, configuration, and environment
+- Range depends on modem specs and environmental conditions</p>
+<p><strong>ROS Version:</strong> ROS 1 (ROS 2 migration status unknown)</p>
+<p><strong>Publications:</strong>
+- E. Gallimore, T. Schneider, H. Schmidt, "<a href="https://acomms.whoi.edu/publications/">ROS Message Transport over Underwater Acoustic Links with ros_acomms</a>," IEEE/OES AUV 2022</p>
+<p><strong>Why Use It:</strong> ros_acomms provides an end-to-end acoustic communications stack for ROS; see the documentation for feature and configuration details.</p>
+<h3 id="known-issues-acoustic-communication">Known Issues: Acoustic Communication</h3>
+<p><strong>⚠️ ros_acomms Limitations:</strong></p>
+<ol>
+<li><strong>Low Bandwidth Constraints</strong></li>
+<li><strong>Limitation:</strong> Acoustic links have much lower throughput than RF</li>
+<li><strong>Impact:</strong> Can't stream video, send large files, or do real-time control</li>
+<li><strong>Suitable for:</strong><ul>
+<li>Status updates (position, battery, mission state)</li>
+<li>Waypoint updates</li>
+<li>Emergency commands (abort, surface)</li>
+<li>Sparse sensor data (temperature, depth readings)</li>
+</ul>
+</li>
+<li>
+<p><strong>NOT suitable for:</strong></p>
+<ul>
+<li>Camera feeds</li>
+<li>Real-time teleoperation</li>
+<li>Large map transfers</li>
+<li>High-rate control loops</li>
+</ul>
+</li>
+<li>
+<p><strong>High Latency</strong></p>
+</li>
+<li><strong>Typical:</strong> Seconds of one-way latency</li>
+<li><strong>Impact:</strong> Round-trip command-response can be slow</li>
+<li><strong>Implications:</strong><ul>
+<li>Vehicle must operate autonomously between commands</li>
+<li>Can't rely on acoustic link for critical safety functions</li>
+<li>Mission updates must account for propagation delay</li>
+</ul>
+</li>
+<li>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Design missions for autonomous execution</li>
+<li>Use acoustic only for monitoring and high-level redirection</li>
+<li>Implement time-stamped commands</li>
+</ul>
+</li>
+<li>
+<p><strong>Packet Loss and Dropouts</strong></p>
+</li>
+<li><strong>Causes:</strong><ul>
+<li>Multipath (shallow water, near structures)</li>
+<li>Thermoclines bending sound</li>
+<li>Biologics (snapping shrimp interference)</li>
+<li>Surface conditions (bubbles from waves)</li>
+<li>Vehicle orientation (directionality of transducers)</li>
+</ul>
+</li>
+<li><strong>Typical:</strong> Packet loss can be significant in challenging conditions</li>
+<li>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Implement retry logic and acknowledgments</li>
+<li>Use redundant critical messages</li>
+<li>Accept that some messages will be lost</li>
+<li>Queue important messages with ros_acomms queue manager</li>
+</ul>
+</li>
+<li>
+<p><strong>Environmental Sensitivity</strong></p>
+</li>
+<li><strong>Issue:</strong> Performance varies drastically with conditions</li>
+<li><strong>Factors:</strong><ul>
+<li>Water temperature (affects sound speed)</li>
+<li>Salinity (affects absorption)</li>
+<li>Depth (pressure effects)</li>
+<li>Sea state (surface noise)</li>
+<li>Time of day (biologics, shipping traffic)</li>
+</ul>
+</li>
+<li><strong>Impact:</strong> Range can vary widely between good and bad conditions</li>
+<li>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Test in actual deployment environment</li>
+<li>Have a fallback plan if acoustic fails</li>
+<li>Don't rely solely on acoustic for critical functions</li>
+</ul>
+</li>
+<li>
+<p><strong>Range Limitations</strong></p>
+</li>
+<li><strong>Typical Ranges:</strong> Range depends on modem specs, water conditions, and installation</li>
+<li><strong>Trade-off:</strong> Range vs bandwidth (longer range = slower rate)</li>
+<li>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Size modem and data rate to mission requirements</li>
+<li>Plan vehicle operations within reliable acoustic range</li>
+<li>Use surface relays for longer-range missions</li>
+</ul>
+</li>
+<li>
+<p><strong>ROS 1 Only</strong></p>
+</li>
+<li><strong>Issue:</strong> ros_acomms not yet ported to ROS 2</li>
+<li><strong>Impact:</strong> Must bridge ROS 2 system to ROS 1 for acoustic comms</li>
+<li><strong>Workarounds:</strong><ul>
+<li>Use ROS 1 ↔ ROS 2 bridge</li>
+<li>Implement custom ROS 2 acoustic driver (significant effort)</li>
+<li>Run acoustic comms in separate ROS 1 container</li>
+</ul>
+</li>
+</ol>
+<p><strong>⚠️ General Acoustic Communication Challenges:</strong></p>
+<ol>
+<li><strong>Hardware Availability</strong></li>
+<li><strong>Issue:</strong> Few affordable acoustic modems available</li>
+<li><strong>Options:</strong><ul>
+<li>WHOI Micro-Modem</li>
+<li>EvoLogics</li>
+<li>Teledyne Benthos</li>
+<li>Budget options are limited</li>
+</ul>
+</li>
+<li>
+<p><strong>Impact:</strong> Acoustic capability can add significant cost</p>
+</li>
+<li>
+<p><strong>Integration Complexity</strong></p>
+</li>
+<li><strong>Issue:</strong> Acoustic modems typically use serial or Ethernet</li>
+<li><strong>Requirements:</strong><ul>
+<li>Waterproof connectors</li>
+<li>Power supply (varies by modem)</li>
+<li>Transducer mounting and cabling</li>
+<li>Topside modem (need two modems for communication)</li>
+</ul>
+</li>
+<li>
+<p><strong>Time:</strong> Budget sufficient time for integration and field testing</p>
+</li>
+<li>
+<p><strong>Testing Challenges</strong></p>
+</li>
+<li><strong>Issue:</strong> Can't test acoustic in air (need water)</li>
+<li><strong>Requirements:</strong><ul>
+<li>Water tank or pool for testing</li>
+<li>Lake/ocean for realistic range tests</li>
+<li>Separate topside modem and power</li>
+</ul>
+</li>
+<li><strong>Cost:</strong> Field testing is expensive and time-consuming</li>
+</ol>
+<p><strong>Decision Guide:</strong>
+- <strong>Need acoustic if:</strong> Operating far from the surface, multi-hour missions, need status monitoring
+- <strong>Skip acoustic if:</strong> Tethered ROV, shallow water with frequent surfacing, budget-constrained
+- <strong>Alternative for budget projects:</strong> Pre-programmed autonomous missions, surface for communication
+- <strong>Critical insight:</strong> Most successful AUV missions are fully autonomous with acoustic as monitoring only</p>
+<hr />
+<h4 id="ns-3-uan-simulation-only">ns-3 UAN (Simulation Only)</h4>
+<p><strong><a href="https://www.nsnam.org/docs/models/html/uan.html">ns-3 UAN</a></strong> - Underwater Acoustic Network simulation module.</p>
+<p><strong>Purpose:</strong> Research and development, protocol testing
+<strong>Status:</strong> Simulation framework (not for production deployment)
+<strong>Use Cases:</strong> Protocol development, network performance analysis, academic research</p>
+<p><strong>Characteristics of Underwater Acoustic Communication:</strong>
+- Low bandwidth compared to RF links
+- High latency (seconds)
+- Range depends on environment and modem specifications
+- Affected by water conditions (temperature, salinity, pressure)
+- Multipath propagation
+- Doppler effects from vehicle motion</p>
+<h3 id="network-protocols">Network Protocols</h3>
+<p>Handling underwater network challenges:
+- Delay-tolerant networking (DTN)
+- Acoustic channel modeling and prediction
+- Multi-hop communication
+- Time synchronization
+- Collision avoidance (TDMA, CDMA)</p>
+<h2 id="mapping-and-slam">Mapping and SLAM</h2>
+<h3 id="underwater-slam">Underwater SLAM</h3>
+<p>Simultaneous Localization and Mapping in underwater environments:</p>
+<p><strong>Sensor Choices:</strong>
+- Sonar-based SLAM (most common)
+- Visual SLAM (clear water only)
+- DVL-aided SLAM</p>
+<p><strong>Challenges:</strong>
+- Feature-sparse environments
+- Dynamic water conditions
+- Computational constraints</p>
+<h3 id="seafloor-mapping">Seafloor Mapping</h3>
+<p>Creating maps of the underwater environment:
+- Bathymetric mapping (depth maps)
+- Photomosaics
+- 3D reconstruction</p>
+<h2 id="tools-and-utilities">Tools and Utilities</h2>
+<h3 id="geographic-conversions">Geographic Conversions</h3>
+<p>Coordinate system transformations for marine robotics:</p>
+<p><strong>Common Conversions:</strong>
+- Lat/Lon ↔ UTM
+- Geodetic ↔ Cartesian
+- Local ENU (East-North-Up) frames</p>
+<p><strong>Libraries:</strong>
+- GeographicLib
+- proj4
+- ROS tf2 for transformations</p>
+<h3 id="visualization">Visualization</h3>
+<p><strong>RViz Plugins:</strong>
+- Sonar visualization
+- Bathymetric data display
+- Vehicle trajectory playback
+- Acoustic range visualization</p>
+<p><strong>Web-Based:</strong>
+- GIS integration
+- Mission planning interfaces
+- Real-time telemetry dashboards</p>
+<h3 id="data-processing">Data Processing</h3>
+<p>Post-mission data analysis:
+- Bag file processing
+- Sensor data extraction
+- Map generation
+- Performance analysis</p>
+<hr />
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://control.ros.org/master/index.html">ros2_control</a></li>
+<li><a href="https://docs.ros.org/en/melodic/api/robot_localization/html/index.html">robot_localization</a></li>
+<li><a href="https://acomms.pages.whoi.edu/ros_acomms/overview.html">ros_acomms documentation</a></li>
+<li><a href="https://git.whoi.edu/acomms/ros_acomms">ros_acomms repository</a></li>
+<li><a href="https://www.nsnam.org/docs/models/html/uan.html">ns-3 UAN module</a></li>
+</ul>
+<p><em>This page was last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2026</span></em></p>
+<script data-goatcounter="https://maritime-robotics-landscape.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../hardware/" class="btn btn-neutral float-left" title="Hardware"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../drivers/" class="btn btn-neutral float-right" title="Drivers">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Information assembled by the ROS Maritime Robotics Working Group. Privacy-respecting analytics with GoatCounter.</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../hardware/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../drivers/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
