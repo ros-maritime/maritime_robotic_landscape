@@ -25,7 +25,7 @@ Gazebo (including Gazebo Classic and modern Gazebo/Ignition) is widely used in t
 | [Orca4](https://github.com/clydemcqueen/orca4) | Gazebo | ✗ | ROS 2 | AUV | 11/2025 |
 | [SUAVE](https://github.com/kas-lab/suave) | Gazebo | ✗ | ROS 2 | AUV | 07/2025 |
 
-_Table last updated on **December 30th, 2025 at 03:09:09 PM UTC**_
+_Table last updated on **December 31th, 2025 at 05:26:06 PM UTC**_
 
 ### Virtual RobotX (VRX)
 
