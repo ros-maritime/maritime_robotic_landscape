@@ -252,7 +252,7 @@ Specialized workshops at major robotics conferences:
 **How to Join:**
 1. Watch for announcements on [ROS Discourse](https://discourse.ros.org/c/maritime/36)
 2. Join the [Google Group](https://groups.google.com/g/maritime-robotics-working-group-invites) for calendar invites
-3. Join via Matrix chat for informal discussion
+3. Join via Zulip chat for informal discussion
 
 **Meeting Notes:** [Google Doc](https://docs.google.com/document/d/1Wnddq4xRXR6HF2XFWeejfUGII_hj7DilKrGcFj1qlEA/edit?usp=drive_link)
 
@@ -292,7 +292,7 @@ Specialized workshops at major robotics conferences:
 
     * Check [ROS Discourse Maritime Category](https://discourse.ros.org/c/maritime/36)
     * Follow robotics conference websites
-    * Join the Maritime Robotics WG Matrix chat for announcements
+    * Join the Maritime Robotics WG Zulip chat for announcements
 
 ### 2025 Events (Check for Updates)
 
@@ -322,7 +322,7 @@ Specialized workshops at major robotics conferences:
 
 ### Community Meetings
 
-1. **Join Matrix Chat:** Real-time discussion
+1. **Join Zulip Chat:** Real-time discussion
 2. **Attend WG Meetings:** Monthly maritime robotics meetings (see schedule)
 3. **Contribute:** Share projects and experiences
 4. **Collaborate:** Find collaborators for projects

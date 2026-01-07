@@ -256,7 +256,7 @@ Use manufacturer datasheets and documented field experience to compare vendors. 
 
 **Community:**
 - [ROS Discourse - Maritime](https://discourse.ros.org/c/maritime/36)
-- [Matrix Chat](https://matrix.to/#/#ros-maritime:matrix.org)
+- [Zulip Chat](https://openrobotics.zulipchat.com/#narrow/channel/526058-Marine-Robotics)
 
 **Key papers:**
 - Fossen, "Handbook of Marine Craft Hydrodynamics and Motion Control"

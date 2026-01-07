@@ -228,8 +228,8 @@ Start with ROS 2. Some older packages only work with ROS 1, but ROS 2 is the cur
    - Searchable archive
    - Experts monitor regularly
 
-2. **Matrix Chat** (for quick questions)
-   - [#ros-maritime](https://matrix.to/#/#ros-maritime:matrix.org)
+2. **Zulip Chat** (for quick questions)
+   - [Marine Robotics channel](https://openrobotics.zulipchat.com/#narrow/channel/526058-Marine-Robotics)
    - Real-time chat
    - Friendly community
 
@@ -251,7 +251,7 @@ Start with ROS 2. Some older packages only work with ROS 1, but ROS 2 is the cur
 
 **Informal mentorship:**
 - Monthly ROS Maritime Working Group meetings - watch and learn
-- Community members often help on Discourse and Matrix
+- Community members often help on Discourse and Zulip
 - Many people share contact info if you're working on interesting projects
 
 ### Can I contribute to this landscape/community?
@@ -363,7 +363,7 @@ Many people start in simulation and build toward field work over time.
 - **Quick terms:** Check the [Glossary](glossary.md)
 - **Getting started:** See the [Getting Started Guide](getting_started.md)
 - **Technical help:** Ask on [ROS Discourse](https://discourse.ros.org/c/maritime/36)
-- **Real-time chat:** Join [Matrix #ros-maritime](https://matrix.to/#/#ros-maritime:matrix.org)
+- **Real-time chat:** Join [Zulip Marine Robotics channel](https://openrobotics.zulipchat.com/#narrow/channel/526058-Marine-Robotics)
 
 ---
 

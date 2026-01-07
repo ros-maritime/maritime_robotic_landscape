@@ -320,7 +320,7 @@ Woods Hole Oceanographic Institution has been a pioneer in underwater robotics f
 ### Forums and Discussion
 
 * **ROS Discourse - Maritime Category:** Ask questions, share projects
-* **Matrix Chat:** Real-time discussion with community members
+* **Zulip Chat:** Real-time discussion with community members
 * **GitHub Discussions:** Package-specific questions
 
 ### Example Projects

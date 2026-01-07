@@ -171,7 +171,7 @@ Here's a realistic schedule for your first week:
 
 ### Community Support
 - **ROS Discourse - Maritime Category:** Ask questions, get help
-- **Matrix Chat:** Real-time discussion with experienced developers
+- **Zulip Chat:** Real-time discussion with experienced developers
 - **Monthly Working Group Meetings:** Watch recordings to learn from experts
 
 ### Documentation on This Site
@@ -191,7 +191,7 @@ Timelines vary widely by project scope, prior experience, and available resource
 No. Start free with simulation. Hardware costs range from hobby projects to professional systems.
 
 **"What if I get stuck?"**
-The community is incredibly helpful! Ask on ROS Discourse, join Matrix chat, or come to monthly meetings.
+The community is incredibly helpful! Ask on ROS Discourse, join Zulip chat, or come to monthly meetings.
 
 **"Can I get a job doing this?"**
 Roles include robotics engineer, ocean technology specialist, research scientist, simulation developer, and controls engineer. Check current job listings for requirements in your region.
@@ -206,7 +206,7 @@ Ready to dive in? Here's what to do next:
 2. **Bookmark this site** - You'll reference it often
 3. **Join the community:**
    - Subscribe to [ROS Discourse Maritime](https://discourse.ros.org/c/maritime/36)
-   - Join [Matrix chat](https://matrix.to/#/#ros-maritime:matrix.org)
+   - Join [Zulip chat](https://openrobotics.zulipchat.com/#narrow/channel/526058-Marine-Robotics)
 4. **Start learning:**
    - Complete your first tutorial
    - Ask questions when you're stuck
@@ -216,7 +216,7 @@ Ready to dive in? Here's what to do next:
 
 - **Quick questions:** Check the [FAQ](faq.md)
 - **Technical help:** [ROS Discourse](https://discourse.ros.org/c/maritime/36)
-- **Real-time chat:** [Matrix #ros-maritime](https://matrix.to/#/#ros-maritime:matrix.org)
+- **Real-time chat:** [Zulip Marine Robotics channel](https://openrobotics.zulipchat.com/#narrow/channel/526058-Marine-Robotics)
 - **Stuck on terms:** See the [Glossary](glossary.md)
 
 ---

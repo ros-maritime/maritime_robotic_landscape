@@ -40,7 +40,7 @@ The Maritime Robotics Working Group meets regularly; meetings are announced on t
 
 ### Team / Community Coordination
 
-* **Instant Messaging:** [Matrix chat #ros-maritime](https://matrix.to/#/#ros-maritime:matrix.org)
+* **Instant Messaging:** [Zulip chat (Marine Robotics channel)](https://openrobotics.zulipchat.com/#narrow/channel/526058-Marine-Robotics)
 * **Forums:** [ROS Discourse Maritime Robotics Category](https://discourse.ros.org/c/maritime/36)
 * **Project Tracking:** [GitHub Project Board](https://github.com/orgs/ros-maritime/projects)
 

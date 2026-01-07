@@ -31,7 +31,7 @@ This landscape is a community project curated by the ROS Maritime Robotics Worki
 
 **Get Involved:**
 * **Meetings:** Monthly (see schedule in the [Google Doc](https://docs.google.com/document/d/1Wnddq4xRXR6HF2XFWeejfUGII_hj7DilKrGcFj1qlEA/edit?usp=drive_link))
-* **Matrix Chat:** [#ros-maritime:matrix.org](https://matrix.to/#/#ros-maritime:matrix.org)
+* **Zulip Chat:** [Marine Robotics channel](https://openrobotics.zulipchat.com/#narrow/channel/526058-Marine-Robotics)
 * **Discourse:** [Maritime Robotics Category](https://discourse.ros.org/c/maritime/36)
 * **Project Board:** [GitHub Projects](https://github.com/orgs/ros-maritime/projects)
 
