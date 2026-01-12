@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Datasets - Maritime Robotics Landscape</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Datasets";
+        var mkdocs_page_input_path = "datasets.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Maritime Robotics Landscape
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Getting Started</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../glossary/">Glossary</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../vehicle_types/">Vehicle Types</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../autonomy_stacks/">Autonomy Stacks</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../simulation/">Simulation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../hardware/">Hardware</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../software/">Software</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../drivers/">Drivers</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Datasets</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#multi-sensor-datasets">Multi-Sensor Datasets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#remaro-data">REMARO Data</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sonar-datasets">Sonar Datasets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#opensonardatasets">OpenSonarDatasets</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mimir-uw">MIMIR-UW</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#object-detection-datasets">Object Detection Datasets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#underwater-trash-detection">Underwater Trash Detection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#marine-structure-datasets">Marine Structure Datasets</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#visual-odometry-and-slam-datasets">Visual Odometry and SLAM Datasets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#marine-visual-datasets">Marine Visual Datasets</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#surface-vehicle-datasets">Surface Vehicle Datasets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#maritime-survey-data">Maritime Survey Data</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#simulation-generated-datasets">Simulation-Generated Datasets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#gazebo-based-datasets">Gazebo-Based Datasets</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#acoustic-communication-datasets">Acoustic Communication Datasets</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#environmental-datasets">Environmental Datasets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#oceanographic-data">Oceanographic Data</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dataset-repositories">Dataset Repositories</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#general-repositories">General Repositories</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mgds-marine-geoscience-data-system">MGDS (Marine Geoscience Data System)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#competition-datasets">Competition Datasets</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creating-and-sharing-datasets">Creating and Sharing Datasets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#best-practices">Best Practices</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contributing-to-this-list">Contributing to This List</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dataset-comparison">Dataset Comparison</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../education_and_tutorials/">Education & Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../expert_reference/">Expert Reference</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../operations/">Operations</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../integration_examples/">Integration Examples</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Maritime Robotics Landscape</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Datasets</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="datasets-for-maritime-robotics">Datasets for Maritime Robotics</h1>
+<p>Open-access datasets are essential for developing and validating perception, navigation, and control algorithms. This page catalogs available datasets for maritime robotics research.</p>
+<h2 id="multi-sensor-datasets">Multi-Sensor Datasets</h2>
+<h3 id="remaro-data">REMARO Data</h3>
+<p><strong><a href="https://github.com/remaro-network/remaro_data">REMARO Data Collections</a></strong></p>
+<p>The REMARO (Reliable AI for Marine Robotics) network provides various datasets for marine robotics.</p>
+<p><strong>Contents:</strong>
+- Multi-sensor recordings
+- Underwater vehicle data
+- Environmental conditions
+- Ground truth when provided by the dataset</p>
+<p><strong>Use Cases:</strong>
+- Algorithm benchmarking
+- Sensor fusion research
+- Environmental monitoring studies</p>
+<p><strong>Format:</strong> ROS bags, raw sensor data</p>
+<h2 id="sonar-datasets">Sonar Datasets</h2>
+<h3 id="opensonardatasets">OpenSonarDatasets</h3>
+<p><strong><a href="https://github.com/remaro-network/OpenSonarDatasets">OpenSonarDatasets</a></strong></p>
+<p>Curated collection of sonar datasets from various sources.</p>
+<p><strong>Contents:</strong>
+- Imaging sonar data
+- Side-scan sonar
+- Multibeam sonar
+- Various underwater environments</p>
+<p><strong>Use Cases:</strong>
+- Sonar SLAM development
+- Object detection and classification
+- Acoustic image processing</p>
+<p><strong>Annotations:</strong> Varies by dataset</p>
+<h3 id="mimir-uw">MIMIR-UW</h3>
+<p><strong><a href="https://github.com/remaro-network/MIMIR-UW">MIMIR-UW</a></strong> - A Multipurpose Synthetic Dataset for Underwater Navigation and Inspection</p>
+<p><strong>Type:</strong> Synthetic dataset (simulation-generated)</p>
+<p><strong>Contents:</strong>
+- Synthetic underwater imagery
+- Sonar data
+- Ground truth poses
+- Various underwater scenarios</p>
+<p><strong>Advantages:</strong>
+- Ground truth available for synthetic scenes
+- Controllable conditions
+- Large-scale data generation
+- Multiple sensor modalities</p>
+<p><strong>Use Cases:</strong>
+- Training deep learning models
+- Algorithm validation
+- Simulation-to-real transfer studies</p>
+<h2 id="object-detection-datasets">Object Detection Datasets</h2>
+<h3 id="underwater-trash-detection">Underwater Trash Detection</h3>
+<p><strong><a href="https://learnopencv.com/yolov6-custom-dataset-training/">LearnOpenCV Underwater Trash Dataset</a></strong></p>
+<p><strong>Contents:</strong>
+- Underwater images with trash
+- Bounding box annotations
+- Various marine environments</p>
+<p><strong>Use Cases:</strong>
+- Object detection training
+- Marine conservation applications
+- Environmental monitoring</p>
+<p><strong>Format:</strong> Images with YOLO-format annotations</p>
+<h3 id="marine-structure-datasets">Marine Structure Datasets</h3>
+<p>Datasets for inspecting underwater structures:</p>
+<p><strong>Common Targets:</strong>
+- Pipelines
+- Cables
+- Ship hulls
+- Offshore platforms
+- Underwater infrastructure</p>
+<p><strong>Characteristics:</strong>
+- Often proprietary or restricted
+- Some academic releases available
+- Competition datasets (e.g., from MBZIRC)</p>
+<h2 id="visual-odometry-and-slam-datasets">Visual Odometry and SLAM Datasets</h2>
+<h3 id="marine-visual-datasets">Marine Visual Datasets</h3>
+<p>Datasets for visual navigation in underwater environments:</p>
+<p><strong>Challenges:</strong>
+- Limited visibility
+- Color distortion
+- Artificial lighting
+- Feature-sparse environments</p>
+<p><strong>Available Datasets:</strong>
+- Research institution releases
+- Competition datasets
+- Simulated environments</p>
+<h2 id="surface-vehicle-datasets">Surface Vehicle Datasets</h2>
+<h3 id="maritime-survey-data">Maritime Survey Data</h3>
+<p>Datasets from autonomous surface vehicles:</p>
+<p><strong>Contents:</strong>
+- GNSS/GPS tracks
+- Radar data
+- Camera imagery
+- Meteorological data
+- Wave conditions</p>
+<p><strong>Sources:</strong>
+- Research projects
+- Maritime competitions (VRX)
+- Academic institutions</p>
+<h2 id="simulation-generated-datasets">Simulation-Generated Datasets</h2>
+<h3 id="gazebo-based-datasets">Gazebo-Based Datasets</h3>
+<p>Data generated from maritime simulators:</p>
+<p><strong>Sources:</strong>
+- VRX competition scenarios
+- DAVE simulation
+- Custom simulation environments</p>
+<p><strong>Advantages:</strong>
+- Perfect ground truth
+- Reproducibility
+- Controllable conditions
+- Unlimited data generation</p>
+<p><strong>Use Cases:</strong>
+- Initial algorithm development
+- Sim-to-real transfer research
+- Benchmarking</p>
+<h2 id="acoustic-communication-datasets">Acoustic Communication Datasets</h2>
+<p>Underwater acoustic channel data:</p>
+<p><strong>Contents:</strong>
+- Channel impulse responses
+- Communication performance metrics
+- Environmental parameters</p>
+<p><strong>Sources:</strong>
+- Oceanographic institutions
+- Research projects
+- ns-3 UAN simulations</p>
+<h2 id="environmental-datasets">Environmental Datasets</h2>
+<h3 id="oceanographic-data">Oceanographic Data</h3>
+<p>Publicly available ocean data:</p>
+<p><strong>Sources:</strong>
+- NOAA databases
+- Copernicus Marine Service
+- World Ocean Database
+- Argo float data</p>
+<p><strong>Contents:</strong>
+- Temperature and salinity profiles
+- Current measurements
+- Wave conditions
+- Bathymetric data</p>
+<p><strong>Use Cases:</strong>
+- Environment modeling
+- Mission planning
+- Algorithm validation</p>
+<h2 id="dataset-repositories">Dataset Repositories</h2>
+<h3 id="general-repositories">General Repositories</h3>
+<ul>
+<li><strong>IEEE DataPort:</strong> Hosts various maritime robotics datasets</li>
+<li><strong>Kaggle:</strong> User-contributed datasets including underwater imagery</li>
+<li><strong>Academic Institutions:</strong> Many labs publish datasets with papers</li>
+</ul>
+<h3 id="mgds-marine-geoscience-data-system">MGDS (Marine Geoscience Data System)</h3>
+<p>MGDS provides public marine geoscience datasets and archives with broad coverage and consistent metadata practices.</p>
+<p><strong>Data Sources:</strong></p>
+<ul>
+<li><strong><a href="https://www.marine-geo.org/">MGDS Data Portal</a>:</strong> Searchable marine geoscience datasets</li>
+<li><strong><a href="https://www.marine-geo.org/tools/search/">MGDS Search</a>:</strong> Dataset listings and metadata</li>
+</ul>
+<p><strong>Access:</strong>
+- Public datasets with downloads and metadata
+- DOI-backed dataset references where available
+- Publications often link to related datasets</p>
+<p><strong>Why MGDS Data Matters:</strong>
+- Publicly archived data with traceable provenance
+- Useful for validating mapping, navigation, and perception pipelines</p>
+<h3 id="competition-datasets">Competition Datasets</h3>
+<p>Some maritime robotics competitions release datasets or logs; check individual competition sites and repositories for availability and licensing (for example, VRX simulation logs).</p>
+<h2 id="creating-and-sharing-datasets">Creating and Sharing Datasets</h2>
+<h3 id="best-practices">Best Practices</h3>
+<p>When creating datasets for the community:</p>
+<ol>
+<li><strong>Documentation:</strong></li>
+<li>Sensor specifications</li>
+<li>Calibration parameters</li>
+<li>Environmental conditions</li>
+<li>
+<p>Data collection procedures</p>
+</li>
+<li>
+<p><strong>Formats:</strong></p>
+</li>
+<li>ROS bags for multi-sensor data</li>
+<li>Standard formats (images, point clouds)</li>
+<li>
+<p>Metadata in human-readable format (YAML, JSON)</p>
+</li>
+<li>
+<p><strong>Annotations:</strong></p>
+</li>
+<li>Ground truth when available</li>
+<li>Annotation methodology</li>
+<li>
+<p>Quality assessment</p>
+</li>
+<li>
+<p><strong>Licensing:</strong></p>
+</li>
+<li>Clear license (Creative Commons, MIT, etc.)</li>
+<li>Citation requirements</li>
+<li>
+<p>Usage restrictions if any</p>
+</li>
+<li>
+<p><strong>Accessibility:</strong></p>
+</li>
+<li>Permanent hosting (university servers, Zenodo, etc.)</li>
+<li>DOI for citation</li>
+<li>README with quick-start guide</li>
+</ol>
+<h3 id="contributing-to-this-list">Contributing to This List</h3>
+<p>If you have a maritime robotics dataset to share:</p>
+<ol>
+<li>Add it to this page via pull request</li>
+<li>Include: name, link, brief description, use cases</li>
+<li>Specify data type and format</li>
+<li>Indicate if annotations/ground truth are available</li>
+<li>Provide license information</li>
+</ol>
+<h2 id="dataset-comparison">Dataset Comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Type</th>
+<th>Sensors</th>
+<th>Size</th>
+<th>Ground Truth</th>
+<th>License</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>REMARO Data</td>
+<td>Multi-sensor</td>
+<td>Various</td>
+<td>Varies</td>
+<td>Partial</td>
+<td>Open</td>
+<td>ROS bags</td>
+</tr>
+<tr>
+<td>OpenSonarDatasets</td>
+<td>Sonar</td>
+<td>Imaging/Side-scan</td>
+<td>Varies</td>
+<td>Partial</td>
+<td>Open</td>
+<td>Mixed</td>
+</tr>
+<tr>
+<td>MIMIR-UW</td>
+<td>Synthetic</td>
+<td>Camera/Sonar</td>
+<td>Large</td>
+<td>Full</td>
+<td>Open</td>
+<td>Simulation</td>
+</tr>
+<tr>
+<td>Trash Detection</td>
+<td>Vision</td>
+<td>Camera</td>
+<td>Medium</td>
+<td>Bounding boxes</td>
+<td>Open</td>
+<td>Images</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>This page was last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2026</span></em></p>
+<script data-goatcounter="https://maritime-robotics-landscape.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../drivers/" class="btn btn-neutral float-left" title="Drivers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../education_and_tutorials/" class="btn btn-neutral float-right" title="Education & Tutorials">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Information assembled by the ROS Maritime Robotics Working Group. Privacy-respecting analytics with GoatCounter.</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../drivers/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../education_and_tutorials/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

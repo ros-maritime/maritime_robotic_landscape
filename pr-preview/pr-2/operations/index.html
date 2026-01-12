@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Operations - Maritime Robotics Landscape</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Operations";
+        var mkdocs_page_input_path = "operations.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Maritime Robotics Landscape
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Getting Started</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../glossary/">Glossary</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../vehicle_types/">Vehicle Types</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../autonomy_stacks/">Autonomy Stacks</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../simulation/">Simulation</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../hardware/">Hardware</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../software/">Software</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../drivers/">Drivers</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../datasets/">Datasets</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../education_and_tutorials/">Education & Tutorials</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../expert_reference/">Expert Reference</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Operations</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pre-deployment-checklist">Pre-Deployment Checklist</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#day-before-deployment">Day Before Deployment</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#shortly-before-splash">Shortly Before Splash</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#during-deployment">During Deployment</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-deployment">Post-Deployment</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#power-budgets">Power Budgets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#calculating-mission-duration">Calculating Mission Duration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-power-budget-hovering-auv">Example Power Budget - Hovering AUV</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#power-optimization-strategies">Power Optimization Strategies</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#environmental-operating-limits">Environmental Operating Limits</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#sea-state-limits">Sea State Limits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#current-limits">Current Limits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#temperature-effects">Temperature Effects</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#depth-limitations">Depth Limitations</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#failure-modes-and-recovery">Failure Modes and Recovery</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#critical-sensor-failures">Critical Sensor Failures</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#dvl-failure">DVL Failure</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#imu-failure">IMU Failure</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#gps-failure-surface-vehicle">GPS Failure (Surface Vehicle)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#acoustic-modem-failure">Acoustic Modem Failure</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mechanical-failures">Mechanical Failures</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#thruster-failure">Thruster Failure</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#leak-detection">Leak Detection</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#softwarecontrol-failures">Software/Control Failures</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#controller-instability">Controller Instability</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ekf-divergence">EKF Divergence</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data-management">Data Management</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mission-data-collection">Mission Data Collection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-mission-processing">Post-Mission Processing</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#standard-operating-procedures-sop-template">Standard Operating Procedures (SOP) Template</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mission-planning-sop">Mission Planning SOP</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#deployment-sop">Deployment SOP</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recovery-sop">Recovery SOP</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lessons-learned-community-contributed">Lessons Learned (Community Contributed)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#always-test-acoustics-first">"Always test acoustics first"</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gps-cold-start-takes-longer-than-you-think">"GPS cold start takes longer than you think"</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dvl-needs-warm-up">"DVL needs warm-up"</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fresh-water-rinse-saves-equipment">"Fresh water rinse saves equipment"</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#document-everything">"Document everything"</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#spare-o-rings-are-mission-critical">"Spare O-rings are mission-critical"</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#maintenance-schedule">Maintenance Schedule</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#after-each-deployment">After Each Deployment</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#weekly-active-use">Weekly (Active Use)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#monthly">Monthly</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#annually">Annually</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../integration_examples/">Integration Examples</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Maritime Robotics Landscape</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Operations</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="operations-and-deployment">Operations and Deployment</h1>
+<p>Practical guidance for deploying marine robots based on real-world experience. This page covers pre-deployment checklists, power budgets, failure modes, environmental limits, and operational procedures.</p>
+<div class="admonition warning">
+<p class="admonition-title">Safety First</p>
+<p>Marine robotics operations involve expensive equipment, challenging environments, and potential hazards. Always:</p>
+<ul>
+<li>Have emergency recovery procedures</li>
+<li>Never deploy alone; ensure adequate staffing</li>
+<li>Check weather and sea state forecasts</li>
+<li>Brief all personnel on safety protocols</li>
+<li>Have communication backup plan</li>
+</ul>
+</div>
+<hr />
+<h2 id="pre-deployment-checklist">Pre-Deployment Checklist</h2>
+<h3 id="day-before-deployment">Day Before Deployment</h3>
+<p><strong>Vehicle Preparation:</strong>
+- [ ] Battery fully charged and voltage verified
+- [ ] All O-rings inspected (no nicks, cuts, or compression set)
+- [ ] O-rings lubricated with appropriate grease (silicone or Krytox)
+- [ ] Pressure housing leak tested (vacuum test if possible)
+- [ ] All sensors functional (bench test in air)
+- [ ] Software updated and tested in simulation
+- [ ] Mission plan loaded and verified
+- [ ] Data storage cleared (ensure sufficient space)
+- [ ] Backup battery charged (for recovery)</p>
+<p><strong>Support Equipment:</strong>
+- [ ] Launch/recovery equipment tested
+- [ ] Spare parts packed (O-rings, connectors, tools)
+- [ ] Communication equipment charged
+- [ ] Shore computer ready with monitoring software
+- [ ] Emergency contact numbers programmed
+- [ ] Weather forecast reviewed</p>
+<p><strong>Documentation:</strong>
+- [ ] Mission plan documented
+- [ ] Risk assessment completed
+- [ ] Permits/permissions verified (if required)
+- [ ] Insurance current
+- [ ] Emergency procedures reviewed with team</p>
+<h3 id="shortly-before-splash">Shortly Before Splash</h3>
+<p><strong>System Power-Up Sequence:</strong></p>
+<ol>
+<li><strong>DVL warm-up</strong> (per manufacturer guidance)</li>
+<li>Power on DVL first</li>
+<li>Allow transducers to stabilize temperature</li>
+<li>
+<p>Verify bottom-lock acquisition (on deck/dock if possible)</p>
+</li>
+<li>
+<p><strong>IMU calibration</strong></p>
+</li>
+<li>Power on IMU</li>
+<li>Allow gyro bias stabilization per manufacturer guidance</li>
+<li>
+<p>Verify orientation output makes sense</p>
+</li>
+<li>
+<p><strong>GPS fix acquisition</strong></p>
+</li>
+<li>Power on GPS</li>
+<li>Wait for a reliable fix (cold starts can take longer)</li>
+<li>
+<p>Log initial position as deployment reference</p>
+</li>
+<li>
+<p><strong>Depth sensor zero-offset</strong></p>
+</li>
+<li>Power on with sensor at surface (in air or just submerged)</li>
+<li>Record zero-offset (atmospheric pressure)</li>
+<li>
+<p>Verify the reading aligns with local conditions</p>
+</li>
+<li>
+<p><strong>Acoustic modem range test</strong></p>
+</li>
+<li>Power on modem</li>
+<li>Perform surface range test with base station</li>
+<li>Verify bidirectional communication</li>
+<li>
+<p>Test emergency abort command</p>
+</li>
+<li>
+<p><strong>Thruster function test</strong></p>
+</li>
+<li><strong>Critical: Keep vehicle restrained</strong></li>
+<li>Command each thruster individually</li>
+<li>Verify all directions (forward/reverse)</li>
+<li>Check for abnormal noise or vibration</li>
+<li>
+<p>Verify thrust allocation produces expected combined motion</p>
+</li>
+<li>
+<p><strong>Camera/lights check</strong></p>
+</li>
+<li>Power on cameras</li>
+<li>Verify image quality and focus</li>
+<li>Check lights (may need submersion to verify thermal performance)</li>
+</ol>
+<p><strong>Final Checks:</strong>
+- [ ] All hatches properly sealed
+- [ ] No loose cables or items that could snag
+- [ ] Abort/recovery line attached (if applicable)
+- [ ] Team briefed on deployment and recovery procedures
+- [ ] Visual inspection complete (no obvious damage)</p>
+<h3 id="during-deployment">During Deployment</h3>
+<p><strong>Launch phase:</strong>
+- Monitor system status in real-time
+- Verify sensor data immediately after submersion
+- Abort if any critical sensor failures
+- Log deployment time and GPS position</p>
+<p><strong>Mission phase:</strong>
+- Monitor periodically (acoustic status updates if available)
+- Log any anomalies or environmental changes
+- Be ready for emergency recovery
+- Track estimated mission completion time</p>
+<p><strong>Recovery phase:</strong>
+- Be ready at estimated surface time
+- Have visual line-of-sight before approach
+- Secure vehicle promptly (don't let it drift)
+- Power down in reverse order of power-up</p>
+<h3 id="post-deployment">Post-Deployment</h3>
+<p><strong>Immediate (post-recovery):</strong>
+- [ ] Download data IMMEDIATELY (don't wait - corruption risk increases with time)
+- [ ] Backup data to multiple locations
+- [ ] Rinse vehicle with fresh water (if salt water deployment)
+- [ ] Remove batteries and dry compartments
+- [ ] Inspect all seals and hatches
+- [ ] Log any damage or issues</p>
+<p><strong>Same day:</strong>
+- [ ] Review data quality and mission success
+- [ ] Document lessons learned
+- [ ] Note any anomalies or failures
+- [ ] Update maintenance log
+- [ ] Charge batteries for next deployment</p>
+<p><strong>Within week:</strong>
+- [ ] Full inspection of all O-rings
+- [ ] Sensor calibration check
+- [ ] Review and archive mission data
+- [ ] Update procedures based on lessons learned</p>
+<hr />
+<h2 id="power-budgets">Power Budgets</h2>
+<h3 id="calculating-mission-duration">Calculating Mission Duration</h3>
+<p><strong>Basic formula:</strong></p>
+<pre><code>Mission Duration = Battery Capacity (Wh) / Average Power Draw (W) × Efficiency Factor
+</code></pre>
+<p><strong>Efficiency factor:</strong> Use a conservative factor that accounts for discharge curves, temperature, and aging. Check your battery datasheet.</p>
+<h3 id="example-power-budget-hovering-auv">Example Power Budget - Hovering AUV</h3>
+<p><strong>Note:</strong> This is a template structure. Fill with values from your component datasheets and measurements.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Power (W)</th>
+<th>Duty Cycle</th>
+<th>Avg Power (W)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Onboard Computer</strong></td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>Datasheet + measured load</td>
+</tr>
+<tr>
+<td><strong>DVL</strong></td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>Datasheet</td>
+</tr>
+<tr>
+<td><strong>IMU</strong></td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>Datasheet</td>
+</tr>
+<tr>
+<td><strong>Depth Sensor</strong></td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>Datasheet</td>
+</tr>
+<tr>
+<td><strong>Sonar</strong></td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>Datasheet</td>
+</tr>
+<tr>
+<td><strong>Cameras/Lights</strong></td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>Datasheet</td>
+</tr>
+<tr>
+<td><strong>Thrusters</strong></td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>Measured under mission profile</td>
+</tr>
+<tr>
+<td><strong>Acoustic Modem</strong></td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>Datasheet</td>
+</tr>
+<tr>
+<td><strong>Miscellaneous</strong></td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>Converters, comms, auxiliaries</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td></td>
+<td><strong>TBD</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Margin:</strong> Reserve capacity for contingencies and recovery. Document your policy in the mission plan.</p>
+<h3 id="power-optimization-strategies">Power Optimization Strategies</h3>
+<p><strong>High-power consumers:</strong>
+1. <strong>Thrusters</strong> - Often the largest consumer during transit
+   - Minimize aggressive maneuvering
+   - Use efficient paths
+   - Consider buoyancy gliding if applicable</p>
+<ol>
+<li><strong>Lights</strong> - Necessary for imaging but power-hungry</li>
+<li>Only enable when imaging</li>
+<li>Use minimum brightness needed</li>
+<li>
+<p>Consider strobes vs continuous</p>
+</li>
+<li>
+<p><strong>Computers</strong> - Always-on baseload</p>
+</li>
+<li>Use efficient processors where feasible</li>
+<li>Disable unused cores/features</li>
+<li>Optimize software (avoid busy-wait loops)</li>
+</ol>
+<p><strong>Low-power mode:</strong>
+- Disable cameras/lights during transit
+- Reduce sonar ping rate
+- Lower computer CPU frequency
+- Can extend mission duration depending on your hardware</p>
+<hr />
+<h2 id="environmental-operating-limits">Environmental Operating Limits</h2>
+<h3 id="sea-state-limits">Sea State Limits</h3>
+<p><strong>Surface vehicles (ASV/USV):</strong></p>
+<p>Define go/no-go criteria based on vehicle design, operator experience, and local marine forecasts. Document limits in your SOPs and update them based on field experience.</p>
+<p><strong>Limitations to consider:</strong>
+- GPS accuracy degrades (antenna motion)
+- Acoustic modem performance drops (surface bubbles)
+- Solar panels less effective (shadowing from waves)
+- Hull slamming can damage equipment</p>
+<p><strong>UUV deployment:</strong>
+- Launch/recovery most critical phase
+- Launch/recovery often has stricter limits than submerged operation
+- Once submerged, UUV largely unaffected by surface conditions
+- Deep thermoclines caused by storms can affect acoustics</p>
+<h3 id="current-limits">Current Limits</h3>
+<p><strong>Vehicle capability:</strong>
+- Strong currents can prevent waypoint following and increase power consumption
+- Define abort criteria based on your vehicle's measured performance</p>
+<p><strong>Impact:</strong>
+- Increased power consumption (fighting current)
+- Poor station-keeping
+- Mission duration reduced
+- Path deviations increase</p>
+<p><strong>Mitigation:</strong>
+- Plan missions with/across current (not against)
+- Increase speed margins in planning
+- Use current profiles if available
+- Have abort criteria (if drift exceeds X meters)</p>
+<h3 id="temperature-effects">Temperature Effects</h3>
+<p><strong>Battery performance:</strong>
+- Capacity drops in cold conditions
+- Very cold environments can cause permanent damage
+- Use manufacturer derating curves when available</p>
+<p><strong>Electronics:</strong>
+- Temperature ratings vary by component
+- Pressure housings can help stabilize temperature
+- Sensors may need time to stabilize</p>
+<p><strong>Acoustic propagation:</strong>
+- Thermoclines bend sound (can create shadow zones)
+- Warm surface, cold deep = sound bends down
+- Affects acoustic modem range and USBL accuracy</p>
+<h3 id="depth-limitations">Depth Limitations</h3>
+<p><strong>Design implications:</strong>
+- Verify depth ratings for every pressure-bearing component
+- Pressure housing cost increases with depth
+- DVL range and acoustic performance can limit operations</p>
+<hr />
+<h2 id="failure-modes-and-recovery">Failure Modes and Recovery</h2>
+<h3 id="critical-sensor-failures">Critical Sensor Failures</h3>
+<h4 id="dvl-failure">DVL Failure</h4>
+<p><strong>Symptoms:</strong>
+- No bottom lock
+- Erratic velocity readings
+- Beam status errors</p>
+<p><strong>Immediate actions:</strong>
+1. Switch to IMU-only dead reckoning (short term)
+2. Surface for GPS fix if possible
+3. Reduce mission to lower speed (dead reckoning degrades with speed)
+4. Abort if position accuracy critical</p>
+<p><strong>Prevention:</strong>
+- Pre-mission warm-up
+- Check beam status before critical maneuvers
+- Plan missions within bottom-lock range</p>
+<h4 id="imu-failure">IMU Failure</h4>
+<p><strong>Symptoms:</strong>
+- Orientation divergence
+- Attitude solution errors
+- High residuals in EKF</p>
+<p><strong>Immediate actions:</strong>
+1. If hovering ROV: Surface immediately (no attitude = no control)
+2. If torpedo AUV: May continue with degraded performance
+3. Check magnetometer (often fails separately from gyros)
+4. Attempt recalibration if possible</p>
+<p><strong>Prevention:</strong>
+- Pre-flight calibration
+- Avoid magnetic interference sources
+- Temperature stabilization time</p>
+<h4 id="gps-failure-surface-vehicle">GPS Failure (Surface Vehicle)</h4>
+<p><strong>Symptoms:</strong>
+- No fix or stale fix
+- Large position jumps</p>
+<p><strong>Immediate actions:</strong>
+1. Continue with dead reckoning (DVL + IMU if available)
+2. Check antenna connection
+3. Check for obstructions (debris on antenna)
+4. Try rebooting GPS receiver</p>
+<p><strong>Recovery:</strong>
+- Most failures are cable/connector issues
+- Salt buildup can block antenna
+- Requires return to shore for repair</p>
+<h4 id="acoustic-modem-failure">Acoustic Modem Failure</h4>
+<p><strong>Symptoms:</strong>
+- No responses to commands
+- Corrupted messages
+- Complete silence</p>
+<p><strong>Immediate actions:</strong>
+1. Vehicle continues autonomous mission (if programmed)
+2. Wait for scheduled surface (can't command abort)
+3. Monitor expected surface location for recovery</p>
+<p><strong>Prevention:</strong>
+- Always program autonomous abort conditions
+- Don't rely solely on acoustic for critical commands
+- Have time-based or location-based automatic surface</p>
+<h3 id="mechanical-failures">Mechanical Failures</h3>
+<h4 id="thruster-failure">Thruster Failure</h4>
+<p><strong>Single thruster:</strong>
+- Thrust allocation can often compensate
+- Reduced performance but mission may continue
+- Monitor power draw on remaining thrusters</p>
+<p><strong>Multiple thrusters:</strong>
+- Abort mission
+- Activate emergency surface procedure
+- Jettison weights if equipped</p>
+<p><strong>Common causes:</strong>
+- Seaweed/debris entanglement
+- Electrical short
+- Bearing failure (noise, vibration)</p>
+<h4 id="leak-detection">Leak Detection</h4>
+<p><strong>Symptoms:</strong>
+- Water in pressure housing
+- Conductivity sensor alarm
+- Unexplained power loss</p>
+<p><strong>Immediate actions:</strong>
+1. <strong>Emergency surface immediately</strong>
+2. All thrusters full up
+3. Drop weights if equipped
+4. Activate recovery beacon</p>
+<p><strong>Prevention:</strong>
+- Careful O-ring maintenance
+- Vacuum test before deployment
+- Don't over-torque hatches</p>
+<h3 id="softwarecontrol-failures">Software/Control Failures</h3>
+<h4 id="controller-instability">Controller Instability</h4>
+<p><strong>Symptoms:</strong>
+- Oscillation in position or attitude
+- Growing amplitude oscillations
+- Erratic thruster commands</p>
+<p><strong>Immediate actions:</strong>
+1. Switch to backup controller (if available)
+2. Reduce controller gains
+3. Emergency surface if unsafe</p>
+<p><strong>Common causes:</strong>
+- Incorrect tuning for actual vehicle
+- Sensor noise not filtered
+- Actuator saturation causing integrator windup</p>
+<h4 id="ekf-divergence">EKF Divergence</h4>
+<p><strong>Symptoms:</strong>
+- Position estimate jumps
+- High innovation values
+- Covariance growing unbounded</p>
+<p><strong>Immediate actions:</strong>
+1. Reset EKF if possible
+2. Disable faulty sensor input
+3. Switch to primary sensor only (e.g., DVL-only navigation)</p>
+<p><strong>Prevention:</strong>
+- Proper covariance tuning
+- Sensor timeout detection
+- Outlier rejection</p>
+<hr />
+<h2 id="data-management">Data Management</h2>
+<h3 id="mission-data-collection">Mission Data Collection</h3>
+<p><strong>Essential logging:</strong>
+- All sensor raw data (for post-processing)
+- State estimates (position, velocity, attitude)
+- Control commands (thruster outputs)
+- System status (CPU, power, temperatures)
+- Timestamps (synchronized across all sensors)</p>
+<p><strong>Data rates:</strong>
+- Sensor rates vary widely by hardware and configuration
+- Estimate storage based on your configured rates and payloads</p>
+<h3 id="post-mission-processing">Post-Mission Processing</h3>
+<p><strong>Quality checks:</strong>
+1. <strong>Sensor health:</strong> Any dropouts or errors?
+2. <strong>Position accuracy:</strong> Compare GPS fixes (if available)
+3. <strong>Control performance:</strong> Did vehicle follow commands?
+4. <strong>Power consumption:</strong> Match predictions?</p>
+<p><strong>Data products:</strong>
+- Processed navigation (final position estimates)
+- Georeferenced sensor data (imagery, sonar)
+- Mission performance metrics
+- Lessons learned documentation</p>
+<hr />
+<h2 id="standard-operating-procedures-sop-template">Standard Operating Procedures (SOP) Template</h2>
+<h3 id="mission-planning-sop">Mission Planning SOP</h3>
+<ol>
+<li><strong>Define mission objectives</strong> (survey area, inspection target, etc.)</li>
+<li><strong>Plan waypoints</strong> with environmental considerations</li>
+<li><strong>Calculate power budget</strong> and mission duration</li>
+<li><strong>Check environmental forecast</strong> (sea state, current, temperature)</li>
+<li><strong>Identify abort criteria</strong> (sensor failures, position error limits, time limits)</li>
+<li><strong>Review emergency procedures</strong> with team</li>
+<li><strong>Obtain required permissions</strong> (if applicable)</li>
+</ol>
+<h3 id="deployment-sop">Deployment SOP</h3>
+<ol>
+<li><strong>Pre-deployment checklist</strong> (see above)</li>
+<li><strong>Team brief</strong> (roles, communication protocol, abort signals)</li>
+<li><strong>Power-up sequence</strong> (DVL first, thrusters last)</li>
+<li><strong>Function tests</strong> (all sensors, thrusters, modem)</li>
+<li><strong>Launch</strong> (controlled, documented)</li>
+<li><strong>Monitor</strong> (periodic status checks)</li>
+</ol>
+<h3 id="recovery-sop">Recovery SOP</h3>
+<ol>
+<li><strong>Estimate surface location</strong> (last known position + drift)</li>
+<li><strong>Visual acquisition</strong> (binoculars, spotter)</li>
+<li><strong>Secure vehicle</strong> (recovery line/hook)</li>
+<li><strong>Power down</strong> (reverse of power-up sequence)</li>
+<li><strong>Immediate post-recovery</strong> (data download, rinse, inspect)</li>
+</ol>
+<hr />
+<h2 id="lessons-learned-community-contributed">Lessons Learned (Community Contributed)</h2>
+<div class="admonition tip">
+<p class="admonition-title">Share Your Experience</p>
+<p>Have operational wisdom to share? Add to this page via pull request or post on <a href="https://discourse.ros.org/c/maritime/36">ROS Discourse</a>.</p>
+</div>
+<p><strong>From the community:</strong></p>
+<h3 id="always-test-acoustics-first">"Always test acoustics first"</h3>
+<p><em>Contributor: Field roboticist</em></p>
+<p>"After loading vehicle on boat and transiting to site, first thing we do is acoustic range test before launching vehicle. Saves hours of debugging if modem isn't working. Can't tell you how many times we caught a bad cable or wrong configuration before splashing."</p>
+<h3 id="gps-cold-start-takes-longer-than-you-think">"GPS cold start takes longer than you think"</h3>
+<p><em>Contributor: ASV operator</em></p>
+<p>"Budget extra time for GPS to get a solid fix after power-on. Don't rush this. A poor GPS fix at start can corrupt navigation."</p>
+<h3 id="dvl-needs-warm-up">"DVL needs warm-up"</h3>
+<p><em>Contributor: Research engineer</em></p>
+<p>"DVL transducers can drift during warm-up. We power our DVL early and wait for readings to stabilize before launch."</p>
+<h3 id="fresh-water-rinse-saves-equipment">"Fresh water rinse saves equipment"</h3>
+<p><em>Contributor: Marine technician</em></p>
+<p>"After every salt water deployment: thorough fresh water rinse. We've saved thousands in corrosion damage with this simple step. Pay attention to connectors - they corrode first."</p>
+<h3 id="document-everything">"Document everything"</h3>
+<p><em>Contributor: Ocean engineer</em></p>
+<p>"Maintain a detailed log book. Date, time, location, sea state, what worked, what didn't. Future you will thank past you when troubleshooting recurring issues."</p>
+<h3 id="spare-o-rings-are-mission-critical">"Spare O-rings are mission-critical"</h3>
+<p><em>Contributor: ROV pilot</em></p>
+<p>"Keep a complete set of spare O-rings at deployment site. Murphy's law: you'll nick an O-ring during assembly. Having spares means mission continues; not having them means mission aborted."</p>
+<hr />
+<h2 id="maintenance-schedule">Maintenance Schedule</h2>
+<h3 id="after-each-deployment">After Each Deployment</h3>
+<ul>
+<li>Fresh water rinse</li>
+<li>Visual inspection</li>
+<li>Data download and backup</li>
+<li>Battery recharge</li>
+<li>O-ring inspection</li>
+</ul>
+<h3 id="weekly-active-use">Weekly (Active Use)</h3>
+<ul>
+<li>Thruster bearing check</li>
+<li>Connector inspection</li>
+<li>Software updates review</li>
+<li>Battery health check</li>
+</ul>
+<h3 id="monthly">Monthly</h3>
+<ul>
+<li>Full system test</li>
+<li>O-ring replacement (preventive)</li>
+<li>Sensor calibration verification</li>
+<li>Vacuum leak test</li>
+</ul>
+<h3 id="annually">Annually</h3>
+<ul>
+<li>Complete overhaul</li>
+<li>Pressure housing hydro test</li>
+<li>All O-rings replaced</li>
+<li>Battery capacity test</li>
+<li>Professional calibration of critical sensors (DVL, INS)</li>
+</ul>
+<hr />
+<p><em>For deployment-specific guidance, see vehicle manufacturer's documentation. This page provides general best practices from community experience.</em></p>
+<hr />
+<p><em>This page was last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2026</span></em></p>
+<script data-goatcounter="https://maritime-robotics-landscape.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../expert_reference/" class="btn btn-neutral float-left" title="Expert Reference"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../integration_examples/" class="btn btn-neutral float-right" title="Integration Examples">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Information assembled by the ROS Maritime Robotics Working Group. Privacy-respecting analytics with GoatCounter.</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../expert_reference/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../integration_examples/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
