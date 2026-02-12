@@ -1,4 +1,5 @@
 site_name: Maritime Robotics Landscape
+site_url: https://ros-maritime.oceansoft.org/
 theme: readthedocs
 
 copyright: 'Information assembled by the ROS Maritime Robotics Working Group. Privacy-respecting analytics with GoatCounter.'
