@@ -57,13 +57,32 @@ Message definitions specifically for acoustic sensors and communication in marin
   - Configurable range and gain
   - Angular resolution control
   - Image and scan data output
+ 
+**[BlueRobotics Ping360 MSIS](https://github.com/GSO-soslab/bluerobotics_ping360/tree/jazzy-devel)**
+- **Manufacturer:** Blue Robotics Ping360
+- **Type:** Mechanically scanning imaging sonar
+- **ROS Version:** ROS 2
+- **Features:**
+  - Point cloud generation
+  - Configurable range and gain
+  - Angular resolution control
+  - Image and scan data output
+  - Serial and UDP connection interfaces.
+  - Is able to constrain any scanning sector
 
 ### Multibeam Sonar
+**[Surveyor 240-16 MBES](https://github.com/GSO-soslab/cerulean_surveyor_mbes)**
+- **Manufacturer:** Cerulean SONAR
+- **Type:** Surveyor 240-16 MBES
+- **ROS Version:** ROS 2
+- **Features:**
+  - Publishes raw atof as well as converted xyz ranges
+  - Configurable parameters of auto-range, range.
+  - Serial and UDP connection interfaces.
 
 Various manufacturers provide multibeam sonar systems. Drivers are often manufacturer-specific or use generic interfaces:
-
+  
 - Teledyne BlueView series
-- Oculus multibeam imaging sonar
 - Nortek multibeam systems
 
 **Integration Approaches:**
@@ -77,6 +96,15 @@ Used for obstacle avoidance and navigation:
 - Short-range detection
 - Real-time obstacle mapping
 - Integration with autonomy systems
+  
+**[Oculus Multibeam Imaging Sonar](https://github.com/GSO-soslab/blueprint_oculus_sonar)**
+- **Manufacturer:** Blueprint Oculus
+- **Type:** Multibeam imaging SONAR
+- **ROS Version:** ROS 2
+- **Features:**
+  - Cartesian Bin-Beam image & Polar image as Image topics
+  - Configurable parameters of range, ping rate, frequency mode etc.
+  - UDP connection interface.
 
 ## Navigation Sensor Drivers
 
