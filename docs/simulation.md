@@ -17,15 +17,15 @@ Gazebo (including Gazebo Classic and modern Gazebo/Ignition) is widely used in t
 
 | Simulator | Physics | Wave Support | ROS Version | Vehicle Types | Last Update |
 |-----------|---------|--------------|-------------|---------------|-------------|
-| [VRX](https://github.com/osrf/vrx) | Gazebo | ✓ | ROS/ROS 2 | USV | 11/2025 |
+| [VRX](https://github.com/osrf/vrx) | Gazebo | ✓ | ROS/ROS 2 | USV | 01/2026 |
 | [MBZIRC](https://github.com/osrf/mbzirc) | Gazebo | ✓ | ROS 2 | ASV/UAV | 08/2022 |
 | [DAVE](https://github.com/Field-Robotics-Lab/dave) | Gazebo | ✓ | ROS | UUV | 12/2023 |
 | [LRAUV](https://github.com/osrf/lrauv) | Gazebo | ✗ | ROS 2 | AUV | 03/2025 |
 | [BlueROV2](https://github.com/clydemcqueen/bluerov2_ignition) | Gazebo | ✗ | ROS 2 | ROV | 12/2025 |
-| [Orca4](https://github.com/clydemcqueen/orca4) | Gazebo | ✗ | ROS 2 | AUV | 11/2025 |
-| [SUAVE](https://github.com/kas-lab/suave) | Gazebo | ✗ | ROS 2 | AUV | 07/2025 |
+| [Orca4](https://github.com/clydemcqueen/orca4) | Gazebo | ✗ | ROS 2 | AUV | 05/2026 |
+| [SUAVE](https://github.com/kas-lab/suave) | Gazebo | ✗ | ROS 2 | AUV | 05/2026 |
 
-_Table last updated on **December 31th, 2025 at 05:26:06 PM UTC**_
+_Table last updated on **May 25th, 2026 at 05:25:57 AM UTC**_
 
 ### Virtual RobotX (VRX)
 

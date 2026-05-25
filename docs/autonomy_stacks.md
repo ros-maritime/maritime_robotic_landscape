@@ -13,9 +13,9 @@ These frameworks provide end-to-end autonomy components for maritime vehicles.
 | [Blue](https://github.com/Robotic-Decision-Making-Lab/blue) | Pipeline | ROS 2 | UUVs | 07/2025 |
 | [Project11](https://github.com/CCOMJHC/project11) | Framework | ROS 2 | ASV | 08/2025 |
 | [MVP](https://github.com/uri-ocean-robotics/mvp_readme) | Full Stack | ROS/ROS 2 | USV/UUV | 09/2024 |
-| [Orca4](https://github.com/clydemcqueen/orca4) | ROS 2 Stack | ROS 2 | BlueROV2/AUV | 11/2025 |
+| [Orca4](https://github.com/clydemcqueen/orca4) | ROS 2 Stack | ROS 2 | BlueROV2/AUV | 05/2026 |
 
-_Table last updated on **December 31th, 2025 at 05:26:04 PM UTC**_
+_Table last updated on **May 25th, 2026 at 05:25:55 AM UTC**_
 
 ### Stack Descriptions
 
