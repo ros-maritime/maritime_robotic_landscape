@@ -20,11 +20,11 @@ Where $T$ is the thrust allocation matrix and $\alpha$ represents actuator orien
 
 | Package | Method | ROS Version | Last Update |
 |---------|--------|-------------|-------------|
-| [MVP-Control](https://github.com/uri-ocean-robotics/mvp_control) | Quadratic Programming | ROS/ROS 2 | 11/2025 |
+| [MVP-Control](https://github.com/uri-ocean-robotics/mvp_control) | Quadratic Programming | ROS/ROS 2 | 09/2026 |
 | [thruster_manager (CNR)](https://github.com/CentraleNantesROV/thruster_manager) | Pseudo-inverse | ROS | 04/2025 |
-| [thruster_allocation_matrix_controller](https://github.com/Robotic-Decision-Making-Lab/auv_controllers/tree/main/thruster_allocation_matrix_controller) | Pseudo-inverse | ROS 2 | 07/2025 |
+| [thruster_allocation_matrix_controller](https://github.com/Robotic-Decision-Making-Lab/auv_controllers/tree/main/thruster_allocation_matrix_controller) | Pseudo-inverse | ROS 2 | 08/2026 |
 
-_Table last updated on **December 31th, 2025 at 05:26:07 PM UTC**_
+_Table last updated on **September 21th, 2026 at 06:05:28 AM UTC**_
 
 #### MVP-Control
 
