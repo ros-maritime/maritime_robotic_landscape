@@ -1,913 +1,2570 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ros-maritime.oceansoft.org/hardware/" />
-      <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Hardware - Maritime Robotics Landscape</title>
-    <link rel="stylesheet" href="../css/theme.css" />
-    <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-      <script>
-        // Current page data
-        var mkdocs_page_name = "Hardware";
-        var mkdocs_page_input_path = "hardware.md";
-        var mkdocs_page_url = "/hardware/";
-      </script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Navigation sensors, sonars, thrusters, power, housings, and platforms for marine robots, with selection criteria and ROS 2 driver status.">
+      
+      
+        <meta name="author" content="ROS Maritime Community Working Group">
+      
+      
+        <link rel="canonical" href="https://ros-maritime.oceansoft.org/hardware/">
+      
+      
+        <link rel="prev" href="../vehicle_types/">
+      
+      
+        <link rel="next" href="../operations/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
-    <!--[if lt IE 9]>
-      <script src="../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
-</head>
+    
+      
+        <title>Sensors and components - Maritime Robotics Landscape</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
 
-<body class="wy-body-for-nav" role="document">
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> Maritime Robotics Landscape
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../getting_started/">Getting Started</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../glossary/">Glossary</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../vehicle_types/">Vehicle Types</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../autonomy_stacks/">Autonomy Stacks</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../simulation/">Simulation</a>
-                </li>
-              </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">Hardware</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#commercial-uuv-platforms">Commercial UUV Platforms</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#bluerov2">BlueROV2</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#lrauv-based-systems">LRAUV-Based Systems</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#commercial-usvasv-platforms">Commercial USV/ASV Platforms</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#development-kits">Development Kits</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#research-platforms">Research Platforms</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#sensors">Sensors</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#navigation-sensors">Navigation Sensors</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#doppler-velocity-log-dvl">Doppler Velocity Log (DVL)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#dvl-selection-guide">DVL Selection Guide</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#inertial-navigation-systems-ins-imu">Inertial Navigation Systems (INS) / IMU</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#insimu-selection-guide">INS/IMU Selection Guide</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#acoustic-sensors">Acoustic Sensors</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#imaging-sonar">Imaging Sonar</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#multibeam-sonar">Multibeam Sonar</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#side-scan-sonar">Side-Scan Sonar</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#environmental-sensors">Environmental Sensors</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#ctd-conductivity-temperature-depth">CTD (Conductivity, Temperature, Depth)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#pressure-sensors">Pressure Sensors</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#vision-systems">Vision Systems</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#underwater-cameras">Underwater Cameras</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#topside-cameras">Topside Cameras</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#positioning-systems">Positioning Systems</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#acoustic-positioning">Acoustic Positioning</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#surface-positioning">Surface Positioning</a>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#propulsion-actuation">Propulsion &amp; Actuation</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#thrusters">Thrusters</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#thruster-selection-guide">Thruster Selection Guide</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#control-surfaces">Control Surfaces</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#buoyancy-control">Buoyancy Control</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#power-systems">Power Systems</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#batteries">Batteries</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#energy-harvesting">Energy Harvesting</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#waterproof-enclosures">Waterproof Enclosures</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#tether-systems">Tether Systems</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#manipulators">Manipulators</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#budget-planning">Budget Planning</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#component-suppliers">Component Suppliers</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#marine-electronics">Marine Electronics</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#subsea-connectors">Subsea Connectors</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#waterproof-housings">Waterproof Housings</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#where-to-save-money">Where to Save Money</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#where-not-to-compromise">Where NOT to Compromise</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#sources">Sources</a>
-    </li>
-    </ul>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../software/">Software</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../drivers/">Drivers</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../datasets/">Datasets</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../education_and_tutorials/">Education & Tutorials</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../expert_reference/">Expert Reference</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../operations/">Operations</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../integration_examples/">Integration Examples</a>
-                </li>
-              </ul>
+
+  <!-- GoatCounter: privacy-respecting, cookie-free page counts -->
+<script data-goatcounter="https://maritime-robotics-landscape.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sensors-and-components" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Maritime Robotics Landscape" class="md-header__button md-logo" aria-label="Maritime Robotics Landscape" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Maritime Robotics Landscape
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sensors and components
+            
+          </span>
+        </div>
       </div>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">Maritime Robotics Landscape</a>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
         
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
       </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Hardware</li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ros-maritime/maritime_robotic_landscape" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ros-maritime/maritime_robotic_landscape
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting_started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Start here
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../software/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Software
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../vehicle_types/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Hardware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../operations/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Field operations
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../datasets/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Datasets
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../community/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Community
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
               
-                <h1 id="hardware-platforms-and-components">Hardware, Platforms, and Components</h1>
-<p>This page covers commercial and research platforms, development kits, sensors, and components for maritime robotics.</p>
-<h2 id="commercial-uuv-platforms">Commercial UUV Platforms</h2>
-<h3 id="bluerov2">BlueROV2</h3>
-<p>The BlueROV2 is a commercial ROV platform used in research and education.</p>
-<p><strong>Specifications:</strong>
-- <strong>Type:</strong> ROV (can be converted to AUV with additional hardware)
-- <strong>Depth Rating:</strong> Varies by configuration; see vendor specifications
-- <strong>Thrusters:</strong> Multi-thruster configuration (vendor-specific)
-- <strong>Payload:</strong> Cameras, sonar, manipulator options
-- <strong>Power:</strong> Tethered</p>
-<p><strong>ROS Support:</strong>
-- Community-maintained Gazebo models and ROS drivers are available; verify compatibility for your ROS version</p>
-<p><strong>Manufacturer:</strong> Blue Robotics</p>
-<h3 id="lrauv-based-systems">LRAUV-Based Systems</h3>
-<p>Long-range AUVs based on MBARI's open designs. See MBARI documentation for capabilities and sensor suites.</p>
-<h2 id="commercial-usvasv-platforms">Commercial USV/ASV Platforms</h2>
-<p>Commercial autonomous surface vehicles are available from various manufacturers:</p>
-<ul>
-<li><strong>Survey Vessels:</strong> Hydrographic mapping-focused platforms</li>
-<li><strong>Multi-purpose ASVs:</strong> Configurable for various missions</li>
-<li><strong>Research Platforms:</strong> Universities and labs maintain custom ASV designs</li>
-</ul>
-<p><strong>Key Suppliers:</strong>
-- Maritime Robotics (Mariner, Otter)
-- ASV Global
-- L3Harris (C-Worker series)
-- Ocean Aero (Submaran S10)</p>
-<h2 id="development-kits">Development Kits</h2>
-<h3 id="research-platforms">Research Platforms</h3>
-<ul>
-<li><strong>University Custom Designs:</strong> Many labs build custom platforms</li>
-<li><strong>Open-source Designs:</strong> Community-shared hull designs and electronics</li>
-</ul>
-<h2 id="sensors">Sensors</h2>
-<h3 id="navigation-sensors">Navigation Sensors</h3>
-<h4 id="doppler-velocity-log-dvl">Doppler Velocity Log (DVL)</h4>
-<p>Essential for underwater navigation, DVLs measure velocity relative to the seafloor or water column.</p>
-<p><strong>Manufacturers:</strong>
-- Teledyne RDI
-- Nortek
-- LinkQuest
-- Water Linked (note: DVL-A50 driver repo is archived)</p>
-<p>⚠️ <strong>Driver Note:</strong> The <a href="https://github.com/waterlinked/dvl-a50-ros-driver">waterlinked/dvl-a50-ros-driver</a> GitHub repository is archived (last push 2024-02-26). For DVL driver options, see the <a href="../drivers/#whoi-deep-submergence-lab-drivers">WHOI Deep Submergence Lab drivers</a>.</p>
-<p><strong>Key Features:</strong>
-- Bottom-track and water-track modes
-- Altitude measurement
-- Beam configurations and accuracy depend on model (see datasheets)</p>
-<p><strong>ROS Integration:</strong> See <a href="../drivers/#dvl-doppler-velocity-log">Drivers page</a> for available ROS drivers</p>
-<h4 id="dvl-selection-guide">DVL Selection Guide</h4>
-<p>Choosing the right DVL depends on mission requirements, budget, and operational environment.</p>
-<p><strong>Comparison Matrix:</strong></p>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Maritime Robotics Landscape" class="md-nav__button md-logo" aria-label="Maritime Robotics Landscape" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    Maritime Robotics Landscape
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ros-maritime/maritime_robotic_landscape" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ros-maritime/maritime_robotic_landscape
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../education_and_tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning path and tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autonomy_stacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomy frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drivers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drivers and interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frames and conventions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control and allocation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Localization and navigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../perception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perception and mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Communication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration_examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expert_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicle_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vehicle types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensors and components
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensors and components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platforms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platforms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commercial-underwater-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial underwater platforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commercial-surface-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial surface platforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation sensors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation sensors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#doppler-velocity-log-dvl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Doppler Velocity Log (DVL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inertial-navigation-ins-imu-ahrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inertial navigation (INS / IMU / AHRS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depth-and-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth and pressure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acoustic-positioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acoustic positioning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sonar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sonar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cameras-and-lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cameras and lights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propulsion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Propulsion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Propulsion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thrusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thrusters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-surfaces-and-buoyancy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control surfaces and buoyancy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#housings-connectors-and-tethers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Housings, connectors, and tethers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipulators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manipulators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-money-and-where-not-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saving money, and where not to
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-suppliers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component suppliers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datasets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Community
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Events and competitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platforms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platforms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commercial-underwater-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial underwater platforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commercial-surface-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commercial surface platforms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation sensors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation sensors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#doppler-velocity-log-dvl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Doppler Velocity Log (DVL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inertial-navigation-ins-imu-ahrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inertial navigation (INS / IMU / AHRS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#depth-and-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Depth and pressure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gnss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GNSS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acoustic-positioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acoustic positioning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sonar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sonar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cameras-and-lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cameras and lights
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propulsion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Propulsion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Propulsion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thrusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thrusters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-surfaces-and-buoyancy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control surfaces and buoyancy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#housings-connectors-and-tethers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Housings, connectors, and tethers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipulators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manipulators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-money-and-where-not-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Saving money, and where not to
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-suppliers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component suppliers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/ros-maritime/maritime_robotic_landscape/edit/main/docs/hardware.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="sensors-and-components">Sensors and components<a class="headerlink" href="#sensors-and-components" title="Permanent link">&para;</a></h1>
+<p>This page helps you choose hardware with software in mind: what each component does, what to compare, and whether it has a maintained ROS 2 driver. Prices and specifications change often; use vendor datasheets and quotes for decisions.</p>
+<div class="admonition info">
+<p class="admonition-title">Driver status</p>
+<p>Driver availability below was checked in October 2026. The <a href="../drivers/#ros-2-driver-status-by-vendor">Drivers</a> page has the full table with links.</p>
+</div>
+<h2 id="platforms">Platforms<a class="headerlink" href="#platforms" title="Permanent link">&para;</a></h2>
+<h3 id="commercial-underwater-platforms">Commercial underwater platforms<a class="headerlink" href="#commercial-underwater-platforms" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Type</th>
+<th>ROS support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blue Robotics BlueROV2</td>
+<td>Small observation-class <abbr title="Remotely Operated Vehicle">ROV</abbr> (base and heavy configurations)</td>
+<td>ArduSub autopilot; ROS 2 through mavros or ardusub_driver; Gazebo models; Blue and Orca stacks</td>
+</tr>
+<tr>
+<td>IQUA Robotics Girona 500, Sparus II</td>
+<td>Hovering and torpedo AUVs for research</td>
+<td>COLA2 (ROS 1, licensed); Stonefish simulation</td>
+</tr>
+<tr>
+<td>MBARI LRAUV (Tethys class)</td>
+<td>Long-range <abbr title="Autonomous Underwater Vehicle">AUV</abbr></td>
+<td>Vendor controller; Gazebo simulation (archived)</td>
+</tr>
+<tr>
+<td>Work-class and inspection ROVs (various)</td>
+<td>Larger ROVs with manipulators</td>
+<td>Vendor control systems; ROS usually added through custom interfaces</td>
+</tr>
+</tbody>
+</table>
+<h3 id="commercial-surface-platforms">Commercial surface platforms<a class="headerlink" href="#commercial-surface-platforms" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Vendor</th>
-<th>Model</th>
-<th>Spec Sheet</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Teledyne RDI</strong></td>
-<td><a href="https://www.teledynemarine.com/en-us/products/SiteAssets/RD%20Instruments/Tasman_DVL.pdf">Tasman DVL</a></td>
-<td>Teledyne Marine datasheet</td>
-</tr>
-<tr>
-<td><strong>Nortek</strong></td>
-<td><a href="https://www.nortekgroup.com/products/dvl-1000-300m">DVL1000</a></td>
-<td><a href="https://www.nortekgroup.com/export/pdf/DVL1000%20-%204000%20m.pdf">DVL1000 datasheet</a></td>
-</tr>
-<tr>
-<td><strong>Nortek</strong></td>
-<td><a href="https://www.nortekgroup.com/products/dvl500-300-m">DVL500</a></td>
-<td>Nortek product page</td>
-</tr>
-<tr>
-<td><strong>Water Linked</strong></td>
-<td><a href="https://waterlinked.com/dvl/">DVL A50</a></td>
-<td>Water Linked product page</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Decision Criteria:</strong></p>
-<ol>
-<li><strong>Budget-Constrained:</strong></li>
-<li>⚠️ Water Linked DVL A50 driver repo is archived; confirm driver support before selecting</li>
-<li>Consider used DVLs or phased procurement</li>
-<li>
-<p>Alternative: Dead reckoning with high-quality INS only (limited duration)</p>
-</li>
-<li>
-<p><strong>Shallow Water Research:</strong></p>
-</li>
-<li>
-<p>Prioritize compact, lower-power DVLs with reliable bottom-track</p>
-</li>
-<li>
-<p><strong>Deep Ocean:</strong></p>
-</li>
-<li>
-<p>Prioritize depth-rated systems with strong vendor support</p>
-</li>
-<li>
-<p><strong>Long-Range AUV:</strong></p>
-</li>
-<li>
-<p>Prioritize low power consumption and extended bottom-track range</p>
-</li>
-<li>
-<p><strong>High-Accuracy Survey:</strong></p>
-</li>
-<li>Prioritize models with published accuracy specs and calibration procedures</li>
-</ol>
-<p><strong>Operational Considerations:</strong>
-- <strong>Lead Time:</strong> Vendor lead times can be long - confirm early in the procurement process
-- <strong>Support:</strong> Check vendor support and service options
-- <strong>Integration:</strong> WHOI drivers support Teledyne RDI; check vendor ROS support
-- <strong>Spares:</strong> Budget for protective caging and spares as needed</p>
-<h4 id="inertial-navigation-systems-ins-imu">Inertial Navigation Systems (INS) / IMU</h4>
-<p>High-accuracy orientation and acceleration measurement.</p>
-<p><strong>Manufacturers:</strong>
-- SBG Systems (Ellipse series)
-- VectorNav
-- Xsens
-- LORD MicroStrain
-- Advanced Navigation
-- EXAIL (PHINS INS range)
-- Sparton (M.2)
-- Kearfott (high-end)</p>
-<p><strong>Integration:</strong>
-- Often combined with DVL for dead-reckoning
-- GPS integration for surface vehicles
-- AHRS (Attitude and Heading Reference System) capabilities</p>
-<h4 id="insimu-selection-guide">INS/IMU Selection Guide</h4>
-<p><strong>Comparison Matrix:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Vendor</th>
-<th>Model</th>
-<th>Type</th>
-<th>ROS Support</th>
-<th>Spec Sheet</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>SBG Systems</strong></td>
-<td><a href="https://www.sbg-systems.com/ins/ellipse-n/">Ellipse-N</a></td>
-<td>INS</td>
-<td>✓ <a href="https://github.com/SBG-Systems/sbg_ros2_driver">Official ROS 2</a></td>
-<td>SBG Systems product page</td>
-</tr>
-<tr>
-<td><strong>SBG Systems</strong></td>
-<td><a href="https://www.sbg-systems.com/ins/ellipse-d/">Ellipse-D</a></td>
-<td>INS</td>
-<td>✓ Official ROS 2</td>
-<td>SBG Systems product page</td>
-</tr>
-<tr>
-<td><strong>VectorNav</strong></td>
-<td><a href="https://www.vectornav.com/products/vn-100">VN-100</a></td>
-<td>IMU/AHRS</td>
-<td>Community</td>
-<td>VectorNav product page</td>
-</tr>
-<tr>
-<td><strong>VectorNav</strong></td>
-<td><a href="https://www.vectornav.com/products/vn-200">VN-200</a></td>
-<td>INS</td>
-<td>Community</td>
-<td>VectorNav product page</td>
-</tr>
-<tr>
-<td><strong>Xsens</strong></td>
-<td><a href="https://www.xsens.com/sensor-modules/xsens-mti-3-ahrs">MTi-3</a></td>
-<td>AHRS</td>
-<td>Community</td>
-<td>Xsens product page</td>
-</tr>
-<tr>
-<td><strong>LORD MicroStrain</strong></td>
-<td><a href="https://www.microstrain.com/inertial/3dm-gx5-45">3DM-GX5-45</a></td>
-<td>INS</td>
-<td>Community</td>
-<td>LORD MicroStrain product page</td>
-</tr>
-<tr>
-<td><strong>Advanced Navigation</strong></td>
-<td><a href="https://www.advancednavigation.com/inertial-navigation-systems/fog-gnss-ins/spatial-fog-dual/">Spatial FOG Dual</a></td>
-<td>INS</td>
-<td>Limited</td>
-<td>Advanced Navigation product page</td>
-</tr>
-<tr>
-<td><strong>EXAIL</strong></td>
-<td><a href="https://www.exail.com/product-range/inertial-navigation-for-subsea-operations">PHINS INS range</a></td>
-<td>INS</td>
-<td>Limited</td>
-<td>EXAIL product range</td>
-</tr>
-<tr>
-<td><strong>Sparton</strong></td>
-<td><a href="https://www.spartonnavex.com/inertial-sensors-ahrs-m2">M.2</a></td>
-<td>AHRS/IMU</td>
-<td>Limited</td>
-<td>Sparton NavEx product page</td>
-</tr>
-<tr>
-<td><strong>Kearfott</strong></td>
-<td><a href="https://www.kearfott.com/products/guidance-navigation/inertial-measurement-units/">Inertial Measurement Units</a></td>
-<td>High-grade INS</td>
-<td>Custom</td>
-<td>Kearfott product page</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Decision Criteria:</strong></p>
-<ol>
-<li><strong>Budget Student/Hobby Project:</strong></li>
-<li>IMU/AHRS-only units can be sufficient for basic attitude</li>
-<li>
-<p><strong>Limitation:</strong> Magnetometer-based heading degrades near metal and high-current systems</p>
-</li>
-<li>
-<p><strong>Research AUV (Pure Underwater):</strong></p>
-</li>
-<li>Prioritize pressure-rated models with strong integration docs</li>
-<li>
-<p>Pair with DVL for dead-reckoning accuracy</p>
-</li>
-<li>
-<p><strong>ASV (Surface Vehicle):</strong></p>
-</li>
-<li>
-<p>GNSS integration is essential for surface positioning</p>
-</li>
-<li>
-<p><strong>ROV (Tethered):</strong></p>
-</li>
-<li>IMU-only configurations may be sufficient</li>
-<li>
-<p><strong>Consideration:</strong> Heading can be provided from topside systems if required</p>
-</li>
-<li>
-<p><strong>High-Accuracy Survey (Precision Required):</strong></p>
-</li>
-<li>Dual-antenna GNSS + high-grade INS for precise heading</li>
-</ol>
-<p><strong>Critical Specifications to Consider:</strong></p>
-<ul>
-<li><strong>Gyro Bias Stability:</strong> Lower is better (affects long-term drift); compare vendor specs</li>
-<li><strong>Depth Rating:</strong> Essential for UUV applications</li>
-<li><strong>GNSS Integration:</strong> Dual-antenna GNSS improves heading accuracy</li>
-<li><strong>Magnetic Interference:</strong> Magnetometer-based heading unreliable near thrusters/motors</li>
-</ul>
-<p><strong>ROS Integration Notes:</strong>
-- <strong>SBG Systems:</strong> Official <a href="https://github.com/SBG-Systems/sbg_ros2_driver">sbg_ros2_driver</a> (check repo activity)
-- <strong>Others:</strong> Community drivers vary in quality and support
-- <strong>Output:</strong> Standard <code>sensor_msgs/Imu</code> for most packages</p>
-<h3 id="acoustic-sensors">Acoustic Sensors</h3>
-<h4 id="imaging-sonar">Imaging Sonar</h4>
-<p>Provides acoustic "images" of underwater environments.</p>
-<p><strong>Types:</strong>
-- Mechanically scanned imaging sonar (Ping360, Tritech Micron)
-- Multi-beam imaging sonar (BlueView, Oculus)
-- Forward-Looking Sonar (FLS)</p>
-<p><strong>Use Cases:</strong>
-- Obstacle avoidance
-- Target detection and classification
-- Navigation in turbid water
-- Underwater inspection</p>
-<h4 id="multibeam-sonar">Multibeam Sonar</h4>
-<p>High-resolution bathymetric mapping.</p>
-<p><strong>Applications:</strong>
-- Seafloor mapping
-- Hydrographic surveys
-- Habitat assessment</p>
-<h4 id="side-scan-sonar">Side-Scan Sonar</h4>
-<p>Creates sonar images of large seabed areas.</p>
-<p><strong>Applications:</strong>
-- Search and survey
-- Pipelines and cables
-- Archaeological surveys</p>
-<h3 id="environmental-sensors">Environmental Sensors</h3>
-<h4 id="ctd-conductivity-temperature-depth">CTD (Conductivity, Temperature, Depth)</h4>
-<p>Fundamental oceanographic sensor.</p>
-<p><strong>Measurements:</strong>
-- Salinity (via conductivity)
-- Temperature
-- Pressure/Depth</p>
-<p><strong>Use Cases:</strong>
-- Water column profiling
-- Ocean monitoring
-- Model validation</p>
-<h4 id="pressure-sensors">Pressure Sensors</h4>
-<p>Depth measurement for underwater vehicles.</p>
-<p><strong>Types:</strong>
-- Absolute pressure (depth)
-- Differential pressure (for flow measurement)
-- High-accuracy options for deep missions</p>
-<h3 id="vision-systems">Vision Systems</h3>
-<h4 id="underwater-cameras">Underwater Cameras</h4>
-<p><strong>Challenges:</strong>
-- Light attenuation
-- Color distortion
-- Turbidity
-- Biofouling</p>
-<p><strong>Solutions:</strong>
-- Low-light cameras
-- Strobes/LED lighting
-- Stereo camera systems
-- Image processing for color correction</p>
-<h4 id="topside-cameras">Topside Cameras</h4>
-<p>Surface vehicles use standard computer vision cameras plus:
-- Thermal cameras (for night operation, SAR)
-- Long-range optical cameras
-- Pan-tilt-zoom (PTZ) systems</p>
-<h3 id="positioning-systems">Positioning Systems</h3>
-<h4 id="acoustic-positioning">Acoustic Positioning</h4>
-<p><strong>USBL (Ultra-Short Baseline):</strong>
-- Surface transponder tracks underwater vehicle
-- Range and bearing measurement
-- Accuracy depends on baseline geometry, environment, and system calibration</p>
-<p><strong>LBL (Long Baseline):</strong>
-- Network of seafloor transponders
-- High accuracy positioning
-- Requires deployment and calibration</p>
-<p><strong>SBL (Short Baseline):</strong>
-- Array of transducers on surface platform
-- Medium accuracy</p>
-<h4 id="surface-positioning">Surface Positioning</h4>
-<ul>
-<li><strong>GNSS/GPS:</strong> Standard for surface vehicles</li>
-<li><strong>Differential GPS (DGPS):</strong> Enhanced accuracy for surveying</li>
-<li><strong>RTK GPS:</strong> High-precision positioning (see receiver specs)</li>
-</ul>
-<h2 id="propulsion-actuation">Propulsion &amp; Actuation</h2>
-<h3 id="thrusters">Thrusters</h3>
-<p><strong>Types:</strong>
-- Brushed DC thrusters (affordable, shorter lifespan)
-- Brushless thrusters (expensive, longer lifespan, higher efficiency)
-- Azimuth thrusters (vectorable)</p>
-<p><strong>Manufacturers:</strong>
-- Blue Robotics (T100, T200, T500)
-- Tecnadyne (professional-grade)
-- SeaBotix (professional-grade)
-- VideoRay (ROV-specific)</p>
-<p><strong>Considerations:</strong>
-- Thrust-to-weight ratio
-- Power consumption
-- Depth rating
-- Maintenance requirements</p>
-<h4 id="thruster-selection-guide">Thruster Selection Guide</h4>
-<p><strong>Comparison Matrix:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Manufacturer</th>
-<th>Model</th>
-<th>Type</th>
-<th>Spec Sheet</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Blue Robotics</strong></td>
-<td><a href="https://bluerobotics.com/store/thrusters/t100-t200-thrusters/t100-thruster-core/">T100</a></td>
-<td>Brushed</td>
-<td>Blue Robotics product page</td>
-</tr>
-<tr>
-<td><strong>Blue Robotics</strong></td>
-<td><a href="https://bluerobotics.com/store/thrusters/t100-t200-thrusters/t200-thruster-r2-rp/">T200</a></td>
-<td>Brushed</td>
-<td>Blue Robotics product page</td>
-</tr>
-<tr>
-<td><strong>Blue Robotics</strong></td>
-<td><a href="https://bluerobotics.com/store/thrusters/t100-t200-thrusters/t500-thruster/">T500</a></td>
-<td>Brushed</td>
-<td>Blue Robotics product page</td>
-</tr>
-<tr>
-<td><strong>SeaBotix</strong></td>
-<td>BTD150</td>
-<td>Brushless</td>
-<td>Contact vendor</td>
-</tr>
-<tr>
-<td><strong>SeaBotix</strong></td>
-<td>BTD300</td>
-<td>Brushless</td>
-<td>Contact vendor</td>
-</tr>
-<tr>
-<td><strong>Tecnadyne</strong></td>
-<td>Model 150D</td>
-<td>Brushless</td>
-<td>Contact vendor</td>
-</tr>
-<tr>
-<td><strong>Tecnadyne</strong></td>
-<td>Model 310</td>
-<td>Brushless</td>
-<td>Contact vendor</td>
-</tr>
-<tr>
-<td><strong>VideoRay</strong></td>
-<td>M3</td>
-<td>Brushless</td>
-<td>Contact vendor</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Decision Criteria:</strong></p>
-<ol>
-<li><strong>Budget Project / Student ROV:</strong></li>
-<li>
-<p>Consider entry-level brushed thrusters and plan for spares</p>
-</li>
-<li>
-<p><strong>Research AUV (Medium Budget):</strong></p>
-</li>
-<li>
-<p>Balance thrust margin, integration effort, and spares strategy</p>
-</li>
-<li>
-<p><strong>Professional ROV (Reliability Critical):</strong></p>
-</li>
-<li>
-<p>Prefer brushless thrusters with vendor support and documented maintenance intervals</p>
-</li>
-<li>
-<p><strong>Deep Ocean:</strong></p>
-</li>
-<li>
-<p>Confirm depth rating and pressure tolerance with the vendor</p>
-</li>
-<li>
-<p><strong>Long-Duration AUV:</strong></p>
-</li>
-<li>Minimize continuous thruster use; consider control surfaces or glider designs</li>
-</ol>
-<p><strong>Thruster Count by Vehicle Type:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Vehicle Type</th>
-<th>Typical Configuration</th>
+<th>Platforms</th>
 <th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Torpedo AUV</td>
-<td>Single stern thruster</td>
-<td>Surge-focused designs</td>
+<td>Maritime Robotics (Norway)</td>
+<td>Otter, Otter X, Mariner, Mariner X</td>
+<td>Survey and research USVs</td>
 </tr>
 <tr>
-<td>Simple ROV</td>
-<td>Differential drive</td>
-<td>Multiple thrusters</td>
+<td>L3Harris (formerly <abbr title="Autonomous Surface Vehicle">ASV</abbr> Global)</td>
+<td>C-Worker series</td>
+<td>Work-class USVs</td>
 </tr>
 <tr>
-<td>BlueROV2</td>
-<td>Vectored</td>
-<td>Full-DOF capable configuration</td>
+<td>Blue Robotics</td>
+<td>BlueBoat</td>
+<td>Small <abbr title="Uncrewed Surface Vehicle">USV</abbr> on ArduPilot Rover and BlueOS</td>
 </tr>
 <tr>
-<td>Heavy ROV</td>
-<td>Vectored + verticals</td>
-<td>Full-DOF with redundancy</td>
+<td>Ocean Aero</td>
+<td>Submaran</td>
+<td>Wind and solar powered surface/subsurface vehicle</td>
 </tr>
 <tr>
-<td>ASV</td>
-<td>Twin differential</td>
-<td>Surge/yaw focused</td>
+<td>WAM-V (Marine Advanced Research)</td>
+<td>Wave Adaptive Modular Vessel</td>
+<td>RobotX platform; simulated in VRX</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Design Trade-Offs:</strong></p>
-<p><strong>Option A: More Low-Cost Thrusters</strong>
-- Higher redundancy
-- Easier to swap spares
-- Lower initial cost</p>
-<p><strong>Option B: Fewer High-End Thrusters</strong>
-- Lower maintenance overhead
-- Higher reliability
-- Vendor-supported service intervals</p>
-<p><strong>Recommendation by Use Case:</strong>
-- <strong>Education/Research (intermittent use):</strong> Entry-level thrusters + spares
-- <strong>Commercial/Survey (continuous use):</strong> Brushless, vendor-supported thrusters
-- <strong>Deep Ocean:</strong> Depth-rated professional thrusters
-- <strong>DIY/Hobby:</strong> Entry-level thrusters</p>
-<p><strong>Integration Considerations:</strong>
-- <strong>ESC (Electronic Speed Controller):</strong> Some vendors include ESCs, others require separate procurement
-- <strong>Control Interface:</strong> PWM (simple) vs CAN bus (advanced)
-- <strong>ROS Integration:</strong> Blue Robotics BasicESC has community ROS support
-- <strong>Mounting:</strong> Consider 3D-printed mounts for Blue Robotics, professional brackets for others</p>
-<h3 id="control-surfaces">Control Surfaces</h3>
-<p>For torpedo-shaped AUVs and gliders:
-- Rudders
-- Elevators
-- Ailerons (for some designs)</p>
-<h3 id="buoyancy-control">Buoyancy Control</h3>
-<p>For gliders and some AUVs:
-- Piston-based buoyancy engines
-- Ballast systems</p>
-<h2 id="power-systems">Power Systems</h2>
-<h3 id="batteries">Batteries</h3>
-<p><strong>Common Chemistries:</strong>
-- Lithium-ion: High energy density, common for most vehicles
-- Lithium polymer: Flexible form factor
-- Alkaline: Simple, safe, lower performance</p>
-<p><strong>Underwater Considerations:</strong>
-- Pressure-compensated housings
-- Thermal management
-- Battery Management Systems (BMS)</p>
-<h3 id="energy-harvesting">Energy Harvesting</h3>
-<ul>
-<li>Solar panels (for surface vehicles)</li>
-<li>Wave energy (experimental)</li>
-<li>Thermal gradients (for gliders)</li>
-</ul>
-<h2 id="waterproof-enclosures">Waterproof Enclosures</h2>
-<p>Essential for protecting electronics underwater.</p>
-<p><strong>Types:</strong>
-- Acrylic tubes (transparent, good for cameras)
-- Aluminum enclosures (strong, opaque)
-- Subsea connectors (SubConn, Blue Robotics penetrators)
-- Pressure compensation systems</p>
-<p><strong>Design Considerations:</strong>
-- Depth rating
-- Corrosion resistance
-- Weight (buoyancy management)
-- Accessibility for maintenance</p>
-<h2 id="tether-systems">Tether Systems</h2>
-<p>For ROVs and some test configurations:
-- Neutrally buoyant tethers
-- Power and communication cables
-- Tether management systems
-- Fiber optic for high-bandwidth communication</p>
-<h2 id="manipulators">Manipulators</h2>
-<p>Underwater robotic arms for intervention tasks.</p>
-<p><strong>Specifications:</strong>
-- Degrees of freedom (varies by model)
-- Reach
-- Payload capacity
-- End effector options (grippers, cutters, sensors)</p>
-<p><strong>Manufacturers:</strong>
-- Schilling Robotics
-- Reach Robotics
-- Blueprint Lab (open-source designs)</p>
-<h2 id="budget-planning">Budget Planning</h2>
-<p>Budget and schedule vary widely by vehicle class, payload, and operating depth. Use vendor quotes and recent project bills of materials for any planning numbers, and confirm lead times with suppliers before committing to a mission schedule.</p>
-<hr />
-<h2 id="component-suppliers">Component Suppliers</h2>
-<h3 id="marine-electronics">Marine Electronics</h3>
-<ul>
-<li><strong>Blue Robotics</strong> - UUV components and accessories</li>
-<li><strong>Teledyne Marine</strong> - Marine sensors and instrumentation</li>
-<li><strong>Sonardyne</strong> - Acoustic positioning and navigation systems</li>
-<li><strong>Nortek</strong> - ADCPs and DVLs</li>
-</ul>
-<h3 id="subsea-connectors">Subsea Connectors</h3>
-<ul>
-<li><strong>MacArtney (SubConn)</strong> - Subsea connectors</li>
-<li><strong>Seacon</strong> - Professional connectors, wide variety</li>
-<li><strong>Blue Robotics</strong> - Penetrators (see vendor specs)</li>
-</ul>
-<h3 id="waterproof-housings">Waterproof Housings</h3>
-<ul>
-<li><strong>Blue Robotics</strong> - Acrylic tubes, aluminum end caps (see vendor specs)</li>
-<li><strong>Sexton Corporation</strong> - Custom professional housings</li>
-<li><strong>Custom fabrication</strong> - Local machine shops for aluminum housings</li>
-</ul>
-<h3 id="where-to-save-money">Where to Save Money</h3>
+<p>Many research groups build their own vehicles. Open designs and community builds are a good start; ask on the <a href="../community/">community channels</a>.</p>
+<h2 id="navigation-sensors">Navigation sensors<a class="headerlink" href="#navigation-sensors" title="Permanent link">&para;</a></h2>
+<h3 id="doppler-velocity-log-dvl">Doppler Velocity Log (<abbr title="Doppler Velocity Log">DVL</abbr>)<a class="headerlink" href="#doppler-velocity-log-dvl" title="Permanent link">&para;</a></h3>
+<p>A <abbr title="Doppler Velocity Log">DVL</abbr> measures velocity relative to the seafloor (bottom track) or to the water (water track) from the Doppler shift of acoustic beams, and usually also altitude. It is the main dead-reckoning sensor of most AUVs. See <a href="../navigation/#dead-reckoning-with-a-dvl">Localization</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Vendor</th>
+<th>Example products</th>
+<th>ROS 2 driver</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Water Linked</td>
+<td><abbr title="Doppler Velocity Log">DVL</abbr> A50, A125</td>
+<td><span class="twemoji mrl-yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg></span> Official (<a href="https://github.com/waterlinked/waterlinked_dvl">waterlinked_dvl</a>)</td>
+</tr>
+<tr>
+<td>Nortek</td>
+<td>Nucleus, DVL500, DVL1000</td>
+<td><span class="twemoji mrl-yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg></span> Official for Nucleus (<a href="https://github.com/nortekgroup/nucleus_driver">nucleus_driver</a>)</td>
+</tr>
+<tr>
+<td>Teledyne RDI</td>
+<td>Pathfinder, Tasman, Workhorse</td>
+<td>Community and lab drivers only</td>
+</tr>
+<tr>
+<td>LinkQuest</td>
+<td>NavQuest</td>
+<td>None public found</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Choose by:</strong></p>
 <ol>
-<li><strong>Buy used DVLs</strong> - Check vendor and reseller listings for availability</li>
-<li><strong>3D print non-critical parts</strong> - Mounts, fairings, cable management</li>
-<li><strong>Community resources</strong> - Use proven designs and reference builds</li>
-<li><strong>Simulation first</strong> - Test extensively in Gazebo before hardware</li>
-<li><strong>Incremental integration</strong> - Test each sensor individually before full system</li>
+<li><strong>Bottom-track range</strong> at your operating altitude. Lower frequency gives more range; higher frequency gives better accuracy at short range and is smaller.</li>
+<li><strong>Minimum altitude</strong>, for vehicles that work close to the bottom.</li>
+<li><strong>Depth rating, size, and power</strong>, for small vehicles.</li>
+<li><strong>Accuracy</strong> (long-term velocity error as a percentage of speed) from the datasheet.</li>
+<li><strong>Interface and driver</strong>: Ethernet or serial, and a maintained ROS 2 driver.</li>
+<li><strong>Interference</strong>: check how pinging is triggered and synchronized with your sonars and modem.</li>
 </ol>
-<h3 id="where-not-to-compromise">Where NOT to Compromise</h3>
-<ol>
-<li><strong>Pressure housings</strong> - Leaks can destroy electronics</li>
-<li><strong>Connectors</strong> - Connectors are a common failure point</li>
-<li><strong>IMU quality</strong> - IMU quality affects navigation accuracy</li>
-<li><strong>Battery safety</strong> - Proper BMS prevents fires/damage</li>
-<li><strong>Professional help</strong> - Budget for engineering review on critical systems</li>
-</ol>
-<hr />
-<h2 id="sources">Sources</h2>
-<p><strong>DVL Specifications:</strong>
-- <a href="https://www.nortekgroup.com/export/pdf/DVL1000%20-%204000%20m.pdf">Nortek DVL1000 Datasheet</a>
-- <a href="https://www.nortekgroup.com/products/dvl500-300-m">Nortek DVL500 Product Page</a>
-- <a href="https://www.teledynemarine.com/en-us/products/SiteAssets/RD%20Instruments/Tasman_DVL.pdf">Teledyne Marine Tasman DVL</a>
-- <a href="https://waterlinked.com/dvl/">Water Linked DVL A50</a></p>
-<p><strong>Thruster Specifications:</strong>
-- <a href="https://bluerobotics.com/store/thrusters/t100-t200-thrusters/t100-thruster-core/">Blue Robotics T100 Thruster</a>
-- <a href="https://bluerobotics.com/store/thrusters/t100-t200-thrusters/t200-thruster-r2-rp/">Blue Robotics T200 Thruster</a>
-- <a href="https://bluerobotics.com/store/thrusters/t100-t200-thrusters/t500-thruster/">Blue Robotics T500 Thruster</a></p>
-<p><strong>INS/IMU Specifications:</strong>
-- <a href="https://www.sbg-systems.com/ins/ellipse-n/">SBG Systems Ellipse-N</a>
-- <a href="https://www.sbg-systems.com/ins/ellipse-d/">SBG Systems Ellipse-D</a>
-- <a href="https://github.com/SBG-Systems/sbg_ros2_driver">SBG ROS 2 Driver</a>
-- <a href="https://www.vectornav.com/products/vn-100">VectorNav VN-100</a>
-- <a href="https://www.vectornav.com/products/vn-200">VectorNav VN-200</a>
-- <a href="https://www.xsens.com/sensor-modules/xsens-mti-3-ahrs">Xsens MTi-3</a>
-- <a href="https://www.microstrain.com/inertial/3dm-gx5-45">LORD MicroStrain 3DM-GX5-45</a>
-- <a href="https://www.advancednavigation.com/inertial-navigation-systems/fog-gnss-ins/spatial-fog-dual/">Advanced Navigation Spatial FOG Dual</a>
-- <a href="https://www.exail.com/product-range/inertial-navigation-for-subsea-operations">EXAIL PHINS INS range</a>
-- <a href="https://www.spartonnavex.com/inertial-sensors-ahrs-m2">Sparton M.2</a>
-- <a href="https://www.kearfott.com/products/guidance-navigation/inertial-measurement-units/">Kearfott Inertial Measurement Units</a></p>
-<p><strong>Note:</strong> Prices and specifications subject to change. Contact vendors directly for current pricing and detailed specifications. Lead times can vary significantly based on market conditions.</p>
-<hr />
-<p><em>This page was last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2025</span></em></p>
-<script data-goatcounter="https://maritime-robotics-landscape.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-              
-            </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../simulation/" class="btn btn-neutral float-left" title="Simulation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../software/" class="btn btn-neutral float-right" title="Software">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
+<h3 id="inertial-navigation-ins-imu-ahrs">Inertial navigation (<abbr title="Inertial Navigation System">INS</abbr> / <abbr title="Inertial Measurement Unit">IMU</abbr> / <abbr title="Attitude and Heading Reference System">AHRS</abbr>)<a class="headerlink" href="#inertial-navigation-ins-imu-ahrs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Gyro technology</th>
+<th>Heading source</th>
+<th>Typical use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><abbr title="Inertial Measurement Unit">IMU</abbr> / <abbr title="Attitude and Heading Reference System">AHRS</abbr></td>
+<td>MEMS</td>
+<td>Magnetometer</td>
+<td>Small ROVs, ASVs, budget AUVs. Magnetic heading suffers near thrusters and steel</td>
+</tr>
+<tr>
+<td><abbr title="Global Navigation Satellite System">GNSS</abbr>-aided <abbr title="Inertial Navigation System">INS</abbr></td>
+<td>MEMS or tactical</td>
+<td>Dual-antenna <abbr title="Global Navigation Satellite System">GNSS</abbr> or magnetometer</td>
+<td>ASVs and surface navigation</td>
+</tr>
+<tr>
+<td>Navigation-grade <abbr title="Inertial Navigation System">INS</abbr></td>
+<td>Fiber-optic (FOG) or ring-laser gyro</td>
+<td>Gyrocompassing (true north from Earth rotation)</td>
+<td>Survey AUVs, deep vehicles; <abbr title="Doppler Velocity Log">DVL</abbr>-aided dead reckoning</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Vendor</th>
+<th>Example products</th>
+<th>ROS 2 driver</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SBG Systems</td>
+<td>Ellipse, Ekinox, Apogee</td>
+<td><span class="twemoji mrl-yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg></span> Official, binary release</td>
+</tr>
+<tr>
+<td>MicroStrain by HBK</td>
+<td>3DM-GX5, CV7, GQ7</td>
+<td><span class="twemoji mrl-yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg></span> Official, binary release</td>
+</tr>
+<tr>
+<td>Xsens (Movella)</td>
+<td>MTi series</td>
+<td><span class="twemoji mrl-yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg></span> Vendor support repository</td>
+</tr>
+<tr>
+<td>Advanced Navigation</td>
+<td>Spatial, Certus, Boreas</td>
+<td><span class="twemoji mrl-yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg></span> Vendor example driver (Humble)</td>
+</tr>
+<tr>
+<td>VectorNav</td>
+<td>VN-100, VN-200, VN-300</td>
+<td>Community driver</td>
+</tr>
+<tr>
+<td>Exail (formerly iXblue)</td>
+<td>PHINS, Rovins</td>
+<td>None public</td>
+</tr>
+<tr>
+<td>Kearfott, Sonardyne (SPRINT), Sparton</td>
+<td>Various</td>
+<td>None public</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Choose by:</strong> gyro bias stability (drift), heading accuracy and its source, the ability to take <abbr title="Doppler Velocity Log">DVL</abbr> and <abbr title="Global Navigation Satellite System">GNSS</abbr> aiding inside the <abbr title="Inertial Navigation System">INS</abbr>, depth rating, and interfaces.</p>
+<h3 id="depth-and-pressure">Depth and pressure<a class="headerlink" href="#depth-and-pressure" title="Permanent link">&para;</a></h3>
+<p>Pressure sensors give depth with good accuracy, and they are simple and reliable. Compare range, accuracy as a percentage of full scale, temperature compensation, and sampling rate. Example: Blue Robotics Bar30 and Bar100 for small vehicles; Paroscientific and Keller for high accuracy. See <a href="../conventions/#depth-pressure-and-altitude">depth conversion</a>.</p>
+<h3 id="gnss"><abbr title="Global Navigation Satellite System">GNSS</abbr><a class="headerlink" href="#gnss" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Standard <abbr title="Global Navigation Satellite System">GNSS</abbr></strong> for general surface positioning.</li>
+<li><strong><abbr title="Real-Time Kinematic GNSS">RTK</abbr> <abbr title="Global Navigation Satellite System">GNSS</abbr></strong> for centimeter-level survey positioning, with a base station or correction service (NTRIP).</li>
+<li><strong>Dual-antenna <abbr title="Global Navigation Satellite System">GNSS</abbr></strong> for heading without a magnetometer, important for ASVs at low speed.</li>
+</ul>
+<p>Drivers: nmea_navsat_driver, ublox_dgnss, ublox, swiftnav-ros2 (see <a href="../drivers/">Drivers</a>).</p>
+<h2 id="acoustic-positioning">Acoustic positioning<a class="headerlink" href="#acoustic-positioning" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Example vendors</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><abbr title="Ultra-Short Baseline acoustic positioning">USBL</abbr></td>
+<td>Sonardyne, EvoLogics, Kongsberg</td>
+<td>Topside array tracks the vehicle; the fix must be sent down to the vehicle if it navigates on it</td>
+</tr>
+<tr>
+<td><abbr title="Short Baseline acoustic positioning">SBL</abbr></td>
+<td>Water Linked Underwater GPS</td>
+<td>Receivers spread around the topside platform; popular with small ROVs</td>
+</tr>
+<tr>
+<td><abbr title="Long Baseline acoustic positioning">LBL</abbr></td>
+<td>Sonardyne, Kongsberg</td>
+<td>Seafloor beacons, highest accuracy over an area</td>
+</tr>
+<tr>
+<td>Modem ranging</td>
+<td>WHOI Micro-Modem, EvoLogics</td>
+<td>Ranges from the communication modem itself</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="../navigation/#acoustic-positioning">Localization</a>.</p>
+<h2 id="sonar">Sonar<a class="headerlink" href="#sonar" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Example products</th>
+<th>Driver status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Echosounder</td>
+<td>Blue Robotics Ping2</td>
+<td>Community (blueos-ros2, ping-python)</td>
+</tr>
+<tr>
+<td>Mechanically scanned imaging</td>
+<td>Blue Robotics Ping360, Tritech Micron</td>
+<td>Ping360: community ROS 2 drivers</td>
+</tr>
+<tr>
+<td>Multibeam imaging / <abbr title="Forward-Looking Sonar">FLS</abbr></td>
+<td>Blueprint Subsea Oculus, Teledyne BlueView</td>
+<td>Oculus: community ROS 2 drivers</td>
+</tr>
+<tr>
+<td>Multibeam echosounder</td>
+<td>Cerulean Surveyor, Norbit, Kongsberg, R2Sonic</td>
+<td>Cerulean: community ROS 2 driver</td>
+</tr>
+<tr>
+<td>Side-scan</td>
+<td>EdgeTech, Klein, Imagenex, Tritech</td>
+<td>Mostly vendor software</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="../perception/#sonar-types">Perception</a> for what each type is good for.</p>
+<h2 id="cameras-and-lights">Cameras and lights<a class="headerlink" href="#cameras-and-lights" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Underwater cameras need in-water calibration (see <a href="../perception/#underwater-vision">Perception</a>). Low-light sensors and good lighting matter more than resolution.</li>
+<li>Strobes and LEDs consume much power; place them away from the camera axis to reduce backscatter.</li>
+<li>Surface vehicles also use thermal cameras and pan-tilt-zoom cameras.</li>
+</ul>
+<h2 id="propulsion">Propulsion<a class="headerlink" href="#propulsion" title="Permanent link">&para;</a></h2>
+<h3 id="thrusters">Thrusters<a class="headerlink" href="#thrusters" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Manufacturer</th>
+<th>Examples</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blue Robotics</td>
+<td><a href="https://bluerobotics.com/store/thrusters/t200-thruster/">T200</a>, T500</td>
+<td>Brushless, flooded-motor design; need a brushless <abbr title="Electronic Speed Controller">ESC</abbr>. The <a href="https://bluerobotics.com/store/retired/t100-thruster/">T100</a> is end of life</td>
+</tr>
+<tr>
+<td>Tecnadyne</td>
+<td>Various models</td>
+<td>Professional subsea thrusters</td>
+</tr>
+<tr>
+<td>VideoRay</td>
+<td>Thrusters for VideoRay ROVs</td>
+<td>Vehicle-specific</td>
+</tr>
+<tr>
+<td>Teledyne SeaBotix</td>
+<td>BTD150, BTD300</td>
+<td>Teledyne ended SeaBotix vehicle production in 2025; check spare availability</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Choose by:</strong></p>
+<ul>
+<li><strong>Thrust curve</strong> at your supply voltage, forward and reverse (they differ), and the current draw. You need the curve for allocation (see <a href="../control/#known-issues">Control</a>).</li>
+<li><strong>Depth rating</strong> and pressure tolerance.</li>
+<li><strong>Control interface</strong>: PWM through an <abbr title="Electronic Speed Controller">ESC</abbr> (simple) or a digital bus with RPM and current feedback (better diagnostics).</li>
+<li><strong>Spares and service</strong>: on intermittent research use, a few low-cost thrusters plus spares can be better than fewer expensive ones; for continuous commercial use, prefer vendor-supported units with service intervals.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Vehicle</th>
+<th>Typical configuration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Torpedo <abbr title="Autonomous Underwater Vehicle">AUV</abbr></td>
+<td>One stern propeller with fins, or a vectored thruster</td>
+</tr>
+<tr>
+<td>Small <abbr title="Remotely Operated Vehicle">ROV</abbr> (for example BlueROV2)</td>
+<td>6 thrusters (heavy configuration: 8) in a vectored layout</td>
+</tr>
+<tr>
+<td>Work-class <abbr title="Remotely Operated Vehicle">ROV</abbr></td>
+<td>Vectored horizontal plus vertical thrusters, with redundancy</td>
+</tr>
+<tr>
+<td><abbr title="Autonomous Surface Vehicle">ASV</abbr></td>
+<td>Twin thrusters (differential), or propeller and rudder; azimuth thrusters on larger vessels</td>
+</tr>
+</tbody>
+</table>
+<h3 id="control-surfaces-and-buoyancy">Control surfaces and buoyancy<a class="headerlink" href="#control-surfaces-and-buoyancy" title="Permanent link">&para;</a></h3>
+<p>Torpedo AUVs and gliders use rudders and elevators. Gliders and some AUVs use buoyancy engines (pumps or pistons) for vertical motion.</p>
+<h2 id="power">Power<a class="headerlink" href="#power" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Lithium-ion</strong> is the norm. Use a battery management system (<abbr title="Battery Management System">BMS</abbr>), and follow transport and storage rules for lithium batteries.</li>
+<li><strong>Pressure-tolerant</strong> battery packs avoid large housings on deep vehicles.</li>
+<li>Thrust falls as battery voltage drops; plan for it in control and in <a href="../operations/#power-budgets">power budgets</a>.</li>
+<li>Surface vehicles can add solar panels or fuel generators.</li>
+</ul>
+<h2 id="housings-connectors-and-tethers">Housings, connectors, and tethers<a class="headerlink" href="#housings-connectors-and-tethers" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Housings</strong>: acrylic or polycarbonate tubes for shallow vehicles and cameras; aluminum, titanium, or glass for deeper ones. Check the depth rating with margin.</li>
+<li><strong>Connectors and penetrators</strong>: MacArtney (SubConn), Teledyne Impulse, Seacon, and Blue Robotics penetrators. Connectors are a common failure point.</li>
+<li><strong>Tethers</strong>: neutrally buoyant tethers for small ROVs; fiber for high bandwidth over long lengths. Tether drag dominates in a current.</li>
+</ul>
+<h2 id="manipulators">Manipulators<a class="headerlink" href="#manipulators" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Manufacturer</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reach Robotics (formerly Blueprint Lab)</td>
+<td>Reach Alpha, Reach Bravo</td>
+</tr>
+<tr>
+<td>Schilling Robotics (TechnipFMC)</td>
+<td>Work-class manipulators</td>
+</tr>
+<tr>
+<td>Kraft TeleRobotics</td>
+<td>Hydraulic manipulators</td>
+</tr>
+</tbody>
+</table>
+<p>For ROS: MoveIt 2 for planning, and whole-body or impedance control for the vehicle and arm together.</p>
+<h2 id="saving-money-and-where-not-to">Saving money, and where not to<a class="headerlink" href="#saving-money-and-where-not-to" title="Permanent link">&para;</a></h2>
+<p><strong>Save on:</strong> used instruments from reputable sources, 3D-printed mounts and fairings, simulation before hardware, and testing each sensor alone before integration.</p>
+<p><strong>Do not save on:</strong> pressure housings and seals, connectors, the <abbr title="Inertial Navigation System">INS</abbr> (it sets your navigation accuracy), battery safety, and an engineering review of critical systems.</p>
+<h2 id="component-suppliers">Component suppliers<a class="headerlink" href="#component-suppliers" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Small-vehicle components</td>
+<td>Blue Robotics</td>
+</tr>
+<tr>
+<td>Marine sensors</td>
+<td>Teledyne Marine, Nortek, Sonardyne, Water Linked, Kongsberg</td>
+</tr>
+<tr>
+<td>Connectors</td>
+<td>MacArtney (SubConn), Seacon, Teledyne Impulse</td>
+</tr>
+<tr>
+<td>Housings</td>
+<td>Blue Robotics, custom machine shops</td>
+</tr>
+</tbody>
+</table>
 
-  <hr/>
 
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-      <p>Information assembled by the ROS Maritime Robotics Working Group. Privacy-respecting analytics with GoatCounter.</p>
-  </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-          
-        </div>
-      </div>
 
-    </section>
 
-  </div>
 
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
+
+  
     
+  
+  
+
+
+  <aside class="md-source-file">
     
-      <span><a href="../simulation/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../software/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 22, 2026 01:42:09 UTC">October 22, 2026</span>
   </span>
-</div>
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "..";</script>
-    <script src="../js/theme_extra.js"></script>
-    <script src="../js/theme.js"></script>
-      <script src="../search/main.js"></script>
-    <script>
-        jQuery(function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        });
-    </script>
 
-</body>
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../vehicle_types/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Vehicle types">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Vehicle types
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../operations/" class="md-footer__link md-footer__link--next" aria-label="Next: Field operations">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Field operations
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Content by the ROS Maritime Community Working Group, licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Privacy-respecting analytics by GoatCounter.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://discourse.openrobotics.org/c/community-groups/marine-robotics/36" target="_blank" rel="noopener" title="ROS Discourse, Marine Robotics" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M225.9 32C103.3 32 0 130.5 0 252.1 0 256 .1 480 .1 480l225.8-.2c122.7 0 222.1-102.3 222.1-223.9S348.6 32 225.9 32M224 384c-19.4 0-37.9-4.3-54.4-12.1L88.5 392l22.9-75c-9.8-18.1-15.4-38.9-15.4-61 0-70.7 57.3-128 128-128s128 57.3 128 128-57.3 128-128 128"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://openrobotics.zulipchat.com/#narrow/channel/526058-Marine-Robotics" target="_blank" rel="noopener" title="Zulip, Marine Robotics channel" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.767 3.589c0 1.209-.543 2.283-1.37 2.934l-8.034 7.174c-.149.128-.343-.078-.235-.25l2.946-5.9c.083-.165-.024-.368-.194-.368H4.452c-1.77 0-3.219-1.615-3.219-3.59C1.233 1.616 2.682 0 4.452 0h15.096c1.77-.001 3.219 1.614 3.219 3.589M4.452 24h15.096c1.77 0 3.219-1.616 3.219-3.59s-1.449-3.59-3.219-3.59H8.12c-.17 0-.277-.202-.194-.367l2.946-5.9c.108-.172-.086-.378-.235-.25l-8.033 7.173c-.828.65-1.37 1.725-1.37 2.934 0 1.974 1.448 3.59 3.218 3.59"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/ros-maritime" target="_blank" rel="noopener" title="ros-maritime on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/catalog.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
 </html>
