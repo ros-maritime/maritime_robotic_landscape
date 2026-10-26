@@ -1,0 +1,267 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Maritime Robotics Landscape theme
+   Tokens first, then components. All colors come from the tokens so that
+   light and dark schemes stay consistent.
+   ───────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --mrl-deep: #06324a;
+  --mrl-ocean: #0a6e8a;
+  --mrl-teal: #12a4a4;
+  --mrl-foam: #e6f4f6;
+  --mrl-sand: #f4b860;
+
+  --md-primary-fg-color: var(--mrl-deep);
+  --md-primary-fg-color--light: var(--mrl-ocean);
+  --md-primary-fg-color--dark: #03202f;
+  --md-accent-fg-color: var(--mrl-teal);
+  --md-accent-fg-color--transparent: rgba(18, 164, 164, 0.1);
+
+  --mrl-surface: #ffffff;
+  --mrl-surface-2: #f3f7f9;
+  --mrl-border: #d5e0e6;
+  --mrl-muted: #55697a;
+
+  --mrl-green: #1a7f4b;
+  --mrl-green-bg: #e3f4ea;
+  --mrl-amber: #8a5a00;
+  --mrl-amber-bg: #fdf0d5;
+  --mrl-grey: #5b6670;
+  --mrl-grey-bg: #eceff1;
+  --mrl-red: #9b2c2c;
+  --mrl-red-bg: #fbe4e4;
+  --mrl-blue: #0b5c8a;
+  --mrl-blue-bg: #e1effa;
+  --mrl-violet: #5a3e9b;
+  --mrl-violet-bg: #ece6fa;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #0d1b24;
+  --md-default-fg-color--light: #b4c3cc;
+  --md-primary-fg-color: #072a3d;
+  --md-accent-fg-color: #3cc8c8;
+  --md-typeset-a-color: #5cc6dd;
+
+  --mrl-surface: #12242f;
+  --mrl-surface-2: #162c39;
+  --mrl-border: #24404f;
+  --mrl-muted: #9fb2bd;
+  --mrl-foam: #12303c;
+
+  --mrl-green: #7ad7a0;
+  --mrl-green-bg: #133426;
+  --mrl-amber: #f2c56b;
+  --mrl-amber-bg: #3a2c0f;
+  --mrl-grey: #b3bec6;
+  --mrl-grey-bg: #26333b;
+  --mrl-red: #f19a9a;
+  --mrl-red-bg: #3d1b1b;
+  --mrl-blue: #8cc8f0;
+  --mrl-blue-bg: #13314a;
+  --mrl-violet: #c4b3f2;
+  --mrl-violet-bg: #2a2147;
+}
+
+/* ── Typography tweaks ─────────────────────────────────────────────────── */
+.md-typeset h1 { font-weight: 700; letter-spacing: -0.01em; color: var(--md-default-fg-color); }
+.md-typeset h2 { font-weight: 650; }
+.md-typeset .lead { font-size: 1.05rem; color: var(--md-default-fg-color--light); max-width: 46rem; }
+.md-typeset table:not([class]) { font-size: 0.72rem; }
+.md-typeset table:not([class]) th { white-space: nowrap; }
+
+/* ── Hero (home page) ──────────────────────────────────────────────────── */
+.mrl-hero {
+  position: relative;
+  clear: both;
+  overflow: hidden;
+  margin: 0 0 2rem;
+  padding: 2.4rem 1.4rem 4.5rem;
+  color: #fff;
+  background:
+    radial-gradient(120% 90% at 85% 10%, rgba(18, 164, 164, 0.45) 0%, transparent 60%),
+    linear-gradient(160deg, #06324a 0%, #0a4f6c 55%, #0a6e8a 100%);
+  border-radius: 0.8rem;
+}
+.mrl-hero h1 { color: #fff; margin: 0 0 0.6rem; font-size: 2.1rem; line-height: 1.15; max-width: 34rem; }
+.mrl-hero p { color: rgba(255, 255, 255, 0.88); font-size: 0.95rem; max-width: 38rem; margin: 0 0 1.4rem; }
+.mrl-hero .md-button { color: #fff; border-color: rgba(255, 255, 255, 0.7); margin: 0 0.4rem 0.5rem 0; }
+.mrl-hero .md-button--primary { background: var(--mrl-sand); border-color: var(--mrl-sand); color: #1b1300; }
+.mrl-hero .md-button:hover { background: #fff; border-color: #fff; color: var(--mrl-deep); }
+.mrl-hero__waves { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 3.2rem; }
+.mrl-hero__waves path { fill: var(--md-default-bg-color); }
+.mrl-hero__waves path.back { opacity: 0.35; }
+@media screen and (min-width: 60em) {
+  .mrl-hero { padding: 3.6rem 2.4rem 5rem; }
+  .mrl-hero h1 { font-size: 2.5rem; }
+}
+
+/* ── Stat tiles ────────────────────────────────────────────────────────── */
+.mrl-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 7rem), 1fr));
+  gap: 0.8rem;
+  margin: 1.2rem 0 1.6rem;
+}
+.mrl-stat {
+  padding: 0.9rem 1rem;
+  background: var(--mrl-surface-2);
+  border: 1px solid var(--mrl-border);
+  border-radius: 0.5rem;
+}
+.mrl-stat__value { display: block; font-size: 1.6rem; font-weight: 700; color: var(--md-typeset-a-color); line-height: 1.1; }
+.mrl-stat__label { display: block; font-size: 0.68rem; color: var(--mrl-muted); margin-top: 0.2rem; }
+
+/* ── Grid cards: tighter and more visual than the defaults ─────────────── */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid > .card {
+  border-radius: 0.5rem;
+  border-color: var(--mrl-border);
+  background: var(--mrl-surface);
+}
+.md-typeset .grid.cards > ul > li:hover { border-color: var(--md-accent-fg-color); box-shadow: 0 0.2rem 0.8rem rgba(6, 50, 74, 0.12); }
+.md-typeset .grid.cards .lg { font-size: 1.6rem; color: var(--md-accent-fg-color); }
+
+/* Four cards in one row on wide screens, two on tablets, one on phones */
+.md-typeset .grid.mrl-four { grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); }
+
+/* Generated catalog tables: give the description room */
+.md-typeset .mrl-table table td:nth-child(1) { min-width: 9rem; }
+.md-typeset .mrl-table table td:nth-child(2) { min-width: 18rem; }
+.md-typeset .mrl-table table td:nth-child(5) { white-space: nowrap; }
+
+/* ── Badges and activity status ────────────────────────────────────────── */
+.mrl-badge, .mrl-status {
+  display: inline-block;
+  padding: 0.05rem 0.4rem;
+  margin: 0.05rem 0.1rem 0.05rem 0;
+  border-radius: 0.25rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.mrl-badge { background: var(--mrl-grey-bg); color: var(--mrl-grey); }
+.mrl-badge.mrl-ros-ros2 { background: var(--mrl-blue-bg); color: var(--mrl-blue); }
+.mrl-badge.mrl-ros-ros1 { background: var(--mrl-violet-bg); color: var(--mrl-violet); }
+.mrl-status::before { content: "●"; margin-right: 0.25rem; }
+.mrl-status-active { background: var(--mrl-green-bg); color: var(--mrl-green); }
+.mrl-status-quiet { background: var(--mrl-amber-bg); color: var(--mrl-amber); }
+.mrl-status-dormant { background: var(--mrl-grey-bg); color: var(--mrl-grey); }
+.mrl-status-archived { background: var(--mrl-red-bg); color: var(--mrl-red); }
+.mrl-status-unknown { background: var(--mrl-grey-bg); color: var(--mrl-grey); }
+.mrl-legend { font-size: 0.68rem; color: var(--mrl-muted); }
+.mrl-legend .mrl-status { margin-right: 0.2rem; }
+
+/* Driver status icons */
+.md-typeset .mrl-yes { color: var(--mrl-green); }
+.md-typeset .mrl-partial { color: var(--mrl-amber); }
+.md-typeset .mrl-no { color: var(--mrl-grey); }
+
+/* ── Catalog explorer ──────────────────────────────────────────────────── */
+.mrl-explorer__controls {
+  position: sticky;
+  top: 2.4rem;
+  z-index: 2;
+  padding: 0.8rem;
+  margin-bottom: 0.6rem;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--mrl-border);
+  border-radius: 0.5rem;
+}
+.mrl-sr {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+@media screen and (max-width: 44.9375em) {
+  .mrl-explorer__controls { position: static; }
+}
+.mrl-search input {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+  font-size: 0.8rem;
+  color: var(--md-default-fg-color);
+  background: var(--mrl-surface-2);
+  border: 1px solid var(--mrl-border);
+  border-radius: 0.35rem;
+}
+.mrl-search input:focus { outline: 2px solid var(--md-accent-fg-color); outline-offset: 0; }
+.mrl-filter-row { display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; align-items: center; margin-top: 0.6rem; }
+.mrl-filter-row select {
+  font: inherit;
+  font-size: 0.72rem;
+  padding: 0.3rem 0.4rem;
+  color: var(--md-default-fg-color);
+  background: var(--mrl-surface-2);
+  border: 1px solid var(--mrl-border);
+  border-radius: 0.35rem;
+}
+.mrl-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.mrl-chip {
+  font: inherit;
+  font-size: 0.66rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  cursor: pointer;
+  color: var(--mrl-muted);
+  background: transparent;
+  border: 1px solid var(--mrl-border);
+  border-radius: 1rem;
+}
+.mrl-chip[aria-pressed="true"] { color: #fff; background: var(--mrl-ocean); border-color: var(--mrl-ocean); }
+.mrl-toggle { font-size: 0.7rem; color: var(--mrl-muted); display: inline-flex; gap: 0.3rem; align-items: center; }
+.mrl-count { font-size: 0.7rem; color: var(--mrl-muted); margin: 0.2rem 0 0.6rem; }
+.mrl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 0.7rem;
+}
+.mrl-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 0.9rem;
+  background: var(--mrl-surface);
+  border: 1px solid var(--mrl-border);
+  border-radius: 0.5rem;
+}
+.mrl-card:hover { border-color: var(--md-accent-fg-color); }
+.mrl-card__cat { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--md-accent-fg-color); }
+.md-typeset .mrl-card h3 { margin: 0.2rem 0 0.15rem; font-size: 0.88rem; }
+.mrl-card__by { font-size: 0.64rem; color: var(--mrl-muted); margin: 0 0 0.4rem; }
+.md-typeset .mrl-card p.mrl-card__desc { font-size: 0.7rem; margin: 0 0 0.6rem; flex: 1; }
+.mrl-card__meta { display: flex; flex-wrap: wrap; gap: 0.15rem; align-items: center; }
+.mrl-card__links { margin-top: 0.5rem; font-size: 0.68rem; display: flex; gap: 0.8rem; }
+.mrl-empty { padding: 2rem; text-align: center; color: var(--mrl-muted); border: 1px dashed var(--mrl-border); border-radius: 0.5rem; }
+
+/* ── Decision and comparison helpers ───────────────────────────────────── */
+.mrl-figure {
+  margin: 1.2rem 0;
+  padding: 1rem;
+  background: var(--mrl-surface-2);
+  border: 1px solid var(--mrl-border);
+  border-radius: 0.5rem;
+  text-align: center;
+}
+.md-typeset figure.mrl-figure { display: block; width: auto; max-width: none; }
+.mrl-figure svg { width: 100%; max-width: 760px; height: auto; }
+.mrl-figure figcaption { font-size: 0.68rem; color: var(--mrl-muted); margin-top: 0.6rem; }
+.mrl-svg-text { fill: var(--md-default-fg-color); font-family: var(--md-text-font-family, sans-serif); }
+.mrl-svg-muted { fill: var(--mrl-muted); font-family: var(--md-text-font-family, sans-serif); }
+.mrl-svg-line { stroke: var(--md-default-fg-color--light); }
+.mrl-svg-water { fill: var(--mrl-foam); }
+.mrl-svg-hull { fill: var(--mrl-ocean); }
+.mrl-svg-accent { fill: var(--mrl-sand); }
+.mrl-svg-x { stroke: #d9534f; }
+.mrl-svg-y { stroke: #2e9e5b; }
+.mrl-svg-z { stroke: #2f7bd6; }
+
+/* Vehicle silhouettes in cards */
+.mrl-vehicle { display: block; width: 100%; max-width: 12rem; height: 4.5rem; margin: 0 auto 0.4rem; }
+
+/* Mermaid diagrams: center and give room */
+.md-typeset .mermaid { text-align: center; margin: 1rem 0; }
+
+/* Make long code blocks easier to scan */
+.md-typeset pre > code { font-size: 0.7rem; }

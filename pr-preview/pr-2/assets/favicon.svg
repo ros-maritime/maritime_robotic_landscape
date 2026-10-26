@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#0a6e8a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <title>Maritime Robotics Landscape</title>
+  <path d="M10 20h22a6 6 0 0 1 0 12H10a6 6 0 0 1 0-12z"/>
+  <path d="M38 26h5M41 22v8"/>
+  <circle cx="14" cy="26" r="1.5" fill="#0a6e8a" stroke="none"/>
+  <path d="M20 20v-5h6"/>
+  <path d="M4 40c4 0 4-3 8-3s4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3"/>
+  <path d="M4 10c4 0 4-3 8-3s4 3 8 3"/>
+</svg>

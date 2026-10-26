@@ -1,0 +1,1761 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Search and filter open-source maritime robotics software by purpose, ROS version, vehicle type, and activity.">
+      
+      
+        <meta name="author" content="ROS Maritime Community Working Group">
+      
+      
+        <link rel="canonical" href="https://ros-maritime.oceansoft.org/catalog/">
+      
+      
+        <link rel="prev" href="../software/">
+      
+      
+        <link rel="next" href="../autonomy_stacks/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Package catalog - Maritime Robotics Landscape</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <!-- GoatCounter: privacy-respecting, cookie-free page counts -->
+<script data-goatcounter="https://maritime-robotics-landscape.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#package-catalog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Maritime Robotics Landscape" class="md-header__button md-logo" aria-label="Maritime Robotics Landscape" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Maritime Robotics Landscape
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Package catalog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ros-maritime/maritime_robotic_landscape" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ros-maritime/maritime_robotic_landscape
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting_started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Start here
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../software/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Software
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../vehicle_types/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Hardware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../operations/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Field operations
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../datasets/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Datasets
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../community/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Community
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Maritime Robotics Landscape" class="md-nav__button md-logo" aria-label="Maritime Robotics Landscape" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    Maritime Robotics Landscape
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ros-maritime/maritime_robotic_landscape" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ros-maritime/maritime_robotic_landscape
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../education_and_tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning path and tutorials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package catalog
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#missing-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing a project?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autonomy_stacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomy frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drivers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drivers and interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frames and conventions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control and allocation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../navigation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Localization and navigation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../perception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perception and mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Communication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools and workflows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration_examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expert_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicle_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vehicle types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensors and components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datasets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datasets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Community
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Events and competitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#missing-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing a project?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+  
+    <a href="https://github.com/ros-maritime/maritime_robotic_landscape/edit/main/docs/catalog.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="package-catalog">Package catalog<a class="headerlink" href="#package-catalog" title="Permanent link">&para;</a></h1>
+<p>Every open-source project this site tracks, in one place. Type to search names, purposes, and tags, or filter by category, ROS version, and vehicle type. The same data drives the tables on each Software page.</p>
+<p class="mrl-legend">
+Activity comes from the date of the latest commit on the branch that matters for ROS 2 (usually the default branch) and refreshes every week:
+<span class="mrl-status mrl-status-active">Active</span> within 12 months,
+<span class="mrl-status mrl-status-quiet">Low activity</span> within 3 years,
+<span class="mrl-status mrl-status-dormant">Dormant</span> older,
+<span class="mrl-status mrl-status-archived">Archived</span> read-only on its host.
+Low activity does not mean broken: some stable packages need few changes.
+</p>
+
+<div class="mrl-explorer" data-mrl-explorer>
+  <div class="mrl-explorer__controls">
+    <label class="mrl-search">
+      <span class="mrl-sr">Search the catalog</span>
+      <input type="search" data-mrl-q placeholder="Search name, purpose, sensor, or tag (for example: dvl, ardusub, sonar)" autocomplete="off">
+    </label>
+    <div class="mrl-filter-row">
+      <select data-mrl-cat aria-label="Category"><option value="">All categories</option></select>
+      <div class="mrl-chips" data-mrl-ros role="group" aria-label="ROS version"></div>
+      <div class="mrl-chips" data-mrl-veh role="group" aria-label="Vehicle type"></div>
+      <label class="mrl-toggle"><input type="checkbox" data-mrl-active> Hide dormant and archived</label>
+    </div>
+  </div>
+  <p class="mrl-count" data-mrl-count aria-live="polite"></p>
+  <div class="mrl-grid" data-mrl-grid></div>
+  <noscript><p>The interactive catalog needs JavaScript. The same entries appear as tables on each Software page.</p></noscript>
+</div>
+<script type="application/json" id="mrl-catalog-data">{"categories": {"autonomy": "Autonomy frameworks", "control": "Control and allocation", "autopilot": "Autopilots and vehicle interfaces", "navigation": "Localization", "perception": "Perception", "simulation": "Simulation", "drivers": "Navigation sensor drivers", "sonar": "Sonar drivers and libraries", "sensors": "Other sensor drivers", "interfaces": "Messages and interfaces", "comms": "Communication and middleware", "tools": "Tools"}, "packages": [{"name": "Blue", "repo": "https://github.com/Robotic-Decision-Making-Lab/blue", "url": null, "category": "autonomy", "ros": ["ros2"], "vehicles": ["rov", "auv"], "maintainer": "Robotic Decision Making Lab (Oregon State University)", "description": "ROS 2 framework to develop, test, and deploy autonomy on underwater vehicles. Supports the BlueROV2 through ArduSub and MAVROS, Gazebo simulation, and custom controllers from auv_controllers. The default Docker image and CI target ROS 2 Rolling; humble and jazzy branches exist.", "tags": ["bluerov2", "ardusub", "ros2_control", "gazebo"], "note": null, "status": "quiet", "last_commit": "2025-07-26", "branch": "main"}, {"name": "Project11", "repo": "https://github.com/CCOMJHC/project11", "url": null, "category": "autonomy", "ros": ["ros2", "ros1"], "vehicles": ["usv", "any"], "maintainer": "UNH Center for Coastal and Ocean Mapping (CCOM/JHC)", "description": "Community framework for marine robotics that started on hydrographic survey ASVs. The default branch targets ROS 2 Jazzy; Melodic and Noetic branches are legacy.", "tags": ["survey", "hydrography", "asv", "mission planning"], "note": null, "status": "active", "last_commit": "2026-08-05", "branch": "jazzy"}, {"name": "CAMP", "repo": "https://github.com/CCOMJHC/camp", "url": null, "category": "autonomy", "ros": ["ros2", "ros1"], "vehicles": ["usv", "auv"], "maintainer": "UNH CCOM/JHC", "description": "CCOM Autonomous Mission Planner. Mission planning and monitoring operator interface that is part of Project11.", "tags": ["operator interface", "mission planning", "gui"], "note": null, "status": "quiet", "last_commit": "2025-08-28", "branch": "jazzy"}, {"name": "MVP (Marine Vehicle Packages)", "repo": "https://github.com/uri-ocean-robotics/mvp_readme", "url": null, "category": "autonomy", "ros": ["ros2", "ros1"], "vehicles": ["usv", "auv", "rov"], "maintainer": "URI Smart Ocean Systems Lab", "description": "Guidance and control framework for surface and underwater vehicles, with Stonefish simulation interfaces. Active ROS 2 development is on the jazzy-devel branches of mvp_control and mvp_mission.", "tags": ["guidance", "control allocation", "stonefish", "behaviors"], "note": "The mvp_readme instructions describe the ROS Noetic release.", "status": "active", "last_commit": "2026-09-11", "branch": "jazzy-devel"}, {"name": "Orca4", "repo": "https://github.com/clydemcqueen/orca4", "url": null, "category": "autonomy", "ros": ["ros2"], "vehicles": ["rov", "auv"], "maintainer": "Clyde McQueen", "description": "ROS 2 AUV packages for a BlueROV2 running ArduSub. Uses mavros, Nav2 for missions, ORB_SLAM2 stereo visual odometry, and Gazebo Harmonic with the standard buoyancy, hydrodynamics, and thruster plugins.", "tags": ["bluerov2", "ardusub", "nav2", "slam", "gazebo harmonic"], "note": null, "status": "active", "last_commit": "2026-06-26", "branch": "main"}, {"name": "Orca5", "repo": "https://github.com/clydemcqueen/orca5", "url": null, "category": "autonomy", "ros": ["ros2"], "vehicles": ["rov", "auv"], "maintainer": "Clyde McQueen", "description": "Successor to Orca4. Gives visual odometry to a BlueROV2 running ArduSub from ORB_SLAM3 and one down-facing camera, without Nav2 or mavros. Targets ROS 2 Jazzy and Gazebo Harmonic.", "tags": ["bluerov2", "ardusub", "orb_slam3", "visual odometry"], "note": null, "status": "active", "last_commit": "2026-10-03", "branch": "main"}, {"name": "SMaRC 2", "repo": "https://github.com/smarc-project/smarc2", "url": null, "category": "autonomy", "ros": ["ros2"], "vehicles": ["auv"], "maintainer": "Swedish Maritime Robotics Centre (KTH)", "description": "ROS 2 packages for the SMaRC vehicles (for example SAM and LoLo), with documentation, examples, and shared message definitions. Simulation runs in Unity (SMARCUnity). The default branch targets ROS 2 Humble; a jazzy branch is work in progress.", "tags": ["sam", "lolo", "kth", "behavior trees"], "note": null, "status": "active", "last_commit": "2026-10-23", "branch": "humble"}, {"name": "SUAVE", "repo": "https://github.com/kas-lab/suave", "url": null, "category": "autonomy", "ros": ["ros2"], "vehicles": ["auv"], "maintainer": "TU Delft (KAS lab)", "description": "Self-adaptive underwater vehicle exemplar for pipeline inspection research. Uses ROS 2 Humble, Gazebo Harmonic, and ArduSub, and has Docker images for headless experiment campaigns.", "tags": ["self-adaptive", "research exemplar", "docker", "ardusub"], "note": null, "status": "active", "last_commit": "2026-10-18", "branch": "main"}, {"name": "COLA2", "repo": "https://bitbucket.org/iquarobotics/cola2_core", "url": "https://iquarobotics.com/", "category": "autonomy", "ros": ["ros1"], "vehicles": ["auv"], "maintainer": "IQUA Robotics / Universitat de Girona", "description": "Control architecture for the Girona 500 and Sparus II AUVs (navigation, control, and mission execution). The source is readable, but the license limits use to IQUA Robotics licensees.", "tags": ["girona 500", "sparus ii", "proprietary license"], "note": null, "status": "active", "last_commit": "2026-05-11", "branch": "master"}, {"name": "MOOS-IvP", "repo": "https://github.com/moos-ivp/moos-ivp", "url": "https://moos-ivp.org/", "category": "autonomy", "ros": ["none"], "vehicles": ["usv", "auv"], "maintainer": "MIT (oceanai)", "description": "Behavior-based marine autonomy suite (MOOS middleware and the IvP Helm multi-objective behavior arbiter). Not ROS-based, but common on research and naval vehicles. There is no widely maintained public ROS 2 bridge; most teams write a small gateway.", "tags": ["helm", "behaviors", "non-ros", "collision avoidance"], "note": null, "status": "active", "last_commit": "2026-10-16", "branch": "main"}, {"name": "DUNE", "repo": "https://github.com/LSTS/dune", "url": null, "category": "autonomy", "ros": ["none"], "vehicles": ["usv", "auv"], "maintainer": "LSTS (University of Porto)", "description": "Unified Navigation Environment. Onboard software of the LSTS toolchain, which uses the IMC message protocol. Not ROS-based.", "tags": ["lsts", "imc", "non-ros"], "note": null, "status": "active", "last_commit": "2026-10-20", "branch": "master"}, {"name": "auv_controllers", "repo": "https://github.com/Robotic-Decision-Making-Lab/auv_controllers", "url": null, "category": "control", "ros": ["ros2"], "vehicles": ["rov", "auv"], "maintainer": "Robotic Decision Making Lab (Oregon State University)", "description": "ros2_control controllers for underwater vehicles, including twist, trajectory, impedance, and whole-body controllers, a thruster allocation matrix controller, and thruster controllers. Supports ROS 2 Rolling and Jazzy.", "tags": ["ros2_control", "thrust allocation", "chained controllers"], "note": null, "status": "active", "last_commit": "2026-08-15", "branch": "main"}, {"name": "mvp_control", "repo": "https://github.com/uri-ocean-robotics/mvp_control", "url": null, "category": "control", "ros": ["ros2", "ros1"], "vehicles": ["usv", "auv", "rov"], "maintainer": "URI Smart Ocean Systems Lab", "description": "Optimization-based control allocation for multi-thruster vehicles, including articulated thrusters. ROS 2 on jazzy-devel, ROS 1 on noetic-devel.", "tags": ["control allocation", "quadratic programming", "azimuth"], "note": null, "status": "active", "last_commit": "2026-09-11", "branch": "jazzy-devel"}, {"name": "mvp_mission", "repo": "https://github.com/uri-ocean-robotics/mvp_mission", "url": null, "category": "control", "ros": ["ros2", "ros1"], "vehicles": ["usv", "auv", "rov"], "maintainer": "URI Smart Ocean Systems Lab", "description": "Behavior-based mission and guidance layer for MVP vehicles. ROS 2 on jazzy-devel.", "tags": ["guidance", "behaviors", "mission"], "note": null, "status": "active", "last_commit": "2026-09-12", "branch": "jazzy-devel"}, {"name": "thruster_manager", "repo": "https://github.com/CentraleNantesROV/thruster_manager", "url": null, "category": "control", "ros": ["ros2"], "vehicles": ["rov", "auv"], "maintainer": "Centrale Nantes", "description": "Maps a desired wrench to thruster forces. Reads the thruster layout from the URDF on robot_description; usable as a node, a component, or a C++ class (Eigen).", "tags": ["thrust allocation", "urdf", "pseudo-inverse"], "note": null, "status": "quiet", "last_commit": "2025-04-10", "branch": "main"}, {"name": "ros2_control", "repo": "https://github.com/ros-controls/ros2_control", "url": "https://control.ros.org/", "category": "control", "ros": ["ros2"], "vehicles": ["any"], "maintainer": "ros-controls", "description": "Standard ROS 2 framework for hardware interfaces and real-time controllers. Underwater controllers such as auv_controllers build on it.", "tags": ["hardware interface", "controllers"], "note": null, "status": "active", "last_commit": "2026-10-19", "branch": "master"}, {"name": "ArduPilot (ArduSub, Rover)", "repo": "https://github.com/ArduPilot/ardupilot", "url": "https://ardupilot.org/", "category": "autopilot", "ros": ["ros2", "none"], "vehicles": ["rov", "auv", "usv"], "maintainer": "ArduPilot project", "description": "Open-source autopilot. ArduSub runs on the BlueROV2 and many hobby ROVs; the Rover firmware supports boats. Connects to ROS through MAVLink (mavros) or the built-in DDS interface for ROS 2.", "tags": ["ardusub", "mavlink", "boat", "firmware"], "note": null, "status": "active", "last_commit": "2026-10-25", "branch": "master"}, {"name": "ardusub_driver", "repo": "https://github.com/Robotic-Decision-Making-Lab/ardusub_driver", "url": null, "category": "autopilot", "ros": ["ros2"], "vehicles": ["rov", "auv"], "maintainer": "Robotic Decision Making Lab (Oregon State University)", "description": "Packages that integrate ROS 2 with vehicles that run ArduSub, such as the BlueROV2. Supports ROS 2 Rolling and Jazzy.", "tags": ["ardusub", "bluerov2", "mavros"], "note": null, "status": "active", "last_commit": "2026-03-30", "branch": "main"}, {"name": "mavros", "repo": "https://github.com/mavlink/mavros", "url": null, "category": "autopilot", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "MAVLink project", "description": "MAVLink to ROS bridge for ArduPilot and PX4 vehicles. The default branch is ros2.", "tags": ["mavlink", "bridge"], "note": null, "status": "active", "last_commit": "2026-10-24", "branch": "ros2"}, {"name": "PX4 Autopilot", "repo": "https://github.com/PX4/PX4-Autopilot", "url": "https://px4.io/", "category": "autopilot", "ros": ["ros2", "none"], "vehicles": ["usv", "auv"], "maintainer": "Dronecode Foundation", "description": "Open-source autopilot with boat support and ROS 2 integration through uXRCE-DDS. Check the PX4 documentation for the current status of underwater frames.", "tags": ["firmware", "uxrce-dds"], "note": null, "status": "active", "last_commit": "2026-10-25", "branch": "main"}, {"name": "BlueOS", "repo": "https://github.com/bluerobotics/BlueOS", "url": "https://blueos.cloud/", "category": "autopilot", "ros": ["none"], "vehicles": ["rov", "usv"], "maintainer": "Blue Robotics", "description": "Onboard software platform for Blue Robotics vehicles (Raspberry Pi based). Manages ArduPilot firmware, video, and Docker-based extensions; ROS can run as an extension.", "tags": ["companion computer", "extensions", "bluerov2", "blueboat"], "note": null, "status": "active", "last_commit": "2026-10-23", "branch": "master"}, {"name": "robot_localization", "repo": "https://github.com/cra-ros-pkg/robot_localization", "url": null, "category": "navigation", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "Tom Moore and contributors", "description": "EKF and UKF state estimation for any number of odometry, twist, pose, and IMU inputs, plus navsat_transform_node to fuse GNSS fixes. The most common fusion node on ROS marine vehicles.", "tags": ["ekf", "ukf", "sensor fusion", "navsat_transform", "dvl"], "note": null, "status": "active", "last_commit": "2026-07-16", "branch": "rolling-devel"}, {"name": "fuse", "repo": "https://github.com/locusrobotics/fuse", "url": null, "category": "navigation", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "Locus Robotics", "description": "Plugin-based factor-graph state estimation framework (Ceres solver). Alternative to filter-based fusion when you need smoothing or custom constraints.", "tags": ["factor graph", "smoothing", "ceres"], "note": null, "status": "active", "last_commit": "2026-06-18", "branch": "devel"}, {"name": "GTSAM", "repo": "https://github.com/borglab/gtsam", "url": "https://gtsam.org/", "category": "navigation", "ros": ["none"], "vehicles": ["any"], "maintainer": "Georgia Tech BORG lab", "description": "C++ and Python factor-graph library (iSAM2) used by many underwater SLAM systems, for example sonar-SLAM.", "tags": ["factor graph", "isam2", "slam backend"], "note": null, "status": "active", "last_commit": "2026-10-25", "branch": "develop"}, {"name": "Nav2", "repo": "https://github.com/ros-navigation/navigation2", "url": "https://docs.nav2.org/", "category": "navigation", "ros": ["ros2"], "vehicles": ["usv", "any"], "maintainer": "Open Navigation and contributors", "description": "ROS 2 navigation framework (planners, controllers, behavior trees, costmaps). Used for 2D navigation on surface vehicles and in some underwater stacks such as Orca4.", "tags": ["path planning", "costmap", "behavior tree"], "note": null, "status": "active", "last_commit": "2026-10-22", "branch": "main"}, {"name": "mesh_navigation", "repo": "https://github.com/uos/mesh_navigation", "url": null, "category": "navigation", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "Osnabrück University", "description": "Path planning and navigation on 3D triangle meshes, an option for terrain and structures that a 2D costmap cannot represent.", "tags": ["mesh", "3d planning"], "note": null, "status": "active", "last_commit": "2026-10-13", "branch": "main"}, {"name": "geographic_info", "repo": "https://github.com/ros-geographic-info/geographic_info", "url": null, "category": "navigation", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "ros-geographic-info", "description": "geographic_msgs (GeoPoint, GeoPose, and more) and the geodesy package for UTM and WGS 84 conversions in ROS.", "tags": ["utm", "wgs84", "geodesy", "geopose"], "note": null, "status": "active", "last_commit": "2026-08-17", "branch": "master"}, {"name": "GeographicLib", "repo": "https://github.com/geographiclib/geographiclib", "url": "https://geographiclib.sourceforge.io/", "category": "navigation", "ros": ["none"], "vehicles": ["any"], "maintainer": "Charles Karney", "description": "Accurate geodesic, UTM/UPS, local Cartesian (ENU), and geoid conversions in C++ with bindings for other languages.", "tags": ["geodesy", "enu", "utm", "geoid"], "note": null, "status": "active", "last_commit": "2025-11-14", "branch": "main"}, {"name": "pyproj", "repo": "https://github.com/pyproj4/pyproj", "url": null, "category": "navigation", "ros": ["none"], "vehicles": ["any"], "maintainer": "pyproj4", "description": "Python interface to PROJ for coordinate reference system transforms. Useful in post-processing and mission planning tools.", "tags": ["proj", "crs", "python"], "note": null, "status": "active", "last_commit": "2026-10-19", "branch": "main"}, {"name": "sonar_image_proc", "repo": "https://github.com/apl-ocean-engineering/sonar_image_proc", "url": null, "category": "perception", "ros": ["ros2", "ros1"], "vehicles": ["rov", "auv"], "maintainer": "UW Applied Physics Laboratory", "description": "Processing and visualization for forward-looking imaging sonar data that uses marine_acoustic_msgs. The ros2 branch was tested with Blueprint Oculus M1200d and M750d sonars.", "tags": ["imaging sonar", "fls", "visualization", "oculus"], "note": null, "status": "active", "last_commit": "2026-09-15", "branch": "ros2"}, {"name": "sonar-SLAM (BRUCE)", "repo": "https://github.com/jake3991/sonar-SLAM", "url": null, "category": "perception", "ros": ["ros1"], "vehicles": ["rov"], "maintainer": "Stevens Institute of Technology (RFAL)", "description": "Graph-based pose SLAM for a BlueROV2 that fuses DVL and IMU dead reckoning with imaging sonar observations, using the iSAM2 backend.", "tags": ["sonar slam", "isam2", "bluerov2"], "note": null, "status": "dormant", "last_commit": "2023-06-13", "branch": "main"}, {"name": "SVIn", "repo": "https://github.com/AutonomousFieldRoboticsLab/SVIn", "url": null, "category": "perception", "ros": ["ros1"], "vehicles": ["auv", "rov"], "maintainer": "Autonomous Field Robotics Lab (University of South Carolina)", "description": "Tightly coupled sonar-visual-inertial-depth SLAM for real-time underwater navigation, based on OKVIS with loop closing.", "tags": ["visual inertial", "slam", "sonar", "depth"], "note": null, "status": "active", "last_commit": "2026-10-08", "branch": "main"}, {"name": "ORB-SLAM3", "repo": "https://github.com/UZ-SLAMLab/ORB_SLAM3", "url": null, "category": "perception", "ros": ["none"], "vehicles": ["any"], "maintainer": "University of Zaragoza", "description": "Visual and visual-inertial SLAM library (mono, stereo, RGB-D). Not marine-specific, but used underwater, for example in Orca5.", "tags": ["visual slam", "vio"], "note": null, "status": "dormant", "last_commit": "2022-02-10", "branch": "master"}, {"name": "OpenVINS", "repo": "https://github.com/rpng/open_vins", "url": "https://docs.openvins.com/", "category": "perception", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "University of Delaware (RPNG)", "description": "Filter-based visual-inertial odometry with ROS 1 and ROS 2 support. A common baseline for underwater visual navigation research.", "tags": ["vio", "msckf"], "note": null, "status": "active", "last_commit": "2025-11-30", "branch": "master"}, {"name": "RTAB-Map ROS", "repo": "https://github.com/introlab/rtabmap_ros", "url": null, "category": "perception", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "IntRoLab (Université de Sherbrooke)", "description": "Graph-based RGB-D, stereo, and lidar SLAM with ROS wrappers. Used for structure mapping on surface vehicles and in clear water.", "tags": ["slam", "stereo", "lidar"], "note": null, "status": "active", "last_commit": "2026-10-20", "branch": "ros2"}, {"name": "image_pipeline", "repo": "https://github.com/ros-perception/image_pipeline", "url": null, "category": "perception", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "ros-perception", "description": "Camera calibration, rectification, and stereo processing. Calibrate underwater cameras in water, because the housing port changes the intrinsics.", "tags": ["camera calibration", "stereo", "rectification"], "note": null, "status": "active", "last_commit": "2026-10-16", "branch": "rolling"}, {"name": "MB-System", "repo": "https://github.com/dwcaress/MB-System", "url": "https://www.mbari.org/technology/mb-system/", "category": "perception", "ros": ["none"], "vehicles": ["any"], "maintainer": "MBARI and Lamont-Doherty Earth Observatory", "description": "Open-source processing and display of swath bathymetry (multibeam) and sidescan sonar data. The standard post-processing toolkit in seafloor mapping.", "tags": ["bathymetry", "multibeam", "sidescan", "post-processing"], "note": null, "status": "active", "last_commit": "2026-10-24", "branch": "master"}, {"name": "VRX", "repo": "https://github.com/osrf/vrx", "url": "https://github.com/osrf/vrx/wiki", "category": "simulation", "ros": ["ros2"], "vehicles": ["usv"], "maintainer": "Open Robotics / RoboNation", "description": "Virtual RobotX surface vehicle simulation (WAM-V, waves, wind, competition tasks). The default branch runs Gazebo Harmonic with ROS 2 Jazzy; the humble branch keeps Gazebo Garden with ROS 2 Humble.", "tags": ["gazebo harmonic", "wam-v", "robotx", "waves", "competition"], "note": null, "status": "active", "last_commit": "2026-01-26", "branch": "jazzy"}, {"name": "POSIM (DAVE for ROS 2)", "repo": "https://github.com/IOES-Lab/POSIM", "url": "https://ioes-lab.github.io/POSIM/", "category": "simulation", "ros": ["ros2"], "vehicles": ["auv", "rov"], "maintainer": "IOES Lab and DAVE contributors", "description": "The ROS 2 and Gazebo Sim migration of the DAVE underwater simulator, now named POSIM. Targets ROS 2 Lyrical on Ubuntu 26.04 and Gazebo Jetty, with Docker images. The earlier port is on the ros2 branch of IOES-Lab/dave.", "tags": ["gazebo jetty", "uuv", "sonar", "dvl", "docker"], "note": null, "status": "active", "last_commit": "2026-10-21", "branch": "main"}, {"name": "DAVE (ROS 1, legacy)", "repo": "https://github.com/Field-Robotics-Lab/dave", "url": "https://field-robotics-lab.github.io/dave.doc/", "category": "simulation", "ros": ["ros1"], "vehicles": ["auv", "rov"], "maintainer": "Field Robotics Lab (NPS)", "description": "Original DAVE underwater simulator on ROS 1 and Gazebo Classic, both now end of life. No commits since 2023; use POSIM for new work.", "tags": ["gazebo classic", "uuv", "noetic"], "note": null, "status": "quiet", "last_commit": "2023-12-04", "branch": "master"}, {"name": "Stonefish", "repo": "https://github.com/patrykcieslak/stonefish", "url": "https://stonefish.readthedocs.io/", "category": "simulation", "ros": ["none"], "vehicles": ["auv", "rov", "usv"], "maintainer": "Patryk Cieślak (Universitat de Girona)", "description": "C++ library for marine robot simulation with hydrodynamics computed from geometry, plus sonar, DVL, camera, and manipulator models. Use it from ROS through stonefish_ros2.", "tags": ["hydrodynamics", "opengl", "sonar simulation"], "note": null, "status": "active", "last_commit": "2026-07-14", "branch": "master"}, {"name": "stonefish_ros2", "repo": "https://github.com/patrykcieslak/stonefish_ros2", "url": null, "category": "simulation", "ros": ["ros2"], "vehicles": ["auv", "rov", "usv"], "maintainer": "Patryk Cieślak (Universitat de Girona)", "description": "ROS 2 interface and standard simulator node for Stonefish. Loads scenarios from XML files; the package version must match the Stonefish library version.", "tags": ["stonefish", "scenario xml"], "note": null, "status": "active", "last_commit": "2025-12-04", "branch": "master"}, {"name": "HoloOcean", "repo": null, "url": "https://byu-holoocean.github.io/holoocean-docs/", "category": "simulation", "ros": ["ros2", "none"], "vehicles": ["auv", "rov", "usv"], "maintainer": "BYU FRoSt Lab", "description": "Underwater simulator on Unreal Engine 5.3 (since version 2.0) with a Python API and imaging sonar, DVL, and camera models. The engine source repository needs a GitHub account linked to Epic Games; the ROS 2 bridge is public.", "tags": ["unreal engine", "python", "sonar simulation", "reinforcement learning"], "note": null, "status": "active", "last_commit": "2026-10-09", "branch": "main"}, {"name": "holoocean-ros", "repo": "https://github.com/byu-holoocean/holoocean-ros", "url": null, "category": "simulation", "ros": ["ros2"], "vehicles": ["auv", "rov", "usv"], "maintainer": "BYU FRoSt Lab", "description": "Official ROS 2 bridge for HoloOcean, tested on Humble and Jazzy.", "tags": ["holoocean", "bridge"], "note": null, "status": "active", "last_commit": "2026-10-09", "branch": "main"}, {"name": "UNav-Sim", "repo": "https://github.com/open-airlab/UNav-Sim", "url": null, "category": "simulation", "ros": ["ros2", "ros1"], "vehicles": ["rov", "auv"], "maintainer": "Aarhus University (AiR Lab)", "description": "Underwater simulator built on Unreal Engine 5 and AirSim with ROS 1 and ROS 2 interfaces, aimed at visual navigation.", "tags": ["unreal engine 5", "airsim", "vision"], "note": null, "status": "quiet", "last_commit": "2025-05-02", "branch": "main"}, {"name": "OceanSim", "repo": "https://github.com/umfieldrobotics/OceanSim", "url": null, "category": "simulation", "ros": ["ros2"], "vehicles": ["rov", "auv"], "maintainer": "University of Michigan Field Robotics Group", "description": "GPU-accelerated underwater perception simulation (camera, sonar, and DVL models) as an NVIDIA Isaac Sim 5.0 extension. ROS 2 support is on the ROS2 branch through the Isaac Sim ROS 2 bridge.", "tags": ["isaac sim", "gpu", "sonar simulation", "rendering"], "note": null, "status": "active", "last_commit": "2026-10-04", "branch": "main"}, {"name": "MARUS 2", "repo": "https://github.com/MARUSimulator/marus2-core", "url": "https://github.com/MARUSimulator/marus2-example", "category": "simulation", "ros": ["ros2"], "vehicles": ["usv", "auv"], "maintainer": "University of Zagreb (LABUST)", "description": "Marine robotics simulator in Unity 6 with a gRPC adapter to ROS 2 (marus2_ros_adapter). The original MARUS (Unity 2021.3, ROS 1 adapter) is in marus-core.", "tags": ["unity", "grpc", "multi-vehicle"], "note": null, "status": "active", "last_commit": "2026-10-02", "branch": "main"}, {"name": "LRAUV simulation", "repo": "https://github.com/osrf/lrauv", "url": null, "category": "simulation", "ros": ["none"], "vehicles": ["auv"], "maintainer": "Open Robotics / MBARI", "description": "Gazebo simulation of MBARI's Tethys-class Long-Range AUV that can run the real LRAUV controller binaries. Archived in 2025; its general-purpose plugins are upstreamed to gz-sim.", "tags": ["gazebo", "mbari", "tethys"], "note": null, "status": "archived", "last_commit": "2025-03-18", "branch": "main"}, {"name": "MBARI WEC", "repo": "https://github.com/osrf/mbari_wec", "url": "https://osrf.github.io/mbari_wec/main/", "category": "simulation", "ros": ["ros2"], "vehicles": ["any"], "maintainer": "Open Robotics / MBARI", "description": "Gazebo simulation and ROS 2 interfaces for MBARI's wave energy converter buoy, with the same API for the physical and simulated buoy.", "tags": ["wave energy", "buoy", "gazebo"], "note": null, "status": "quiet", "last_commit": "2025-09-11", "branch": "main"}, {"name": "gz-sim maritime systems", "repo": "https://github.com/gazebosim/gz-sim", "url": "https://gazebosim.org/", "category": "simulation", "ros": ["ros2", "none"], "vehicles": ["any"], "maintainer": "Open Robotics", "description": "Gazebo Sim ships the Buoyancy, Hydrodynamics, Thruster, LiftDrag, BuoyancyEngine, and DopplerVelocityLog systems that most current marine Gazebo projects use. There is no built-in wave system. Connect to ROS 2 through ros_gz.", "tags": ["buoyancy", "hydrodynamics", "thruster plugin", "ros_gz"], "note": null, "status": "active", "last_commit": "2026-10-26", "branch": "main"}, {"name": "ros_gz", "repo": "https://github.com/gazebosim/ros_gz", "url": null, "category": "simulation", "ros": ["ros2"], "vehicles": ["any"], "maintainer": "Open Robotics", "description": "Bridge and launch integration between ROS 2 and Gazebo Sim.", "tags": ["bridge", "gazebo"], "note": null, "status": "active", "last_commit": "2026-10-22", "branch": "ros2"}, {"name": "ardupilot_gazebo", "repo": "https://github.com/ArduPilot/ardupilot_gazebo", "url": null, "category": "simulation", "ros": ["ros2", "none"], "vehicles": ["rov", "usv"], "maintainer": "ArduPilot project", "description": "Gazebo plugin that connects ArduPilot software-in-the-loop (for example ArduSub) to Gazebo Sim. Used by Orca4, Orca5, bluerov2_ignition, and SUAVE.", "tags": ["sitl", "ardusub", "gazebo harmonic"], "note": null, "status": "active", "last_commit": "2026-10-25", "branch": "main"}, {"name": "bluerov2_ignition", "repo": "https://github.com/clydemcqueen/bluerov2_ignition", "url": null, "category": "simulation", "ros": ["none"], "vehicles": ["rov"], "maintainer": "Clyde McQueen", "description": "BlueROV2 base and heavy models for Gazebo Harmonic that use the standard buoyancy, hydrodynamics, and thruster systems. Proof-of-concept status per the README.", "tags": ["bluerov2", "gazebo harmonic", "model"], "note": null, "status": "active", "last_commit": "2026-10-10", "branch": "main"}, {"name": "asv_wave_sim", "repo": "https://github.com/srmainwaring/asv_wave_sim", "url": null, "category": "simulation", "ros": ["none"], "vehicles": ["usv"], "maintainer": "Rhys Mainwaring", "description": "Gazebo plugins for ocean wave fields and wave forces on surface vessels.", "tags": ["waves", "gazebo", "hydrostatics"], "note": null, "status": "quiet", "last_commit": "2025-01-02", "branch": "master"}, {"name": "rs750", "repo": "https://github.com/srmainwaring/rs750", "url": null, "category": "simulation", "ros": ["none"], "vehicles": ["usv"], "maintainer": "Rhys Mainwaring", "description": "Racing Sparrow 750 sailboat model and wind simulation for Gazebo, with ArduPilot integration.", "tags": ["sailboat", "wind", "ardupilot"], "note": null, "status": "dormant", "last_commit": "2023-03-27", "branch": "main"}, {"name": "MBZIRC simulator", "repo": "https://github.com/osrf/mbzirc", "url": null, "category": "simulation", "ros": ["ros2"], "vehicles": ["usv"], "maintainer": "Open Robotics", "description": "Simulation environment for the MBZIRC Maritime Grand Challenge (USV with UAVs) on Ignition Fortress and ROS 2 Galactic, both end of life. The challenge ended in 2024; use it for reference only.", "tags": ["competition", "multi-domain", "uav"], "note": null, "status": "dormant", "last_commit": "2022-08-31", "branch": "main"}, {"name": "TurtleBoat", "repo": "https://github.com/bartboogmans/TurtleBoat", "url": null, "category": "simulation", "ros": ["ros2", "ros1"], "vehicles": ["usv"], "maintainer": "Bart Boogmans (TU Delft)", "description": "Lightweight vessel dynamics simulator for learning ship control. Default branch is ros2.", "tags": ["education", "vessel dynamics"], "note": null, "status": "quiet", "last_commit": "2024-06-12", "branch": "ros2"}, {"name": "ds_sim", "repo": "https://bitbucket.org/whoidsl/ds_sim", "url": null, "category": "simulation", "ros": ["ros1"], "vehicles": ["auv", "rov"], "maintainer": "WHOI Deep Submergence Lab", "description": "Gazebo plugins and utilities (DVL, sensors, environment) from the WHOI Deep Submergence Lab. A GitHub mirror is at Field-Robotics-Lab/ds_sim.", "tags": ["whoi", "dvl plugin", "gazebo classic"], "note": null, "status": "active", "last_commit": "2026-09-04", "branch": "master"}, {"name": "Plankton", "repo": "https://github.com/Liquid-ai/Plankton", "url": null, "category": "simulation", "ros": ["ros2"], "vehicles": ["auv", "rov"], "maintainer": "Liquid AI", "description": "ROS 2 Foxy port of UUV Simulator for Gazebo Classic. Both are end of life, and there are no commits since 2021.", "tags": ["uuv simulator", "gazebo classic"], "note": null, "status": "dormant", "last_commit": "2021-11-09", "branch": "master"}, {"name": "UUV Simulator", "repo": "https://github.com/uuvsimulator/uuv_simulator", "url": null, "category": "simulation", "ros": ["ros1"], "vehicles": ["auv", "rov"], "maintainer": "uuvsimulator", "description": "Historic Gazebo Classic underwater simulator, archived in 2023. Many current tools derive from its plugins.", "tags": ["gazebo classic", "legacy"], "note": null, "status": "archived", "last_commit": "2020-06-15", "branch": "master"}, {"name": "unity-arduboat-sim", "repo": "https://github.com/chrisdalke/unity-arduboat-sim", "url": null, "category": "simulation", "ros": ["none"], "vehicles": ["usv"], "maintainer": "Chris Dalke", "description": "Unity simulation of an ArduRover boat for software-in-the-loop testing.", "tags": ["unity", "ardupilot"], "note": null, "status": "dormant", "last_commit": "2023-10-09", "branch": "main"}, {"name": "sbg_ros2_driver", "repo": "https://github.com/SBG-Systems/sbg_ros2_driver", "url": null, "category": "drivers", "ros": ["ros2"], "vehicles": ["any"], "maintainer": "SBG Systems (official)", "description": "Official ROS 2 driver for SBG Systems IMU, AHRS, and INS products (for example Ellipse).", "tags": ["ins", "imu", "gnss", "official"], "note": null, "status": "active", "last_commit": "2026-07-22", "branch": "master"}, {"name": "microstrain_inertial", "repo": "https://github.com/LORD-MicroStrain/microstrain_inertial", "url": null, "category": "drivers", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "MicroStrain by HBK (official)", "description": "Official ROS and ROS 2 driver for MicroStrain inertial sensors (3DM-GX5, CV7, GQ7, and others). The default branch is ros2.", "tags": ["imu", "ins", "ahrs", "official"], "note": null, "status": "active", "last_commit": "2026-10-01", "branch": "ros2"}, {"name": "Xsens MTi ROS driver", "repo": "https://github.com/xsenssupport/Xsens_MTi_ROS_Driver_and_Ntrip_Client", "url": null, "category": "drivers", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "Movella / Xsens support", "description": "ROS 1 and ROS 2 drivers for Xsens MTi sensors, built on the Xsens Device API, with an NTRIP client for RTK corrections. The ros2 branch supports Foxy, Humble, and Jazzy.", "tags": ["imu", "ahrs", "rtk", "ntrip"], "note": null, "status": "active", "last_commit": "2026-02-02", "branch": "main"}, {"name": "vectornav", "repo": "https://github.com/dawonn/vectornav", "url": null, "category": "drivers", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "Community (dawonn)", "description": "Community driver for VectorNav VN-100, VN-200, and VN-300; ROS 2 on the ros2 branch. No official VectorNav ROS 2 driver was found.", "tags": ["imu", "ins"], "note": null, "status": "quiet", "last_commit": "2025-03-07", "branch": "ros2"}, {"name": "Advanced Navigation ROS 2 driver", "repo": "https://github.com/advanced-navigation/ros2-driver", "url": null, "category": "drivers", "ros": ["ros2"], "vehicles": ["any"], "maintainer": "Advanced Navigation", "description": "Example ROS 2 driver from Advanced Navigation for its INS products, tested on Ubuntu 22.04 and ROS 2 Humble.", "tags": ["ins", "gnss", "fog"], "note": null, "status": "quiet", "last_commit": "2025-04-23", "branch": "master"}, {"name": "waterlinked_dvl", "repo": "https://github.com/waterlinked/waterlinked_dvl", "url": null, "category": "drivers", "ros": ["ros2"], "vehicles": ["rov", "auv"], "maintainer": "Water Linked (official, contributed by Oregon State RDML)", "description": "Official ROS 2 driver for the Water Linked DVL A50 and A125, with humble and jazzy branches.", "tags": ["dvl", "a50", "a125", "official"], "note": null, "status": "active", "last_commit": "2026-08-20", "branch": "main"}, {"name": "Nortek Nucleus driver", "repo": "https://github.com/nortekgroup/nucleus_driver", "url": null, "category": "drivers", "ros": ["ros2", "none"], "vehicles": ["rov", "auv"], "maintainer": "Nortek (official)", "description": "Official Python driver for the Nortek Nucleus navigation sensor (DVL with AHRS and pressure), with ROS 2 packages and a BlueOS extension.", "tags": ["dvl", "nucleus", "ahrs", "official"], "note": null, "status": "active", "last_commit": "2026-10-12", "branch": "main"}, {"name": "Water Linked DVL A50 driver (ROS 1)", "repo": "https://github.com/waterlinked/dvl-a50-ros-driver", "url": null, "category": "drivers", "ros": ["ros1"], "vehicles": ["rov", "auv"], "maintainer": "Water Linked", "description": "Original ROS 1 driver for the Water Linked DVL A50. Archived; use waterlinked_dvl for ROS 2.", "tags": ["dvl", "a50"], "note": null, "status": "archived", "last_commit": "2024-02-26", "branch": "master"}, {"name": "nmea_navsat_driver", "repo": "https://github.com/ros-drivers/nmea_navsat_driver", "url": null, "category": "drivers", "ros": ["ros2", "ros1"], "vehicles": ["usv", "any"], "maintainer": "ros-drivers", "description": "Generic NMEA 0183 GNSS driver that publishes sensor_msgs/NavSatFix. ROS 2 on the ros2 branch.", "tags": ["gnss", "gps", "nmea"], "note": null, "status": "active", "last_commit": "2026-10-18", "branch": "ros2"}, {"name": "ublox_dgnss", "repo": "https://github.com/aussierobots/ublox_dgnss", "url": null, "category": "drivers", "ros": ["ros2"], "vehicles": ["usv", "any"], "maintainer": "Aussie Robots", "description": "ROS 2 driver for u-blox ZED-F9P and related receivers over USB, with RTK support.", "tags": ["gnss", "rtk", "u-blox"], "note": null, "status": "active", "last_commit": "2026-10-08", "branch": "main"}, {"name": "ublox", "repo": "https://github.com/KumarRobotics/ublox", "url": null, "category": "drivers", "ros": ["ros2", "ros1"], "vehicles": ["usv", "any"], "maintainer": "KumarRobotics", "description": "Long-standing u-blox GNSS driver; ROS 2 on the ros2 branch.", "tags": ["gnss", "u-blox"], "note": null, "status": "quiet", "last_commit": "2025-09-26", "branch": "ros2"}, {"name": "swiftnav-ros2", "repo": "https://github.com/swift-nav/swiftnav-ros2", "url": null, "category": "drivers", "ros": ["ros2"], "vehicles": ["usv", "any"], "maintainer": "Swift Navigation (official)", "description": "ROS 2 driver for Swift Navigation GNSS receivers (Piksi Multi, Duro).", "tags": ["gnss", "rtk"], "note": null, "status": "quiet", "last_commit": "2024-07-22", "branch": "master"}, {"name": "ping360_sonar", "repo": "https://github.com/CentraleNantesRobotics/ping360_sonar", "url": null, "category": "sonar", "ros": ["ros2", "ros1"], "vehicles": ["rov", "auv"], "maintainer": "Centrale Nantes", "description": "Driver for the Blue Robotics Ping360 scanning imaging sonar (image and scan output). The default branch is ros2.", "tags": ["ping360", "imaging sonar", "blue robotics"], "note": null, "status": "active", "last_commit": "2026-07-02", "branch": "ros2"}, {"name": "bluerobotics_ping360", "repo": "https://github.com/GSO-soslab/bluerobotics_ping360", "url": null, "category": "sonar", "ros": ["ros2"], "vehicles": ["rov", "auv"], "maintainer": "URI Smart Ocean Systems Lab", "description": "ROS 2 Jazzy driver for the Ping360 with serial and UDP links, sector scanning, and point cloud output.", "tags": ["ping360", "imaging sonar"], "note": null, "status": "quiet", "last_commit": "2025-05-13", "branch": "jazzy-devel"}, {"name": "blueprint_oculus_sonar", "repo": "https://github.com/GSO-soslab/blueprint_oculus_sonar", "url": null, "category": "sonar", "ros": ["ros2"], "vehicles": ["rov", "auv"], "maintainer": "URI Smart Ocean Systems Lab", "description": "ROS 2 Jazzy driver for Blueprint Subsea Oculus multibeam imaging sonars. Publishes polar and Cartesian images over UDP.", "tags": ["oculus", "imaging sonar", "fls"], "note": null, "status": "active", "last_commit": "2025-11-16", "branch": "jazzy-devel"}, {"name": "oculus_ros2", "repo": "https://github.com/ENSTABretagneRobotics/oculus_ros2", "url": null, "category": "sonar", "ros": ["ros2"], "vehicles": ["rov", "auv"], "maintainer": "ENSTA Bretagne", "description": "Community ROS 2 driver for Blueprint Subsea Oculus sonars, built on the oculus_driver library.", "tags": ["oculus", "imaging sonar"], "note": null, "status": "quiet", "last_commit": "2023-11-29", "branch": "master"}, {"name": "liboculus", "repo": "https://github.com/apl-ocean-engineering/liboculus", "url": null, "category": "sonar", "ros": ["none"], "vehicles": ["rov", "auv"], "maintainer": "UW Applied Physics Laboratory", "description": "C++ library for the Blueprint Subsea Oculus sonar network protocol, used by ROS drivers.", "tags": ["oculus", "protocol"], "note": null, "status": "active", "last_commit": "2026-09-17", "branch": "main"}, {"name": "cerulean_surveyor_mbes", "repo": "https://github.com/GSO-soslab/cerulean_surveyor_mbes", "url": null, "category": "sonar", "ros": ["ros2"], "vehicles": ["rov", "auv", "usv"], "maintainer": "URI Smart Ocean Systems Lab", "description": "ROS 2 driver for the Cerulean Surveyor 240-16 multibeam echosounder (raw and XYZ ranges, serial or UDP).", "tags": ["multibeam", "cerulean", "mbes"], "note": null, "status": "active", "last_commit": "2026-03-13", "branch": "main"}, {"name": "blueos-ros2", "repo": "https://github.com/itskalvik/blueos-ros2", "url": null, "category": "sonar", "ros": ["ros2"], "vehicles": ["rov", "usv"], "maintainer": "Community (Kalvik Jakkala)", "description": "Community BlueOS extension that runs ROS 2 Jazzy on Blue Robotics vehicles and bundles Ping1D, Ping360, and Sonoptix Echo drivers. Blue Robotics does not ship an official ROS 2 driver.", "tags": ["blueos", "ping360", "ping2", "extension"], "note": null, "status": "quiet", "last_commit": "2025-08-04", "branch": "main"}, {"name": "ping-python", "repo": "https://github.com/bluerobotics/ping-python", "url": null, "category": "sonar", "ros": ["none"], "vehicles": ["rov", "auv", "usv"], "maintainer": "Blue Robotics (official)", "description": "Python library for Blue Robotics Ping-protocol devices (Ping2 echosounder, Ping360). Base for custom ROS nodes.", "tags": ["ping2", "ping360", "echosounder"], "note": null, "status": "active", "last_commit": "2026-08-05", "branch": "master"}, {"name": "usb_cam", "repo": "https://github.com/ros-drivers/usb_cam", "url": null, "category": "sensors", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "ros-drivers", "description": "Driver for V4L2 USB cameras, common for low-cost ROV cameras.", "tags": ["camera", "v4l2"], "note": null, "status": "active", "last_commit": "2026-02-26", "branch": "main"}, {"name": "ros2_v4l2_camera", "repo": "https://github.com/tier4/ros2_v4l2_camera", "url": null, "category": "sensors", "ros": ["ros2"], "vehicles": ["any"], "maintainer": "TIER IV", "description": "ROS 2 driver for Video4Linux2 cameras.", "tags": ["camera", "v4l2"], "note": null, "status": "active", "last_commit": "2026-09-24", "branch": "galactic"}, {"name": "gscam", "repo": "https://github.com/ros-drivers/gscam", "url": null, "category": "sensors", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "ros-drivers", "description": "GStreamer-based camera driver. Useful for the H.264 RTP/UDP video streams that ROV cameras and BlueOS publish.", "tags": ["camera", "gstreamer", "video stream"], "note": null, "status": "active", "last_commit": "2026-02-16", "branch": "ros2"}, {"name": "ouster-ros", "repo": "https://github.com/ouster-lidar/ouster-ros", "url": null, "category": "sensors", "ros": ["ros2", "ros1"], "vehicles": ["usv"], "maintainer": "Ouster (official)", "description": "Official driver for Ouster lidars, often used on surface vehicles for docking and obstacle detection.", "tags": ["lidar"], "note": null, "status": "active", "last_commit": "2026-09-24", "branch": "ros2"}, {"name": "marine_ais", "repo": "https://github.com/rolker/marine_ais", "url": null, "category": "sensors", "ros": ["ros2", "ros1"], "vehicles": ["usv"], "maintainer": "Roland Arsenault (UNH CCOM)", "description": "AIS message decoding and ROS messages for vessel traffic, used with Project11. The default branch is jazzy.", "tags": ["ais", "vessel traffic", "colregs"], "note": null, "status": "active", "last_commit": "2026-08-20", "branch": "jazzy"}, {"name": "transport_drivers", "repo": "https://github.com/ros-drivers/transport_drivers", "url": null, "category": "sensors", "ros": ["ros2"], "vehicles": ["any"], "maintainer": "ros-drivers", "description": "Reusable serial and UDP driver nodes for ROS 2. A good base when you write a driver for a serial or Ethernet marine sensor.", "tags": ["serial", "udp", "driver development"], "note": null, "status": "active", "last_commit": "2026-03-02", "branch": "main"}, {"name": "marine_msgs", "repo": "https://github.com/apl-ocean-engineering/marine_msgs", "url": null, "category": "interfaces", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "UW APL, USF, NPS, UNH CCOM", "description": "Community message definitions. marine_acoustic_msgs has Dvl, RawSonarImage, ProjectedSonarImage, SonarDetections, and SonarRanges; marine_sensor_msgs has RadarSector, RadarEcho, and TurbidityNTU. Released as binaries from Noetic through Lyrical and Rolling.", "tags": ["dvl message", "sonar message", "radar", "standard"], "note": null, "status": "quiet", "last_commit": "2024-03-15", "branch": "ros2"}, {"name": "maritime_interfaces", "repo": "https://github.com/ros-maritime/maritime_interfaces", "url": null, "category": "interfaces", "ros": ["ros2"], "vehicles": ["any"], "maintainer": "ROS Maritime Robotics Working Group", "description": "Placeholder for standard maritime interfaces. The main branch has no message definitions yet (proposals live on branches); use marine_msgs today.", "tags": ["working group"], "note": null, "status": "dormant", "last_commit": "2022-07-11", "branch": "main"}, {"name": "ros_acomms", "repo": "https://git.whoi.edu/acomms/ros_acomms", "url": "https://acomms.pages.whoi.edu/ros_acomms/overview.html", "category": "comms", "ros": ["ros1"], "vehicles": ["auv", "rov", "usv"], "maintainer": "WHOI Acoustic Communications Group", "description": "Transports ROS messages over acoustic links (WHOI Micro-Modem) and Iridium, with message packing, queue management, MAC, and a link simulator.", "tags": ["acoustic modem", "micro-modem", "iridium", "dccl"], "note": "A merge request on the WHOI GitLab adds ROS 2 (Humble and Jazzy) support; check the documentation for its release status.", "status": "active", "last_commit": "2026-10-23", "branch": "devel"}, {"name": "Goby3", "repo": "https://github.com/GobySoft/goby3", "url": "https://goby.software/", "category": "comms", "ros": ["none"], "vehicles": ["auv", "usv"], "maintainer": "GobySoft", "description": "Autonomy middleware designed for marine robots on slow and intermittent links (interthread, interprocess, and intervehicle publish-subscribe), with MOOS interoperability.", "tags": ["middleware", "acoustic", "intervehicle", "moos"], "note": null, "status": "active", "last_commit": "2026-09-16", "branch": "3.0"}, {"name": "DCCL", "repo": "https://github.com/GobySoft/dccl", "url": "https://libdccl.org/", "category": "comms", "ros": ["none"], "vehicles": ["auv", "usv"], "maintainer": "GobySoft", "description": "Dynamic Compact Control Language. Encodes messages into very small payloads for acoustic modems and satellite links.", "tags": ["encoding", "compression", "acoustic"], "note": null, "status": "active", "last_commit": "2026-09-15", "branch": "5.0"}, {"name": "rmw_zenoh", "repo": "https://github.com/ros2/rmw_zenoh", "url": null, "category": "comms", "ros": ["ros2"], "vehicles": ["any"], "maintainer": "Open Robotics / ZettaScale", "description": "ROS 2 middleware implementation on Zenoh. An option for robot-to-shore links over Wi-Fi, cellular, or radio where DDS discovery is a problem.", "tags": ["middleware", "zenoh", "rmw", "wireless"], "note": null, "status": "active", "last_commit": "2026-10-22", "branch": "rolling"}, {"name": "rosbridge_suite", "repo": "https://github.com/RobotWebTools/rosbridge_suite", "url": null, "category": "comms", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "RobotWebTools", "description": "JSON over WebSocket bridge for web dashboards and topside tools.", "tags": ["websocket", "web ui"], "note": null, "status": "active", "last_commit": "2026-10-05", "branch": "ros2"}, {"name": "evologics_driver", "repo": "https://github.com/oceansystemslab/evologics_driver", "url": null, "category": "comms", "ros": ["ros1"], "vehicles": ["auv", "rov"], "maintainer": "Ocean Systems Lab (Heriot-Watt)", "description": "Old ROS 1 driver for EvoLogics acoustic modems. No ROS 2 driver for EvoLogics modems was found.", "tags": ["acoustic modem", "evologics"], "note": null, "status": "dormant", "last_commit": "2016-05-20", "branch": "master"}, {"name": "imc_ros_bridge", "repo": "https://github.com/smarc-project/imc_ros_bridge", "url": null, "category": "comms", "ros": ["ros1"], "vehicles": ["auv"], "maintainer": "SMaRC (KTH)", "description": "Bridge between ROS and the LSTS IMC protocol, so ROS vehicles can be commanded from Neptus.", "tags": ["imc", "neptus", "lsts"], "note": null, "status": "dormant", "last_commit": "2023-05-30", "branch": "noetic-devel"}, {"name": "rosbag2", "repo": "https://github.com/ros2/rosbag2", "url": null, "category": "tools", "ros": ["ros2"], "vehicles": ["any"], "maintainer": "ROS 2 tooling working group", "description": "Record and replay ROS 2 data. MCAP is the default storage format in current ROS 2 releases.", "tags": ["logging", "bags", "mcap"], "note": null, "status": "active", "last_commit": "2026-10-22", "branch": "rolling"}, {"name": "MCAP", "repo": "https://github.com/foxglove/mcap", "url": "https://mcap.dev/", "category": "tools", "ros": ["ros2", "none"], "vehicles": ["any"], "maintainer": "Foxglove", "description": "Open container format and libraries for timestamped multi-sensor logs (C++, Python, Go, Rust, and more).", "tags": ["logging", "file format"], "note": null, "status": "active", "last_commit": "2026-10-23", "branch": "main"}, {"name": "rosbags", "repo": "https://gitlab.com/ternaris/rosbags", "url": null, "category": "tools", "ros": ["none"], "vehicles": ["any"], "maintainer": "Ternaris", "description": "Pure Python library to read, write, and convert ROS 1 and ROS 2 bags without a ROS installation. Useful in data pipelines.", "tags": ["python", "bag conversion"], "note": null, "status": "active", "last_commit": "2026-10-20", "branch": "master"}, {"name": "PlotJuggler", "repo": "https://github.com/facontidavide/PlotJuggler", "url": "https://plotjuggler.io/", "category": "tools", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "Davide Faconti", "description": "Time-series plotting for live topics and bag files. Fast for controller and EKF tuning.", "tags": ["plotting", "tuning"], "note": null, "status": "active", "last_commit": "2026-10-15", "branch": "main-4.x"}, {"name": "RViz2", "repo": "https://github.com/ros2/rviz", "url": null, "category": "tools", "ros": ["ros2"], "vehicles": ["any"], "maintainer": "Open Robotics", "description": "Standard 3D visualization for ROS 2 (TF, point clouds, markers, images).", "tags": ["visualization"], "note": null, "status": "active", "last_commit": "2026-10-23", "branch": "rolling"}, {"name": "Lichtblick", "repo": "https://github.com/lichtblick-suite/lichtblick", "url": null, "category": "tools", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "Lichtblick Suite", "description": "Open-source robotics visualization and log analysis app, forked from the last open-source Foxglove Studio release.", "tags": ["visualization", "mcap", "web"], "note": null, "status": "active", "last_commit": "2026-10-22", "branch": "develop"}, {"name": "foxglove_bridge", "repo": "https://github.com/foxglove/ros-foxglove-bridge", "url": null, "category": "tools", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "Foxglove", "description": "WebSocket bridge that streams ROS topics to Foxglove and Lichtblick. Check the Foxglove SDK repository for newer development.", "tags": ["websocket", "visualization"], "note": null, "status": "quiet", "last_commit": "2025-10-08", "branch": "main"}, {"name": "QGroundControl", "repo": "https://github.com/mavlink/qgroundcontrol", "url": null, "category": "tools", "ros": ["none"], "vehicles": ["rov", "usv"], "maintainer": "Dronecode Foundation", "description": "Ground control station for MAVLink vehicles (ArduSub, ArduPilot Rover, PX4). Common as the topside pilot interface for the BlueROV2.", "tags": ["gcs", "ardusub", "pilot"], "note": null, "status": "active", "last_commit": "2026-10-25", "branch": "master"}, {"name": "Neptus", "repo": "https://github.com/LSTS/neptus", "url": null, "category": "tools", "ros": ["none"], "vehicles": ["auv", "usv"], "maintainer": "LSTS (University of Porto)", "description": "Command, control, and mission review software of the LSTS toolchain (IMC protocol).", "tags": ["c2", "mission review", "imc"], "note": null, "status": "active", "last_commit": "2026-10-22", "branch": "develop"}, {"name": "industrial_ci", "repo": "https://github.com/ros-industrial/industrial_ci", "url": null, "category": "tools", "ros": ["ros2", "ros1"], "vehicles": ["any"], "maintainer": "ROS-Industrial", "description": "Ready-made CI scripts that build and test ROS packages on GitHub Actions, GitLab CI, and other services.", "tags": ["ci", "testing"], "note": null, "status": "active", "last_commit": "2026-06-01", "branch": "master"}, {"name": "action-ros-ci", "repo": "https://github.com/ros-tooling/action-ros-ci", "url": null, "category": "tools", "ros": ["ros2"], "vehicles": ["any"], "maintainer": "ROS tooling working group", "description": "GitHub Action that builds and tests a ROS 2 workspace with colcon.", "tags": ["ci", "github actions", "colcon"], "note": null, "status": "active", "last_commit": "2026-05-15", "branch": "main"}, {"name": "awesome-maritime-robotics", "repo": "https://github.com/ros-maritime/awesome-maritime-robotics", "url": null, "category": "tools", "ros": ["none"], "vehicles": ["any"], "maintainer": "ROS Maritime Community Working Group", "description": "The working group's earlier link list of open-source maritime robotics software. This catalog supersedes and extends it.", "tags": ["list", "working group"], "note": null, "status": "active", "last_commit": "2025-11-04", "branch": "main"}, {"name": "best-of-robot-simulators", "repo": "https://github.com/knmcguire/best-of-robot-simulators", "url": null, "category": "tools", "ros": ["none"], "vehicles": ["any"], "maintainer": "Kimberly McGuire and contributors", "description": "Ranked, regularly updated list of robot simulators, including marine ones. Good for a wider survey.", "tags": ["list", "simulators"], "note": null, "status": "active", "last_commit": "2026-10-21", "branch": "main"}]}</script>
+
+<h2 id="missing-a-project">Missing a project?<a class="headerlink" href="#missing-a-project" title="Permanent link">&para;</a></h2>
+<p>Add it to <a href="https://github.com/ros-maritime/maritime_robotic_landscape/blob/main/data/catalog.yml"><code>data/catalog.yml</code></a> with a pull request. Each entry needs a name, a repository or website, a category, the ROS versions, the vehicle types, and a one-sentence factual description. See <a href="../contributing/">Contributing</a> for the field list. The full data set is also available as <a href="../catalog.json"><code>catalog.json</code></a> for your own tools.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 22, 2026 01:42:09 UTC">October 22, 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../software/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Software overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Software overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../autonomy_stacks/" class="md-footer__link md-footer__link--next" aria-label="Next: Autonomy frameworks">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Autonomy frameworks
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Content by the ROS Maritime Community Working Group, licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Privacy-respecting analytics by GoatCounter.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://discourse.openrobotics.org/c/community-groups/marine-robotics/36" target="_blank" rel="noopener" title="ROS Discourse, Marine Robotics" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M225.9 32C103.3 32 0 130.5 0 252.1 0 256 .1 480 .1 480l225.8-.2c122.7 0 222.1-102.3 222.1-223.9S348.6 32 225.9 32M224 384c-19.4 0-37.9-4.3-54.4-12.1L88.5 392l22.9-75c-9.8-18.1-15.4-38.9-15.4-61 0-70.7 57.3-128 128-128s128 57.3 128 128-57.3 128-128 128"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://openrobotics.zulipchat.com/#narrow/channel/526058-Marine-Robotics" target="_blank" rel="noopener" title="Zulip, Marine Robotics channel" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.767 3.589c0 1.209-.543 2.283-1.37 2.934l-8.034 7.174c-.149.128-.343-.078-.235-.25l2.946-5.9c.083-.165-.024-.368-.194-.368H4.452c-1.77 0-3.219-1.615-3.219-3.59C1.233 1.616 2.682 0 4.452 0h15.096c1.77-.001 3.219 1.614 3.219 3.589M4.452 24h15.096c1.77 0 3.219-1.616 3.219-3.59s-1.449-3.59-3.219-3.59H8.12c-.17 0-.277-.202-.194-.367l2.946-5.9c.108-.172-.086-.378-.235-.25l-8.033 7.173c-.828.65-1.37 1.725-1.37 2.934 0 1.974 1.448 3.59 3.218 3.59"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/ros-maritime" target="_blank" rel="noopener" title="ros-maritime on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/catalog.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

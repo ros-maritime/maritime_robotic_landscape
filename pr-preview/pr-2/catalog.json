@@ -1,0 +1,2419 @@
+[
+  {
+    "name": "Blue",
+    "repo": "https://github.com/Robotic-Decision-Making-Lab/blue",
+    "category": "autonomy",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "Robotic Decision Making Lab (Oregon State University)",
+    "description": "ROS 2 framework to develop, test, and deploy autonomy on underwater vehicles. Supports the BlueROV2 through ArduSub and MAVROS, Gazebo simulation, and custom controllers from auv_controllers. The default Docker image and CI target ROS 2 Rolling; humble and jazzy branches exist.",
+    "tags": [
+      "bluerov2",
+      "ardusub",
+      "ros2_control",
+      "gazebo"
+    ],
+    "status": "quiet",
+    "last_commit": "2025-07-26",
+    "branch": "main"
+  },
+  {
+    "name": "Project11",
+    "repo": "https://github.com/CCOMJHC/project11",
+    "category": "autonomy",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "usv",
+      "any"
+    ],
+    "maintainer": "UNH Center for Coastal and Ocean Mapping (CCOM/JHC)",
+    "description": "Community framework for marine robotics that started on hydrographic survey ASVs. The default branch targets ROS 2 Jazzy; Melodic and Noetic branches are legacy.",
+    "tags": [
+      "survey",
+      "hydrography",
+      "asv",
+      "mission planning"
+    ],
+    "status": "active",
+    "last_commit": "2026-08-05",
+    "branch": "jazzy"
+  },
+  {
+    "name": "CAMP",
+    "repo": "https://github.com/CCOMJHC/camp",
+    "branch": "jazzy",
+    "category": "autonomy",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "usv",
+      "auv"
+    ],
+    "maintainer": "UNH CCOM/JHC",
+    "description": "CCOM Autonomous Mission Planner. Mission planning and monitoring operator interface that is part of Project11.",
+    "tags": [
+      "operator interface",
+      "mission planning",
+      "gui"
+    ],
+    "status": "quiet",
+    "last_commit": "2025-08-28"
+  },
+  {
+    "name": "MVP (Marine Vehicle Packages)",
+    "repo": "https://github.com/uri-ocean-robotics/mvp_readme",
+    "status_from": "https://github.com/uri-ocean-robotics/mvp_control",
+    "category": "autonomy",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "usv",
+      "auv",
+      "rov"
+    ],
+    "maintainer": "URI Smart Ocean Systems Lab",
+    "description": "Guidance and control framework for surface and underwater vehicles, with Stonefish simulation interfaces. Active ROS 2 development is on the jazzy-devel branches of mvp_control and mvp_mission.",
+    "tags": [
+      "guidance",
+      "control allocation",
+      "stonefish",
+      "behaviors"
+    ],
+    "note": "The mvp_readme instructions describe the ROS Noetic release.",
+    "status": "active",
+    "last_commit": "2026-09-11",
+    "branch": "jazzy-devel"
+  },
+  {
+    "name": "Orca4",
+    "repo": "https://github.com/clydemcqueen/orca4",
+    "category": "autonomy",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "Clyde McQueen",
+    "description": "ROS 2 AUV packages for a BlueROV2 running ArduSub. Uses mavros, Nav2 for missions, ORB_SLAM2 stereo visual odometry, and Gazebo Harmonic with the standard buoyancy, hydrodynamics, and thruster plugins.",
+    "tags": [
+      "bluerov2",
+      "ardusub",
+      "nav2",
+      "slam",
+      "gazebo harmonic"
+    ],
+    "status": "active",
+    "last_commit": "2026-06-26",
+    "branch": "main"
+  },
+  {
+    "name": "Orca5",
+    "repo": "https://github.com/clydemcqueen/orca5",
+    "category": "autonomy",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "Clyde McQueen",
+    "description": "Successor to Orca4. Gives visual odometry to a BlueROV2 running ArduSub from ORB_SLAM3 and one down-facing camera, without Nav2 or mavros. Targets ROS 2 Jazzy and Gazebo Harmonic.",
+    "tags": [
+      "bluerov2",
+      "ardusub",
+      "orb_slam3",
+      "visual odometry"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-03",
+    "branch": "main"
+  },
+  {
+    "name": "SMaRC 2",
+    "repo": "https://github.com/smarc-project/smarc2",
+    "category": "autonomy",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "auv"
+    ],
+    "maintainer": "Swedish Maritime Robotics Centre (KTH)",
+    "description": "ROS 2 packages for the SMaRC vehicles (for example SAM and LoLo), with documentation, examples, and shared message definitions. Simulation runs in Unity (SMARCUnity). The default branch targets ROS 2 Humble; a jazzy branch is work in progress.",
+    "tags": [
+      "sam",
+      "lolo",
+      "kth",
+      "behavior trees"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-23",
+    "branch": "humble"
+  },
+  {
+    "name": "SUAVE",
+    "repo": "https://github.com/kas-lab/suave",
+    "category": "autonomy",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "auv"
+    ],
+    "maintainer": "TU Delft (KAS lab)",
+    "description": "Self-adaptive underwater vehicle exemplar for pipeline inspection research. Uses ROS 2 Humble, Gazebo Harmonic, and ArduSub, and has Docker images for headless experiment campaigns.",
+    "tags": [
+      "self-adaptive",
+      "research exemplar",
+      "docker",
+      "ardusub"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-18",
+    "branch": "main"
+  },
+  {
+    "name": "COLA2",
+    "repo": "https://bitbucket.org/iquarobotics/cola2_core",
+    "url": "https://iquarobotics.com/",
+    "category": "autonomy",
+    "ros": [
+      "ros1"
+    ],
+    "vehicles": [
+      "auv"
+    ],
+    "maintainer": "IQUA Robotics / Universitat de Girona",
+    "description": "Control architecture for the Girona 500 and Sparus II AUVs (navigation, control, and mission execution). The source is readable, but the license limits use to IQUA Robotics licensees.",
+    "tags": [
+      "girona 500",
+      "sparus ii",
+      "proprietary license"
+    ],
+    "status": "active",
+    "last_commit": "2026-05-11",
+    "branch": "master"
+  },
+  {
+    "name": "MOOS-IvP",
+    "repo": "https://github.com/moos-ivp/moos-ivp",
+    "url": "https://moos-ivp.org/",
+    "category": "autonomy",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "usv",
+      "auv"
+    ],
+    "maintainer": "MIT (oceanai)",
+    "description": "Behavior-based marine autonomy suite (MOOS middleware and the IvP Helm multi-objective behavior arbiter). Not ROS-based, but common on research and naval vehicles. There is no widely maintained public ROS 2 bridge; most teams write a small gateway.",
+    "tags": [
+      "helm",
+      "behaviors",
+      "non-ros",
+      "collision avoidance"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-16",
+    "branch": "main"
+  },
+  {
+    "name": "DUNE",
+    "repo": "https://github.com/LSTS/dune",
+    "category": "autonomy",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "usv",
+      "auv"
+    ],
+    "maintainer": "LSTS (University of Porto)",
+    "description": "Unified Navigation Environment. Onboard software of the LSTS toolchain, which uses the IMC message protocol. Not ROS-based.",
+    "tags": [
+      "lsts",
+      "imc",
+      "non-ros"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-20",
+    "branch": "master"
+  },
+  {
+    "name": "auv_controllers",
+    "repo": "https://github.com/Robotic-Decision-Making-Lab/auv_controllers",
+    "category": "control",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "Robotic Decision Making Lab (Oregon State University)",
+    "description": "ros2_control controllers for underwater vehicles, including twist, trajectory, impedance, and whole-body controllers, a thruster allocation matrix controller, and thruster controllers. Supports ROS 2 Rolling and Jazzy.",
+    "tags": [
+      "ros2_control",
+      "thrust allocation",
+      "chained controllers"
+    ],
+    "status": "active",
+    "last_commit": "2026-08-15",
+    "branch": "main"
+  },
+  {
+    "name": "mvp_control",
+    "repo": "https://github.com/uri-ocean-robotics/mvp_control",
+    "category": "control",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "usv",
+      "auv",
+      "rov"
+    ],
+    "maintainer": "URI Smart Ocean Systems Lab",
+    "description": "Optimization-based control allocation for multi-thruster vehicles, including articulated thrusters. ROS 2 on jazzy-devel, ROS 1 on noetic-devel.",
+    "tags": [
+      "control allocation",
+      "quadratic programming",
+      "azimuth"
+    ],
+    "status": "active",
+    "last_commit": "2026-09-11",
+    "branch": "jazzy-devel"
+  },
+  {
+    "name": "mvp_mission",
+    "repo": "https://github.com/uri-ocean-robotics/mvp_mission",
+    "category": "control",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "usv",
+      "auv",
+      "rov"
+    ],
+    "maintainer": "URI Smart Ocean Systems Lab",
+    "description": "Behavior-based mission and guidance layer for MVP vehicles. ROS 2 on jazzy-devel.",
+    "tags": [
+      "guidance",
+      "behaviors",
+      "mission"
+    ],
+    "status": "active",
+    "last_commit": "2026-09-12",
+    "branch": "jazzy-devel"
+  },
+  {
+    "name": "thruster_manager",
+    "repo": "https://github.com/CentraleNantesROV/thruster_manager",
+    "category": "control",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "Centrale Nantes",
+    "description": "Maps a desired wrench to thruster forces. Reads the thruster layout from the URDF on robot_description; usable as a node, a component, or a C++ class (Eigen).",
+    "tags": [
+      "thrust allocation",
+      "urdf",
+      "pseudo-inverse"
+    ],
+    "status": "quiet",
+    "last_commit": "2025-04-10",
+    "branch": "main"
+  },
+  {
+    "name": "ros2_control",
+    "repo": "https://github.com/ros-controls/ros2_control",
+    "url": "https://control.ros.org/",
+    "category": "control",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "ros-controls",
+    "description": "Standard ROS 2 framework for hardware interfaces and real-time controllers. Underwater controllers such as auv_controllers build on it.",
+    "tags": [
+      "hardware interface",
+      "controllers"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-19",
+    "branch": "master"
+  },
+  {
+    "name": "ArduPilot (ArduSub, Rover)",
+    "repo": "https://github.com/ArduPilot/ardupilot",
+    "url": "https://ardupilot.org/",
+    "category": "autopilot",
+    "ros": [
+      "ros2",
+      "none"
+    ],
+    "vehicles": [
+      "rov",
+      "auv",
+      "usv"
+    ],
+    "maintainer": "ArduPilot project",
+    "description": "Open-source autopilot. ArduSub runs on the BlueROV2 and many hobby ROVs; the Rover firmware supports boats. Connects to ROS through MAVLink (mavros) or the built-in DDS interface for ROS 2.",
+    "tags": [
+      "ardusub",
+      "mavlink",
+      "boat",
+      "firmware"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-25",
+    "branch": "master"
+  },
+  {
+    "name": "ardusub_driver",
+    "repo": "https://github.com/Robotic-Decision-Making-Lab/ardusub_driver",
+    "category": "autopilot",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "Robotic Decision Making Lab (Oregon State University)",
+    "description": "Packages that integrate ROS 2 with vehicles that run ArduSub, such as the BlueROV2. Supports ROS 2 Rolling and Jazzy.",
+    "tags": [
+      "ardusub",
+      "bluerov2",
+      "mavros"
+    ],
+    "status": "active",
+    "last_commit": "2026-03-30",
+    "branch": "main"
+  },
+  {
+    "name": "mavros",
+    "repo": "https://github.com/mavlink/mavros",
+    "category": "autopilot",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "MAVLink project",
+    "description": "MAVLink to ROS bridge for ArduPilot and PX4 vehicles. The default branch is ros2.",
+    "tags": [
+      "mavlink",
+      "bridge"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-24",
+    "branch": "ros2"
+  },
+  {
+    "name": "PX4 Autopilot",
+    "repo": "https://github.com/PX4/PX4-Autopilot",
+    "url": "https://px4.io/",
+    "category": "autopilot",
+    "ros": [
+      "ros2",
+      "none"
+    ],
+    "vehicles": [
+      "usv",
+      "auv"
+    ],
+    "maintainer": "Dronecode Foundation",
+    "description": "Open-source autopilot with boat support and ROS 2 integration through uXRCE-DDS. Check the PX4 documentation for the current status of underwater frames.",
+    "tags": [
+      "firmware",
+      "uxrce-dds"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-25",
+    "branch": "main"
+  },
+  {
+    "name": "BlueOS",
+    "repo": "https://github.com/bluerobotics/BlueOS",
+    "url": "https://blueos.cloud/",
+    "category": "autopilot",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "rov",
+      "usv"
+    ],
+    "maintainer": "Blue Robotics",
+    "description": "Onboard software platform for Blue Robotics vehicles (Raspberry Pi based). Manages ArduPilot firmware, video, and Docker-based extensions; ROS can run as an extension.",
+    "tags": [
+      "companion computer",
+      "extensions",
+      "bluerov2",
+      "blueboat"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-23",
+    "branch": "master"
+  },
+  {
+    "name": "robot_localization",
+    "repo": "https://github.com/cra-ros-pkg/robot_localization",
+    "category": "navigation",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Tom Moore and contributors",
+    "description": "EKF and UKF state estimation for any number of odometry, twist, pose, and IMU inputs, plus navsat_transform_node to fuse GNSS fixes. The most common fusion node on ROS marine vehicles.",
+    "tags": [
+      "ekf",
+      "ukf",
+      "sensor fusion",
+      "navsat_transform",
+      "dvl"
+    ],
+    "status": "active",
+    "last_commit": "2026-07-16",
+    "branch": "rolling-devel"
+  },
+  {
+    "name": "fuse",
+    "repo": "https://github.com/locusrobotics/fuse",
+    "category": "navigation",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Locus Robotics",
+    "description": "Plugin-based factor-graph state estimation framework (Ceres solver). Alternative to filter-based fusion when you need smoothing or custom constraints.",
+    "tags": [
+      "factor graph",
+      "smoothing",
+      "ceres"
+    ],
+    "status": "active",
+    "last_commit": "2026-06-18",
+    "branch": "devel"
+  },
+  {
+    "name": "GTSAM",
+    "repo": "https://github.com/borglab/gtsam",
+    "url": "https://gtsam.org/",
+    "category": "navigation",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Georgia Tech BORG lab",
+    "description": "C++ and Python factor-graph library (iSAM2) used by many underwater SLAM systems, for example sonar-SLAM.",
+    "tags": [
+      "factor graph",
+      "isam2",
+      "slam backend"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-25",
+    "branch": "develop"
+  },
+  {
+    "name": "Nav2",
+    "repo": "https://github.com/ros-navigation/navigation2",
+    "url": "https://docs.nav2.org/",
+    "category": "navigation",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "usv",
+      "any"
+    ],
+    "maintainer": "Open Navigation and contributors",
+    "description": "ROS 2 navigation framework (planners, controllers, behavior trees, costmaps). Used for 2D navigation on surface vehicles and in some underwater stacks such as Orca4.",
+    "tags": [
+      "path planning",
+      "costmap",
+      "behavior tree"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-22",
+    "branch": "main"
+  },
+  {
+    "name": "mesh_navigation",
+    "repo": "https://github.com/uos/mesh_navigation",
+    "category": "navigation",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Osnabrück University",
+    "description": "Path planning and navigation on 3D triangle meshes, an option for terrain and structures that a 2D costmap cannot represent.",
+    "tags": [
+      "mesh",
+      "3d planning"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-13",
+    "branch": "main"
+  },
+  {
+    "name": "geographic_info",
+    "repo": "https://github.com/ros-geographic-info/geographic_info",
+    "category": "navigation",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "ros-geographic-info",
+    "description": "geographic_msgs (GeoPoint, GeoPose, and more) and the geodesy package for UTM and WGS 84 conversions in ROS.",
+    "tags": [
+      "utm",
+      "wgs84",
+      "geodesy",
+      "geopose"
+    ],
+    "status": "active",
+    "last_commit": "2026-08-17",
+    "branch": "master"
+  },
+  {
+    "name": "GeographicLib",
+    "repo": "https://github.com/geographiclib/geographiclib",
+    "url": "https://geographiclib.sourceforge.io/",
+    "category": "navigation",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Charles Karney",
+    "description": "Accurate geodesic, UTM/UPS, local Cartesian (ENU), and geoid conversions in C++ with bindings for other languages.",
+    "tags": [
+      "geodesy",
+      "enu",
+      "utm",
+      "geoid"
+    ],
+    "status": "active",
+    "last_commit": "2025-11-14",
+    "branch": "main"
+  },
+  {
+    "name": "pyproj",
+    "repo": "https://github.com/pyproj4/pyproj",
+    "category": "navigation",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "pyproj4",
+    "description": "Python interface to PROJ for coordinate reference system transforms. Useful in post-processing and mission planning tools.",
+    "tags": [
+      "proj",
+      "crs",
+      "python"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-19",
+    "branch": "main"
+  },
+  {
+    "name": "sonar_image_proc",
+    "repo": "https://github.com/apl-ocean-engineering/sonar_image_proc",
+    "branch": "ros2",
+    "category": "perception",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "UW Applied Physics Laboratory",
+    "description": "Processing and visualization for forward-looking imaging sonar data that uses marine_acoustic_msgs. The ros2 branch was tested with Blueprint Oculus M1200d and M750d sonars.",
+    "tags": [
+      "imaging sonar",
+      "fls",
+      "visualization",
+      "oculus"
+    ],
+    "status": "active",
+    "last_commit": "2026-09-15"
+  },
+  {
+    "name": "sonar-SLAM (BRUCE)",
+    "repo": "https://github.com/jake3991/sonar-SLAM",
+    "category": "perception",
+    "ros": [
+      "ros1"
+    ],
+    "vehicles": [
+      "rov"
+    ],
+    "maintainer": "Stevens Institute of Technology (RFAL)",
+    "description": "Graph-based pose SLAM for a BlueROV2 that fuses DVL and IMU dead reckoning with imaging sonar observations, using the iSAM2 backend.",
+    "tags": [
+      "sonar slam",
+      "isam2",
+      "bluerov2"
+    ],
+    "status": "dormant",
+    "last_commit": "2023-06-13",
+    "branch": "main"
+  },
+  {
+    "name": "SVIn",
+    "repo": "https://github.com/AutonomousFieldRoboticsLab/SVIn",
+    "category": "perception",
+    "ros": [
+      "ros1"
+    ],
+    "vehicles": [
+      "auv",
+      "rov"
+    ],
+    "maintainer": "Autonomous Field Robotics Lab (University of South Carolina)",
+    "description": "Tightly coupled sonar-visual-inertial-depth SLAM for real-time underwater navigation, based on OKVIS with loop closing.",
+    "tags": [
+      "visual inertial",
+      "slam",
+      "sonar",
+      "depth"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-08",
+    "branch": "main"
+  },
+  {
+    "name": "ORB-SLAM3",
+    "repo": "https://github.com/UZ-SLAMLab/ORB_SLAM3",
+    "category": "perception",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "University of Zaragoza",
+    "description": "Visual and visual-inertial SLAM library (mono, stereo, RGB-D). Not marine-specific, but used underwater, for example in Orca5.",
+    "tags": [
+      "visual slam",
+      "vio"
+    ],
+    "status": "dormant",
+    "last_commit": "2022-02-10",
+    "branch": "master"
+  },
+  {
+    "name": "OpenVINS",
+    "repo": "https://github.com/rpng/open_vins",
+    "url": "https://docs.openvins.com/",
+    "category": "perception",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "University of Delaware (RPNG)",
+    "description": "Filter-based visual-inertial odometry with ROS 1 and ROS 2 support. A common baseline for underwater visual navigation research.",
+    "tags": [
+      "vio",
+      "msckf"
+    ],
+    "status": "active",
+    "last_commit": "2025-11-30",
+    "branch": "master"
+  },
+  {
+    "name": "RTAB-Map ROS",
+    "repo": "https://github.com/introlab/rtabmap_ros",
+    "category": "perception",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "IntRoLab (Université de Sherbrooke)",
+    "description": "Graph-based RGB-D, stereo, and lidar SLAM with ROS wrappers. Used for structure mapping on surface vehicles and in clear water.",
+    "tags": [
+      "slam",
+      "stereo",
+      "lidar"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-20",
+    "branch": "ros2"
+  },
+  {
+    "name": "image_pipeline",
+    "repo": "https://github.com/ros-perception/image_pipeline",
+    "category": "perception",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "ros-perception",
+    "description": "Camera calibration, rectification, and stereo processing. Calibrate underwater cameras in water, because the housing port changes the intrinsics.",
+    "tags": [
+      "camera calibration",
+      "stereo",
+      "rectification"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-16",
+    "branch": "rolling"
+  },
+  {
+    "name": "MB-System",
+    "repo": "https://github.com/dwcaress/MB-System",
+    "url": "https://www.mbari.org/technology/mb-system/",
+    "category": "perception",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "MBARI and Lamont-Doherty Earth Observatory",
+    "description": "Open-source processing and display of swath bathymetry (multibeam) and sidescan sonar data. The standard post-processing toolkit in seafloor mapping.",
+    "tags": [
+      "bathymetry",
+      "multibeam",
+      "sidescan",
+      "post-processing"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-24",
+    "branch": "master"
+  },
+  {
+    "name": "VRX",
+    "repo": "https://github.com/osrf/vrx",
+    "url": "https://github.com/osrf/vrx/wiki",
+    "category": "simulation",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "usv"
+    ],
+    "maintainer": "Open Robotics / RoboNation",
+    "description": "Virtual RobotX surface vehicle simulation (WAM-V, waves, wind, competition tasks). The default branch runs Gazebo Harmonic with ROS 2 Jazzy; the humble branch keeps Gazebo Garden with ROS 2 Humble.",
+    "tags": [
+      "gazebo harmonic",
+      "wam-v",
+      "robotx",
+      "waves",
+      "competition"
+    ],
+    "status": "active",
+    "last_commit": "2026-01-26",
+    "branch": "jazzy"
+  },
+  {
+    "name": "POSIM (DAVE for ROS 2)",
+    "repo": "https://github.com/IOES-Lab/POSIM",
+    "url": "https://ioes-lab.github.io/POSIM/",
+    "category": "simulation",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "auv",
+      "rov"
+    ],
+    "maintainer": "IOES Lab and DAVE contributors",
+    "description": "The ROS 2 and Gazebo Sim migration of the DAVE underwater simulator, now named POSIM. Targets ROS 2 Lyrical on Ubuntu 26.04 and Gazebo Jetty, with Docker images. The earlier port is on the ros2 branch of IOES-Lab/dave.",
+    "tags": [
+      "gazebo jetty",
+      "uuv",
+      "sonar",
+      "dvl",
+      "docker"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-21",
+    "branch": "main"
+  },
+  {
+    "name": "DAVE (ROS 1, legacy)",
+    "repo": "https://github.com/Field-Robotics-Lab/dave",
+    "url": "https://field-robotics-lab.github.io/dave.doc/",
+    "category": "simulation",
+    "ros": [
+      "ros1"
+    ],
+    "vehicles": [
+      "auv",
+      "rov"
+    ],
+    "maintainer": "Field Robotics Lab (NPS)",
+    "description": "Original DAVE underwater simulator on ROS 1 and Gazebo Classic, both now end of life. No commits since 2023; use POSIM for new work.",
+    "tags": [
+      "gazebo classic",
+      "uuv",
+      "noetic"
+    ],
+    "status": "quiet",
+    "last_commit": "2023-12-04",
+    "branch": "master"
+  },
+  {
+    "name": "Stonefish",
+    "repo": "https://github.com/patrykcieslak/stonefish",
+    "url": "https://stonefish.readthedocs.io/",
+    "category": "simulation",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "auv",
+      "rov",
+      "usv"
+    ],
+    "maintainer": "Patryk Cieślak (Universitat de Girona)",
+    "description": "C++ library for marine robot simulation with hydrodynamics computed from geometry, plus sonar, DVL, camera, and manipulator models. Use it from ROS through stonefish_ros2.",
+    "tags": [
+      "hydrodynamics",
+      "opengl",
+      "sonar simulation"
+    ],
+    "status": "active",
+    "last_commit": "2026-07-14",
+    "branch": "master"
+  },
+  {
+    "name": "stonefish_ros2",
+    "repo": "https://github.com/patrykcieslak/stonefish_ros2",
+    "category": "simulation",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "auv",
+      "rov",
+      "usv"
+    ],
+    "maintainer": "Patryk Cieślak (Universitat de Girona)",
+    "description": "ROS 2 interface and standard simulator node for Stonefish. Loads scenarios from XML files; the package version must match the Stonefish library version.",
+    "tags": [
+      "stonefish",
+      "scenario xml"
+    ],
+    "status": "active",
+    "last_commit": "2025-12-04",
+    "branch": "master"
+  },
+  {
+    "name": "HoloOcean",
+    "url": "https://byu-holoocean.github.io/holoocean-docs/",
+    "status_from": "https://github.com/byu-holoocean/holoocean-ros",
+    "category": "simulation",
+    "ros": [
+      "ros2",
+      "none"
+    ],
+    "vehicles": [
+      "auv",
+      "rov",
+      "usv"
+    ],
+    "maintainer": "BYU FRoSt Lab",
+    "description": "Underwater simulator on Unreal Engine 5.3 (since version 2.0) with a Python API and imaging sonar, DVL, and camera models. The engine source repository needs a GitHub account linked to Epic Games; the ROS 2 bridge is public.",
+    "tags": [
+      "unreal engine",
+      "python",
+      "sonar simulation",
+      "reinforcement learning"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-09",
+    "branch": "main"
+  },
+  {
+    "name": "holoocean-ros",
+    "repo": "https://github.com/byu-holoocean/holoocean-ros",
+    "category": "simulation",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "auv",
+      "rov",
+      "usv"
+    ],
+    "maintainer": "BYU FRoSt Lab",
+    "description": "Official ROS 2 bridge for HoloOcean, tested on Humble and Jazzy.",
+    "tags": [
+      "holoocean",
+      "bridge"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-09",
+    "branch": "main"
+  },
+  {
+    "name": "UNav-Sim",
+    "repo": "https://github.com/open-airlab/UNav-Sim",
+    "category": "simulation",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "Aarhus University (AiR Lab)",
+    "description": "Underwater simulator built on Unreal Engine 5 and AirSim with ROS 1 and ROS 2 interfaces, aimed at visual navigation.",
+    "tags": [
+      "unreal engine 5",
+      "airsim",
+      "vision"
+    ],
+    "status": "quiet",
+    "last_commit": "2025-05-02",
+    "branch": "main"
+  },
+  {
+    "name": "OceanSim",
+    "repo": "https://github.com/umfieldrobotics/OceanSim",
+    "category": "simulation",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "University of Michigan Field Robotics Group",
+    "description": "GPU-accelerated underwater perception simulation (camera, sonar, and DVL models) as an NVIDIA Isaac Sim 5.0 extension. ROS 2 support is on the ROS2 branch through the Isaac Sim ROS 2 bridge.",
+    "tags": [
+      "isaac sim",
+      "gpu",
+      "sonar simulation",
+      "rendering"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-04",
+    "branch": "main"
+  },
+  {
+    "name": "MARUS 2",
+    "repo": "https://github.com/MARUSimulator/marus2-core",
+    "url": "https://github.com/MARUSimulator/marus2-example",
+    "category": "simulation",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "usv",
+      "auv"
+    ],
+    "maintainer": "University of Zagreb (LABUST)",
+    "description": "Marine robotics simulator in Unity 6 with a gRPC adapter to ROS 2 (marus2_ros_adapter). The original MARUS (Unity 2021.3, ROS 1 adapter) is in marus-core.",
+    "tags": [
+      "unity",
+      "grpc",
+      "multi-vehicle"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-02",
+    "branch": "main"
+  },
+  {
+    "name": "LRAUV simulation",
+    "repo": "https://github.com/osrf/lrauv",
+    "category": "simulation",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "auv"
+    ],
+    "maintainer": "Open Robotics / MBARI",
+    "description": "Gazebo simulation of MBARI's Tethys-class Long-Range AUV that can run the real LRAUV controller binaries. Archived in 2025; its general-purpose plugins are upstreamed to gz-sim.",
+    "tags": [
+      "gazebo",
+      "mbari",
+      "tethys"
+    ],
+    "status": "archived",
+    "last_commit": "2025-03-18",
+    "branch": "main"
+  },
+  {
+    "name": "MBARI WEC",
+    "repo": "https://github.com/osrf/mbari_wec",
+    "url": "https://osrf.github.io/mbari_wec/main/",
+    "category": "simulation",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Open Robotics / MBARI",
+    "description": "Gazebo simulation and ROS 2 interfaces for MBARI's wave energy converter buoy, with the same API for the physical and simulated buoy.",
+    "tags": [
+      "wave energy",
+      "buoy",
+      "gazebo"
+    ],
+    "status": "quiet",
+    "last_commit": "2025-09-11",
+    "branch": "main"
+  },
+  {
+    "name": "gz-sim maritime systems",
+    "repo": "https://github.com/gazebosim/gz-sim",
+    "url": "https://gazebosim.org/",
+    "category": "simulation",
+    "ros": [
+      "ros2",
+      "none"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Open Robotics",
+    "description": "Gazebo Sim ships the Buoyancy, Hydrodynamics, Thruster, LiftDrag, BuoyancyEngine, and DopplerVelocityLog systems that most current marine Gazebo projects use. There is no built-in wave system. Connect to ROS 2 through ros_gz.",
+    "tags": [
+      "buoyancy",
+      "hydrodynamics",
+      "thruster plugin",
+      "ros_gz"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-26",
+    "branch": "main"
+  },
+  {
+    "name": "ros_gz",
+    "repo": "https://github.com/gazebosim/ros_gz",
+    "category": "simulation",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Open Robotics",
+    "description": "Bridge and launch integration between ROS 2 and Gazebo Sim.",
+    "tags": [
+      "bridge",
+      "gazebo"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-22",
+    "branch": "ros2"
+  },
+  {
+    "name": "ardupilot_gazebo",
+    "repo": "https://github.com/ArduPilot/ardupilot_gazebo",
+    "category": "simulation",
+    "ros": [
+      "ros2",
+      "none"
+    ],
+    "vehicles": [
+      "rov",
+      "usv"
+    ],
+    "maintainer": "ArduPilot project",
+    "description": "Gazebo plugin that connects ArduPilot software-in-the-loop (for example ArduSub) to Gazebo Sim. Used by Orca4, Orca5, bluerov2_ignition, and SUAVE.",
+    "tags": [
+      "sitl",
+      "ardusub",
+      "gazebo harmonic"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-25",
+    "branch": "main"
+  },
+  {
+    "name": "bluerov2_ignition",
+    "repo": "https://github.com/clydemcqueen/bluerov2_ignition",
+    "category": "simulation",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "rov"
+    ],
+    "maintainer": "Clyde McQueen",
+    "description": "BlueROV2 base and heavy models for Gazebo Harmonic that use the standard buoyancy, hydrodynamics, and thruster systems. Proof-of-concept status per the README.",
+    "tags": [
+      "bluerov2",
+      "gazebo harmonic",
+      "model"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-10",
+    "branch": "main"
+  },
+  {
+    "name": "asv_wave_sim",
+    "repo": "https://github.com/srmainwaring/asv_wave_sim",
+    "category": "simulation",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "usv"
+    ],
+    "maintainer": "Rhys Mainwaring",
+    "description": "Gazebo plugins for ocean wave fields and wave forces on surface vessels.",
+    "tags": [
+      "waves",
+      "gazebo",
+      "hydrostatics"
+    ],
+    "status": "quiet",
+    "last_commit": "2025-01-02",
+    "branch": "master"
+  },
+  {
+    "name": "rs750",
+    "repo": "https://github.com/srmainwaring/rs750",
+    "category": "simulation",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "usv"
+    ],
+    "maintainer": "Rhys Mainwaring",
+    "description": "Racing Sparrow 750 sailboat model and wind simulation for Gazebo, with ArduPilot integration.",
+    "tags": [
+      "sailboat",
+      "wind",
+      "ardupilot"
+    ],
+    "status": "dormant",
+    "last_commit": "2023-03-27",
+    "branch": "main"
+  },
+  {
+    "name": "MBZIRC simulator",
+    "repo": "https://github.com/osrf/mbzirc",
+    "category": "simulation",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "usv"
+    ],
+    "maintainer": "Open Robotics",
+    "description": "Simulation environment for the MBZIRC Maritime Grand Challenge (USV with UAVs) on Ignition Fortress and ROS 2 Galactic, both end of life. The challenge ended in 2024; use it for reference only.",
+    "tags": [
+      "competition",
+      "multi-domain",
+      "uav"
+    ],
+    "status": "dormant",
+    "last_commit": "2022-08-31",
+    "branch": "main"
+  },
+  {
+    "name": "TurtleBoat",
+    "repo": "https://github.com/bartboogmans/TurtleBoat",
+    "category": "simulation",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "usv"
+    ],
+    "maintainer": "Bart Boogmans (TU Delft)",
+    "description": "Lightweight vessel dynamics simulator for learning ship control. Default branch is ros2.",
+    "tags": [
+      "education",
+      "vessel dynamics"
+    ],
+    "status": "quiet",
+    "last_commit": "2024-06-12",
+    "branch": "ros2"
+  },
+  {
+    "name": "ds_sim",
+    "repo": "https://bitbucket.org/whoidsl/ds_sim",
+    "category": "simulation",
+    "ros": [
+      "ros1"
+    ],
+    "vehicles": [
+      "auv",
+      "rov"
+    ],
+    "maintainer": "WHOI Deep Submergence Lab",
+    "description": "Gazebo plugins and utilities (DVL, sensors, environment) from the WHOI Deep Submergence Lab. A GitHub mirror is at Field-Robotics-Lab/ds_sim.",
+    "tags": [
+      "whoi",
+      "dvl plugin",
+      "gazebo classic"
+    ],
+    "status": "active",
+    "last_commit": "2026-09-04",
+    "branch": "master"
+  },
+  {
+    "name": "Plankton",
+    "repo": "https://github.com/Liquid-ai/Plankton",
+    "category": "simulation",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "auv",
+      "rov"
+    ],
+    "maintainer": "Liquid AI",
+    "description": "ROS 2 Foxy port of UUV Simulator for Gazebo Classic. Both are end of life, and there are no commits since 2021.",
+    "tags": [
+      "uuv simulator",
+      "gazebo classic"
+    ],
+    "status": "dormant",
+    "last_commit": "2021-11-09",
+    "branch": "master"
+  },
+  {
+    "name": "UUV Simulator",
+    "repo": "https://github.com/uuvsimulator/uuv_simulator",
+    "category": "simulation",
+    "ros": [
+      "ros1"
+    ],
+    "vehicles": [
+      "auv",
+      "rov"
+    ],
+    "maintainer": "uuvsimulator",
+    "description": "Historic Gazebo Classic underwater simulator, archived in 2023. Many current tools derive from its plugins.",
+    "tags": [
+      "gazebo classic",
+      "legacy"
+    ],
+    "status": "archived",
+    "last_commit": "2020-06-15",
+    "branch": "master"
+  },
+  {
+    "name": "unity-arduboat-sim",
+    "repo": "https://github.com/chrisdalke/unity-arduboat-sim",
+    "category": "simulation",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "usv"
+    ],
+    "maintainer": "Chris Dalke",
+    "description": "Unity simulation of an ArduRover boat for software-in-the-loop testing.",
+    "tags": [
+      "unity",
+      "ardupilot"
+    ],
+    "status": "dormant",
+    "last_commit": "2023-10-09",
+    "branch": "main"
+  },
+  {
+    "name": "sbg_ros2_driver",
+    "repo": "https://github.com/SBG-Systems/sbg_ros2_driver",
+    "category": "drivers",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "SBG Systems (official)",
+    "description": "Official ROS 2 driver for SBG Systems IMU, AHRS, and INS products (for example Ellipse).",
+    "tags": [
+      "ins",
+      "imu",
+      "gnss",
+      "official"
+    ],
+    "status": "active",
+    "last_commit": "2026-07-22",
+    "branch": "master"
+  },
+  {
+    "name": "microstrain_inertial",
+    "repo": "https://github.com/LORD-MicroStrain/microstrain_inertial",
+    "category": "drivers",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "MicroStrain by HBK (official)",
+    "description": "Official ROS and ROS 2 driver for MicroStrain inertial sensors (3DM-GX5, CV7, GQ7, and others). The default branch is ros2.",
+    "tags": [
+      "imu",
+      "ins",
+      "ahrs",
+      "official"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-01",
+    "branch": "ros2"
+  },
+  {
+    "name": "Xsens MTi ROS driver",
+    "repo": "https://github.com/xsenssupport/Xsens_MTi_ROS_Driver_and_Ntrip_Client",
+    "category": "drivers",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Movella / Xsens support",
+    "description": "ROS 1 and ROS 2 drivers for Xsens MTi sensors, built on the Xsens Device API, with an NTRIP client for RTK corrections. The ros2 branch supports Foxy, Humble, and Jazzy.",
+    "tags": [
+      "imu",
+      "ahrs",
+      "rtk",
+      "ntrip"
+    ],
+    "status": "active",
+    "last_commit": "2026-02-02",
+    "branch": "main"
+  },
+  {
+    "name": "vectornav",
+    "repo": "https://github.com/dawonn/vectornav",
+    "branch": "ros2",
+    "category": "drivers",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Community (dawonn)",
+    "description": "Community driver for VectorNav VN-100, VN-200, and VN-300; ROS 2 on the ros2 branch. No official VectorNav ROS 2 driver was found.",
+    "tags": [
+      "imu",
+      "ins"
+    ],
+    "status": "quiet",
+    "last_commit": "2025-03-07"
+  },
+  {
+    "name": "Advanced Navigation ROS 2 driver",
+    "repo": "https://github.com/advanced-navigation/ros2-driver",
+    "category": "drivers",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Advanced Navigation",
+    "description": "Example ROS 2 driver from Advanced Navigation for its INS products, tested on Ubuntu 22.04 and ROS 2 Humble.",
+    "tags": [
+      "ins",
+      "gnss",
+      "fog"
+    ],
+    "status": "quiet",
+    "last_commit": "2025-04-23",
+    "branch": "master"
+  },
+  {
+    "name": "waterlinked_dvl",
+    "repo": "https://github.com/waterlinked/waterlinked_dvl",
+    "category": "drivers",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "Water Linked (official, contributed by Oregon State RDML)",
+    "description": "Official ROS 2 driver for the Water Linked DVL A50 and A125, with humble and jazzy branches.",
+    "tags": [
+      "dvl",
+      "a50",
+      "a125",
+      "official"
+    ],
+    "status": "active",
+    "last_commit": "2026-08-20",
+    "branch": "main"
+  },
+  {
+    "name": "Nortek Nucleus driver",
+    "repo": "https://github.com/nortekgroup/nucleus_driver",
+    "category": "drivers",
+    "ros": [
+      "ros2",
+      "none"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "Nortek (official)",
+    "description": "Official Python driver for the Nortek Nucleus navigation sensor (DVL with AHRS and pressure), with ROS 2 packages and a BlueOS extension.",
+    "tags": [
+      "dvl",
+      "nucleus",
+      "ahrs",
+      "official"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-12",
+    "branch": "main"
+  },
+  {
+    "name": "Water Linked DVL A50 driver (ROS 1)",
+    "repo": "https://github.com/waterlinked/dvl-a50-ros-driver",
+    "category": "drivers",
+    "ros": [
+      "ros1"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "Water Linked",
+    "description": "Original ROS 1 driver for the Water Linked DVL A50. Archived; use waterlinked_dvl for ROS 2.",
+    "tags": [
+      "dvl",
+      "a50"
+    ],
+    "status": "archived",
+    "last_commit": "2024-02-26",
+    "branch": "master"
+  },
+  {
+    "name": "nmea_navsat_driver",
+    "repo": "https://github.com/ros-drivers/nmea_navsat_driver",
+    "branch": "ros2",
+    "category": "drivers",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "usv",
+      "any"
+    ],
+    "maintainer": "ros-drivers",
+    "description": "Generic NMEA 0183 GNSS driver that publishes sensor_msgs/NavSatFix. ROS 2 on the ros2 branch.",
+    "tags": [
+      "gnss",
+      "gps",
+      "nmea"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-18"
+  },
+  {
+    "name": "ublox_dgnss",
+    "repo": "https://github.com/aussierobots/ublox_dgnss",
+    "category": "drivers",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "usv",
+      "any"
+    ],
+    "maintainer": "Aussie Robots",
+    "description": "ROS 2 driver for u-blox ZED-F9P and related receivers over USB, with RTK support.",
+    "tags": [
+      "gnss",
+      "rtk",
+      "u-blox"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-08",
+    "branch": "main"
+  },
+  {
+    "name": "ublox",
+    "repo": "https://github.com/KumarRobotics/ublox",
+    "branch": "ros2",
+    "category": "drivers",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "usv",
+      "any"
+    ],
+    "maintainer": "KumarRobotics",
+    "description": "Long-standing u-blox GNSS driver; ROS 2 on the ros2 branch.",
+    "tags": [
+      "gnss",
+      "u-blox"
+    ],
+    "status": "quiet",
+    "last_commit": "2025-09-26"
+  },
+  {
+    "name": "swiftnav-ros2",
+    "repo": "https://github.com/swift-nav/swiftnav-ros2",
+    "category": "drivers",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "usv",
+      "any"
+    ],
+    "maintainer": "Swift Navigation (official)",
+    "description": "ROS 2 driver for Swift Navigation GNSS receivers (Piksi Multi, Duro).",
+    "tags": [
+      "gnss",
+      "rtk"
+    ],
+    "status": "quiet",
+    "last_commit": "2024-07-22",
+    "branch": "master"
+  },
+  {
+    "name": "ping360_sonar",
+    "repo": "https://github.com/CentraleNantesRobotics/ping360_sonar",
+    "category": "sonar",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "Centrale Nantes",
+    "description": "Driver for the Blue Robotics Ping360 scanning imaging sonar (image and scan output). The default branch is ros2.",
+    "tags": [
+      "ping360",
+      "imaging sonar",
+      "blue robotics"
+    ],
+    "status": "active",
+    "last_commit": "2026-07-02",
+    "branch": "ros2"
+  },
+  {
+    "name": "bluerobotics_ping360",
+    "repo": "https://github.com/GSO-soslab/bluerobotics_ping360",
+    "category": "sonar",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "URI Smart Ocean Systems Lab",
+    "description": "ROS 2 Jazzy driver for the Ping360 with serial and UDP links, sector scanning, and point cloud output.",
+    "tags": [
+      "ping360",
+      "imaging sonar"
+    ],
+    "status": "quiet",
+    "last_commit": "2025-05-13",
+    "branch": "jazzy-devel"
+  },
+  {
+    "name": "blueprint_oculus_sonar",
+    "repo": "https://github.com/GSO-soslab/blueprint_oculus_sonar",
+    "category": "sonar",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "URI Smart Ocean Systems Lab",
+    "description": "ROS 2 Jazzy driver for Blueprint Subsea Oculus multibeam imaging sonars. Publishes polar and Cartesian images over UDP.",
+    "tags": [
+      "oculus",
+      "imaging sonar",
+      "fls"
+    ],
+    "status": "active",
+    "last_commit": "2025-11-16",
+    "branch": "jazzy-devel"
+  },
+  {
+    "name": "oculus_ros2",
+    "repo": "https://github.com/ENSTABretagneRobotics/oculus_ros2",
+    "category": "sonar",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "ENSTA Bretagne",
+    "description": "Community ROS 2 driver for Blueprint Subsea Oculus sonars, built on the oculus_driver library.",
+    "tags": [
+      "oculus",
+      "imaging sonar"
+    ],
+    "status": "quiet",
+    "last_commit": "2023-11-29",
+    "branch": "master"
+  },
+  {
+    "name": "liboculus",
+    "repo": "https://github.com/apl-ocean-engineering/liboculus",
+    "category": "sonar",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "rov",
+      "auv"
+    ],
+    "maintainer": "UW Applied Physics Laboratory",
+    "description": "C++ library for the Blueprint Subsea Oculus sonar network protocol, used by ROS drivers.",
+    "tags": [
+      "oculus",
+      "protocol"
+    ],
+    "status": "active",
+    "last_commit": "2026-09-17",
+    "branch": "main"
+  },
+  {
+    "name": "cerulean_surveyor_mbes",
+    "repo": "https://github.com/GSO-soslab/cerulean_surveyor_mbes",
+    "category": "sonar",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "rov",
+      "auv",
+      "usv"
+    ],
+    "maintainer": "URI Smart Ocean Systems Lab",
+    "description": "ROS 2 driver for the Cerulean Surveyor 240-16 multibeam echosounder (raw and XYZ ranges, serial or UDP).",
+    "tags": [
+      "multibeam",
+      "cerulean",
+      "mbes"
+    ],
+    "status": "active",
+    "last_commit": "2026-03-13",
+    "branch": "main"
+  },
+  {
+    "name": "blueos-ros2",
+    "repo": "https://github.com/itskalvik/blueos-ros2",
+    "category": "sonar",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "rov",
+      "usv"
+    ],
+    "maintainer": "Community (Kalvik Jakkala)",
+    "description": "Community BlueOS extension that runs ROS 2 Jazzy on Blue Robotics vehicles and bundles Ping1D, Ping360, and Sonoptix Echo drivers. Blue Robotics does not ship an official ROS 2 driver.",
+    "tags": [
+      "blueos",
+      "ping360",
+      "ping2",
+      "extension"
+    ],
+    "status": "quiet",
+    "last_commit": "2025-08-04",
+    "branch": "main"
+  },
+  {
+    "name": "ping-python",
+    "repo": "https://github.com/bluerobotics/ping-python",
+    "category": "sonar",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "rov",
+      "auv",
+      "usv"
+    ],
+    "maintainer": "Blue Robotics (official)",
+    "description": "Python library for Blue Robotics Ping-protocol devices (Ping2 echosounder, Ping360). Base for custom ROS nodes.",
+    "tags": [
+      "ping2",
+      "ping360",
+      "echosounder"
+    ],
+    "status": "active",
+    "last_commit": "2026-08-05",
+    "branch": "master"
+  },
+  {
+    "name": "usb_cam",
+    "repo": "https://github.com/ros-drivers/usb_cam",
+    "category": "sensors",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "ros-drivers",
+    "description": "Driver for V4L2 USB cameras, common for low-cost ROV cameras.",
+    "tags": [
+      "camera",
+      "v4l2"
+    ],
+    "status": "active",
+    "last_commit": "2026-02-26",
+    "branch": "main"
+  },
+  {
+    "name": "ros2_v4l2_camera",
+    "repo": "https://github.com/tier4/ros2_v4l2_camera",
+    "category": "sensors",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "TIER IV",
+    "description": "ROS 2 driver for Video4Linux2 cameras.",
+    "tags": [
+      "camera",
+      "v4l2"
+    ],
+    "status": "active",
+    "last_commit": "2026-09-24",
+    "branch": "galactic"
+  },
+  {
+    "name": "gscam",
+    "repo": "https://github.com/ros-drivers/gscam",
+    "branch": "ros2",
+    "category": "sensors",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "ros-drivers",
+    "description": "GStreamer-based camera driver. Useful for the H.264 RTP/UDP video streams that ROV cameras and BlueOS publish.",
+    "tags": [
+      "camera",
+      "gstreamer",
+      "video stream"
+    ],
+    "status": "active",
+    "last_commit": "2026-02-16"
+  },
+  {
+    "name": "ouster-ros",
+    "repo": "https://github.com/ouster-lidar/ouster-ros",
+    "category": "sensors",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "usv"
+    ],
+    "maintainer": "Ouster (official)",
+    "description": "Official driver for Ouster lidars, often used on surface vehicles for docking and obstacle detection.",
+    "tags": [
+      "lidar"
+    ],
+    "status": "active",
+    "last_commit": "2026-09-24",
+    "branch": "ros2"
+  },
+  {
+    "name": "marine_ais",
+    "repo": "https://github.com/rolker/marine_ais",
+    "category": "sensors",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "usv"
+    ],
+    "maintainer": "Roland Arsenault (UNH CCOM)",
+    "description": "AIS message decoding and ROS messages for vessel traffic, used with Project11. The default branch is jazzy.",
+    "tags": [
+      "ais",
+      "vessel traffic",
+      "colregs"
+    ],
+    "status": "active",
+    "last_commit": "2026-08-20",
+    "branch": "jazzy"
+  },
+  {
+    "name": "transport_drivers",
+    "repo": "https://github.com/ros-drivers/transport_drivers",
+    "category": "sensors",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "ros-drivers",
+    "description": "Reusable serial and UDP driver nodes for ROS 2. A good base when you write a driver for a serial or Ethernet marine sensor.",
+    "tags": [
+      "serial",
+      "udp",
+      "driver development"
+    ],
+    "status": "active",
+    "last_commit": "2026-03-02",
+    "branch": "main"
+  },
+  {
+    "name": "marine_msgs",
+    "repo": "https://github.com/apl-ocean-engineering/marine_msgs",
+    "branch": "ros2",
+    "category": "interfaces",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "UW APL, USF, NPS, UNH CCOM",
+    "description": "Community message definitions. marine_acoustic_msgs has Dvl, RawSonarImage, ProjectedSonarImage, SonarDetections, and SonarRanges; marine_sensor_msgs has RadarSector, RadarEcho, and TurbidityNTU. Released as binaries from Noetic through Lyrical and Rolling.",
+    "tags": [
+      "dvl message",
+      "sonar message",
+      "radar",
+      "standard"
+    ],
+    "status": "quiet",
+    "last_commit": "2024-03-15"
+  },
+  {
+    "name": "maritime_interfaces",
+    "repo": "https://github.com/ros-maritime/maritime_interfaces",
+    "category": "interfaces",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "ROS Maritime Robotics Working Group",
+    "description": "Placeholder for standard maritime interfaces. The main branch has no message definitions yet (proposals live on branches); use marine_msgs today.",
+    "tags": [
+      "working group"
+    ],
+    "status": "dormant",
+    "last_commit": "2022-07-11",
+    "branch": "main"
+  },
+  {
+    "name": "ros_acomms",
+    "repo": "https://git.whoi.edu/acomms/ros_acomms",
+    "url": "https://acomms.pages.whoi.edu/ros_acomms/overview.html",
+    "category": "comms",
+    "ros": [
+      "ros1"
+    ],
+    "vehicles": [
+      "auv",
+      "rov",
+      "usv"
+    ],
+    "maintainer": "WHOI Acoustic Communications Group",
+    "description": "Transports ROS messages over acoustic links (WHOI Micro-Modem) and Iridium, with message packing, queue management, MAC, and a link simulator.",
+    "tags": [
+      "acoustic modem",
+      "micro-modem",
+      "iridium",
+      "dccl"
+    ],
+    "note": "A merge request on the WHOI GitLab adds ROS 2 (Humble and Jazzy) support; check the documentation for its release status.",
+    "status": "active",
+    "last_commit": "2026-10-23",
+    "branch": "devel"
+  },
+  {
+    "name": "Goby3",
+    "repo": "https://github.com/GobySoft/goby3",
+    "url": "https://goby.software/",
+    "category": "comms",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "auv",
+      "usv"
+    ],
+    "maintainer": "GobySoft",
+    "description": "Autonomy middleware designed for marine robots on slow and intermittent links (interthread, interprocess, and intervehicle publish-subscribe), with MOOS interoperability.",
+    "tags": [
+      "middleware",
+      "acoustic",
+      "intervehicle",
+      "moos"
+    ],
+    "status": "active",
+    "last_commit": "2026-09-16",
+    "branch": "3.0"
+  },
+  {
+    "name": "DCCL",
+    "repo": "https://github.com/GobySoft/dccl",
+    "url": "https://libdccl.org/",
+    "category": "comms",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "auv",
+      "usv"
+    ],
+    "maintainer": "GobySoft",
+    "description": "Dynamic Compact Control Language. Encodes messages into very small payloads for acoustic modems and satellite links.",
+    "tags": [
+      "encoding",
+      "compression",
+      "acoustic"
+    ],
+    "status": "active",
+    "last_commit": "2026-09-15",
+    "branch": "5.0"
+  },
+  {
+    "name": "rmw_zenoh",
+    "repo": "https://github.com/ros2/rmw_zenoh",
+    "category": "comms",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Open Robotics / ZettaScale",
+    "description": "ROS 2 middleware implementation on Zenoh. An option for robot-to-shore links over Wi-Fi, cellular, or radio where DDS discovery is a problem.",
+    "tags": [
+      "middleware",
+      "zenoh",
+      "rmw",
+      "wireless"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-22",
+    "branch": "rolling"
+  },
+  {
+    "name": "rosbridge_suite",
+    "repo": "https://github.com/RobotWebTools/rosbridge_suite",
+    "category": "comms",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "RobotWebTools",
+    "description": "JSON over WebSocket bridge for web dashboards and topside tools.",
+    "tags": [
+      "websocket",
+      "web ui"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-05",
+    "branch": "ros2"
+  },
+  {
+    "name": "evologics_driver",
+    "repo": "https://github.com/oceansystemslab/evologics_driver",
+    "category": "comms",
+    "ros": [
+      "ros1"
+    ],
+    "vehicles": [
+      "auv",
+      "rov"
+    ],
+    "maintainer": "Ocean Systems Lab (Heriot-Watt)",
+    "description": "Old ROS 1 driver for EvoLogics acoustic modems. No ROS 2 driver for EvoLogics modems was found.",
+    "tags": [
+      "acoustic modem",
+      "evologics"
+    ],
+    "status": "dormant",
+    "last_commit": "2016-05-20",
+    "branch": "master"
+  },
+  {
+    "name": "imc_ros_bridge",
+    "repo": "https://github.com/smarc-project/imc_ros_bridge",
+    "category": "comms",
+    "ros": [
+      "ros1"
+    ],
+    "vehicles": [
+      "auv"
+    ],
+    "maintainer": "SMaRC (KTH)",
+    "description": "Bridge between ROS and the LSTS IMC protocol, so ROS vehicles can be commanded from Neptus.",
+    "tags": [
+      "imc",
+      "neptus",
+      "lsts"
+    ],
+    "status": "dormant",
+    "last_commit": "2023-05-30",
+    "branch": "noetic-devel"
+  },
+  {
+    "name": "rosbag2",
+    "repo": "https://github.com/ros2/rosbag2",
+    "category": "tools",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "ROS 2 tooling working group",
+    "description": "Record and replay ROS 2 data. MCAP is the default storage format in current ROS 2 releases.",
+    "tags": [
+      "logging",
+      "bags",
+      "mcap"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-22",
+    "branch": "rolling"
+  },
+  {
+    "name": "MCAP",
+    "repo": "https://github.com/foxglove/mcap",
+    "url": "https://mcap.dev/",
+    "category": "tools",
+    "ros": [
+      "ros2",
+      "none"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Foxglove",
+    "description": "Open container format and libraries for timestamped multi-sensor logs (C++, Python, Go, Rust, and more).",
+    "tags": [
+      "logging",
+      "file format"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-23",
+    "branch": "main"
+  },
+  {
+    "name": "rosbags",
+    "repo": "https://gitlab.com/ternaris/rosbags",
+    "category": "tools",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Ternaris",
+    "description": "Pure Python library to read, write, and convert ROS 1 and ROS 2 bags without a ROS installation. Useful in data pipelines.",
+    "tags": [
+      "python",
+      "bag conversion"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-20",
+    "branch": "master"
+  },
+  {
+    "name": "PlotJuggler",
+    "repo": "https://github.com/facontidavide/PlotJuggler",
+    "url": "https://plotjuggler.io/",
+    "category": "tools",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Davide Faconti",
+    "description": "Time-series plotting for live topics and bag files. Fast for controller and EKF tuning.",
+    "tags": [
+      "plotting",
+      "tuning"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-15",
+    "branch": "main-4.x"
+  },
+  {
+    "name": "RViz2",
+    "repo": "https://github.com/ros2/rviz",
+    "category": "tools",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Open Robotics",
+    "description": "Standard 3D visualization for ROS 2 (TF, point clouds, markers, images).",
+    "tags": [
+      "visualization"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-23",
+    "branch": "rolling"
+  },
+  {
+    "name": "Lichtblick",
+    "repo": "https://github.com/lichtblick-suite/lichtblick",
+    "category": "tools",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Lichtblick Suite",
+    "description": "Open-source robotics visualization and log analysis app, forked from the last open-source Foxglove Studio release.",
+    "tags": [
+      "visualization",
+      "mcap",
+      "web"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-22",
+    "branch": "develop"
+  },
+  {
+    "name": "foxglove_bridge",
+    "repo": "https://github.com/foxglove/ros-foxglove-bridge",
+    "category": "tools",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Foxglove",
+    "description": "WebSocket bridge that streams ROS topics to Foxglove and Lichtblick. Check the Foxglove SDK repository for newer development.",
+    "tags": [
+      "websocket",
+      "visualization"
+    ],
+    "status": "quiet",
+    "last_commit": "2025-10-08",
+    "branch": "main"
+  },
+  {
+    "name": "QGroundControl",
+    "repo": "https://github.com/mavlink/qgroundcontrol",
+    "category": "tools",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "rov",
+      "usv"
+    ],
+    "maintainer": "Dronecode Foundation",
+    "description": "Ground control station for MAVLink vehicles (ArduSub, ArduPilot Rover, PX4). Common as the topside pilot interface for the BlueROV2.",
+    "tags": [
+      "gcs",
+      "ardusub",
+      "pilot"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-25",
+    "branch": "master"
+  },
+  {
+    "name": "Neptus",
+    "repo": "https://github.com/LSTS/neptus",
+    "category": "tools",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "auv",
+      "usv"
+    ],
+    "maintainer": "LSTS (University of Porto)",
+    "description": "Command, control, and mission review software of the LSTS toolchain (IMC protocol).",
+    "tags": [
+      "c2",
+      "mission review",
+      "imc"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-22",
+    "branch": "develop"
+  },
+  {
+    "name": "industrial_ci",
+    "repo": "https://github.com/ros-industrial/industrial_ci",
+    "category": "tools",
+    "ros": [
+      "ros2",
+      "ros1"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "ROS-Industrial",
+    "description": "Ready-made CI scripts that build and test ROS packages on GitHub Actions, GitLab CI, and other services.",
+    "tags": [
+      "ci",
+      "testing"
+    ],
+    "status": "active",
+    "last_commit": "2026-06-01",
+    "branch": "master"
+  },
+  {
+    "name": "action-ros-ci",
+    "repo": "https://github.com/ros-tooling/action-ros-ci",
+    "category": "tools",
+    "ros": [
+      "ros2"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "ROS tooling working group",
+    "description": "GitHub Action that builds and tests a ROS 2 workspace with colcon.",
+    "tags": [
+      "ci",
+      "github actions",
+      "colcon"
+    ],
+    "status": "active",
+    "last_commit": "2026-05-15",
+    "branch": "main"
+  },
+  {
+    "name": "awesome-maritime-robotics",
+    "repo": "https://github.com/ros-maritime/awesome-maritime-robotics",
+    "category": "tools",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "ROS Maritime Community Working Group",
+    "description": "The working group's earlier link list of open-source maritime robotics software. This catalog supersedes and extends it.",
+    "tags": [
+      "list",
+      "working group"
+    ],
+    "status": "active",
+    "last_commit": "2025-11-04",
+    "branch": "main"
+  },
+  {
+    "name": "best-of-robot-simulators",
+    "repo": "https://github.com/knmcguire/best-of-robot-simulators",
+    "category": "tools",
+    "ros": [
+      "none"
+    ],
+    "vehicles": [
+      "any"
+    ],
+    "maintainer": "Kimberly McGuire and contributors",
+    "description": "Ranked, regularly updated list of robot simulators, including marine ones. Good for a wider survey.",
+    "tags": [
+      "list",
+      "simulators"
+    ],
+    "status": "active",
+    "last_commit": "2026-10-21",
+    "branch": "main"
+  }
+]
