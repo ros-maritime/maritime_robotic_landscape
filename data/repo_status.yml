@@ -9,6 +9,9 @@ repos:
     branch: master
     last_commit: '2026-09-04'
   https://git.whoi.edu/acomms/ros_acomms: {}
+  https://github.com/AlePuglisi/oculus-m3000d-ros2-cpp-driver:
+    branch: ros2-jazzy
+    last_commit: '2026-10-27'
   https://github.com/ArduPilot/ardupilot:
     branch: master
     last_commit: '2026-10-21'
