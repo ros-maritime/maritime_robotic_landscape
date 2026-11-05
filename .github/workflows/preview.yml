@@ -36,7 +36,9 @@ jobs:
         run: |
           mkdocs build --strict
 
+      # Fork PRs get a read-only token and can't push to gh-pages, so they stop at the build
       - name: Deploy preview
+        if: github.event.pull_request.head.repo.full_name == github.repository
         uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: ./site/
