@@ -874,10 +874,11 @@
     ],
     "vehicles": [
       "auv",
-      "rov"
+      "rov",
+      "usv"
     ],
     "maintainer": "IOES Lab and DAVE contributors",
-    "description": "The ROS 2 and Gazebo Sim migration of the DAVE underwater simulator, now named POSIM. Targets ROS 2 Lyrical on Ubuntu 26.04 and Gazebo Jetty, with Docker images. The earlier port is on the ros2 branch of IOES-Lab/dave.",
+    "description": "The ROS 2 and Gazebo Sim migration of DAVE, now named POSIM, with a physics-based multibeam sonar plugin, BlueROV2 with ArduSub SITL and MAVROS, and optional WAM-V/ArduRover surface-vehicle integration. Targets ROS 2 Lyrical on Ubuntu 26.04 and Gazebo Jetty, with Docker images; the earlier port is on the ros2 branch of IOES-Lab/dave.",
     "tags": [
       "gazebo jetty",
       "uuv",
