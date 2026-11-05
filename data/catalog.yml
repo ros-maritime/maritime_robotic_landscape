@@ -408,8 +408,8 @@ packages:
     ros: [ros2]
     vehicles: [auv, rov, usv]
     maintainer: IOES Lab and DAVE contributors
-    description: The ROS 2 and Gazebo Sim migration of DAVE, now named POSIM, with a physics-based multibeam sonar plugin, BlueROV2 with ArduSub SITL and MAVROS, and optional WAM-V/ArduRover surface-vehicle integration. Targets ROS 2 Lyrical on Ubuntu 26.04 and Gazebo Jetty, with Docker images; the earlier port is on the ros2 branch of IOES-Lab/dave.
-    tags: [gazebo jetty, uuv, sonar, dvl, docker]
+    description: ROS 2 and Gazebo Sim successor to DAVE, with a CUDA multibeam sonar, BlueROV2 with ArduSub SITL and MAVROS, and an optional WAM-V/ArduRover surface overlay. Targets ROS 2 Lyrical and Gazebo Jetty on Ubuntu 26.04, with Docker images.
+    tags: [gazebo jetty, uuv, sonar, dvl, docker, ardusub, wam-v, cuda]
 
   - name: DAVE (ROS 1, legacy)
     repo: https://github.com/Field-Robotics-Lab/dave
@@ -763,6 +763,16 @@ packages:
     maintainer: ENSTA Bretagne
     description: Community ROS 2 driver for Blueprint Subsea Oculus sonars, built on the oculus_driver library.
     tags: [oculus, imaging sonar]
+
+  - name: oculus-m3000d-ros2-cpp-driver
+    repo: https://github.com/AlePuglisi/oculus-m3000d-ros2-cpp-driver
+    url: https://oculus-m3000d-ros2-cpp-driver.readthedocs.io
+    category: sonar
+    ros: [ros2]
+    vehicles: [rov, auv]
+    maintainer: Alessandro Puglisi (LIRMM)
+    description: ROS 2 Jazzy driver for the Blueprint Subsea Oculus M3000d, extended from ENSTA's oculus_ros2. Publishes fan and polar images and a thresholded point cloud.
+    tags: [oculus, imaging sonar, fls]
 
   - name: liboculus
     repo: https://github.com/apl-ocean-engineering/liboculus
