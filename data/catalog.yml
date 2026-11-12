@@ -412,7 +412,7 @@ packages:
     tags: [gazebo jetty, ros lyrical, uuv, usv, rov, sonar, dvl, docker, ardusub, ardurover, ardupilot, sitl, wam-v, cuda, wgpu, bluerov, qgroundcontrol, mavros, multi vehicle]
 
   - name: WWW-POSIM (Ready-to-Launch Application for POSIM)
-    repo: https://github.com/IOES-Lab/POSIM
+    repo: https://github.com/IOES-Lab/homebrew-www-posim
     url: https://www-posim.vercel.app/
     category: simulation
     ros: [ros2]
