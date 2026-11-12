@@ -37,7 +37,7 @@ Click a question to open the answer. Cannot find yours? Ask on [ROS Discourse](h
 
 ??? question "Which simulator should I use?"
 
-    For surface vehicles, VRX. For a BlueROV2, Gazebo Harmonic with ArduSub (Orca5 or bluerov2_ignition). For general underwater work with sonar and DVL, POSIM or Stonefish. For realistic images, HoloOcean or OceanSim. See the [simulator selection guide](simulation.md#choose-a-simulator).
+    For surface vehicles, VRX. For a BlueROV2, Gazebo Harmonic with ArduSub (Orca5 or bluerov2_ignition). For general underwater work with sonar and DVL, POSIM or Stonefish. For realistic images, HoloOcean or OceanSim. For ready-to-launch package application, WWW-POSIM. See the [simulator selection guide](simulation.md#choose-a-simulator).
 
 ??? question "Is there a standard set of maritime ROS messages?"
 

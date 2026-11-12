@@ -57,6 +57,9 @@ repos:
   https://github.com/IOES-Lab/POSIM:
     branch: main
     last_commit: '2026-10-21'
+  https://github.com/IOES-Lab/:
+    branch: main
+    last_commit: '2026-10-09'
   https://github.com/KumarRobotics/ublox:
     branch: ros2
     last_commit: '2025-09-26'

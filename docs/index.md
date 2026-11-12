@@ -108,7 +108,7 @@ flowchart LR
 
 !!! tip "Recommended for new projects"
 
-    Use **ROS 2 Jazzy** with **Gazebo Harmonic** on **Ubuntu 24.04**. Most maintained maritime packages target this pair, for example VRX, Orca5, auv_controllers, ardusub_driver, and the MVP jazzy branches. Use **ROS 2 Lyrical** with **Gazebo Jetty** on Ubuntu 26.04 if a dependency needs it (for example POSIM, the ROS 2 version of DAVE). Plan to leave Humble before its end of life in May 2027.
+    Use **ROS 2 Jazzy** with **Gazebo Harmonic** on **Ubuntu 24.04**. Most maintained maritime packages target this pair, for example VRX, Orca5, auv_controllers, ardusub_driver, and the MVP jazzy branches. Use **ROS 2 Lyrical** with **Gazebo Jetty** on Ubuntu 26.04 if a dependency needs it (for example POSIM). Plan to leave Humble before its end of life in May 2027.
 
 | Release | Type | Ubuntu | Gazebo pairing | Supported until |
 |---|---|---|---|---|
