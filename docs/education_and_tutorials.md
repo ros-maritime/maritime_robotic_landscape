@@ -14,7 +14,7 @@ description: A structured learning path for maritime robotics with ROS 2, hands-
 ```mermaid
 flowchart TD
   A["1 · ROS 2 basics<br/>topics, TF, launch, bags"] --> B["2 · Marine concepts<br/>vehicle types, 6-DOF motion,<br/>ENU vs NED, sensors"]
-  B --> C["3 · Simulation<br/>VRX surface vehicle;<br/>BlueROV2 or POSIM underwater"]
+  B --> C["3 · Simulation<br/>VRX: surface vehicles;<br/>POSIM: surface and underwater vehicles"]
   C --> D["4 · Control<br/>PID on heading and speed,<br/>thrust allocation, LOS guidance"]
   D --> E["5 · State estimation<br/>robot_localization with<br/>DVL, IMU, depth, GNSS"]
   E --> F["6 · Autonomy<br/>missions, behaviors, failsafes"]

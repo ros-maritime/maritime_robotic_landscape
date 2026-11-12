@@ -408,8 +408,18 @@ packages:
     ros: [ros2]
     vehicles: [auv, rov, usv]
     maintainer: IOES Lab and DAVE contributors
-    description: ROS 2 and Gazebo Sim successor to DAVE, with a CUDA multibeam sonar, BlueROV2 with ArduSub SITL and MAVROS, and an optional WAM-V/ArduRover surface overlay. Targets ROS 2 Lyrical and Gazebo Jetty on Ubuntu 26.04, with Docker images.
-    tags: [gazebo jetty, uuv, sonar, dvl, docker, ardusub, wam-v, cuda]
+    description: An open-source maritime robotics simulation library, featuring physics-based sonar, underwater and surface vehicles, marine sensors, and ArduPilot SITL integration. Targets ROS 2 Lyrical and Gazebo Jetty on Ubuntu 26.04, with Docker images.
+    tags: [gazebo jetty, ros lyrical, uuv, usv, rov, sonar, dvl, docker, ardusub, ardurover, ardupilot, sitl, wam-v, cuda, wgpu, bluerov, qgroundcontrol, mavros, multi vehicle]
+
+  - name: WWW-POSIM (Ready-to-Launch Application for POSIM)
+    repo: https://github.com/IOES-Lab/homebrew-www-posim
+    url: https://www-posim.vercel.app/
+    category: simulation
+    ros: [ros2]
+    vehicles: [auv, rov, usv]
+    maintainer: IOES Lab
+    description: WWW-POSIM brings POSIM, ROS 2 Lyrical, and Gazebo Jetty to ready-to-launch web and desktop application for marine robotics research and education. Build coastal and seabed worlds from geographic data, customize vehicles and sensors, run ArduPilot missions, and test Python/ROS 2 controllers.
+    tags: [gazebo jetty, ros lyrical, uuv, usv, rov, sonar, dvl, ardupilot, sitl, wam-v, cuda, wgpu, bluerov, qgroundcontrol, mavros, slam, multi vehicle]
 
   - name: DAVE (ROS 1, legacy)
     repo: https://github.com/Field-Robotics-Lab/dave

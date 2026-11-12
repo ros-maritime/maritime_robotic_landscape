@@ -11,14 +11,16 @@ A dense summary for experienced developers. Each section links to the full page.
 
 | Need | Start with | Alternatives |
 |---|---|---|
-| Platform | ROS 2 Jazzy + Gazebo Harmonic, Ubuntu 24.04 | Lyrical + Jetty (POSIM); Humble until May 2027 |
+| Platform | ROS 2 Jazzy + Gazebo Harmonic, Ubuntu 24.04 | POSIM: ROS 2 Lyrical + Gazebo Jetty, Ubuntu 26.04 |
 | UUV framework | Blue + auv_controllers | MVP, SMaRC 2 |
-| BlueROV2 / ArduSub | ardusub_driver or mavros; Orca5 for visual odometry | Blue |
+| BlueROV2 / ArduSub | ardusub_driver or MAVROS; POSIM for BlueROV2 + ArduSub SITL | Orca5 for visual odometry; Blue |
 | ASV framework | Project11 | Nav2 + custom; MOOS-IvP |
 | State estimation | robot_localization (two EKFs + navsat_transform) | fuse, GTSAM |
 | Thrust allocation | Pseudo-inverse + scaling (thruster_manager, auv_controllers) | QP (mvp_control) |
-| Surface simulation | VRX | Stonefish, MARUS 2 |
-| Underwater simulation | Gazebo Harmonic systems, POSIM | Stonefish, HoloOcean, OceanSim |
+| Surface simulation | VRX, POSIM (WAM-V + ArduRover SITL) | Stonefish, MARUS 2 |
+| Underwater simulation | POSIM (DAVE); Gazebo Harmonic systems | Stonefish, HoloOcean, OceanSim |
+| Sonar simulation | POSIM (DAVE); physics-based multibeam sonar | Stonefish, HoloOcean |
+| Ready-to-launch application | WWW-POSIM (web and desktop, powered by POSIM) | |
 | Messages | sensor_msgs, geometry_msgs, nav_msgs + marine_msgs | |
 | Acoustic comms | ros_acomms (WHOI Micro-Modem) | Goby3 + DCCL |
 | Logging | rosbag2 with MCAP | |

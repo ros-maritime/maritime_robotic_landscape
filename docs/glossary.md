@@ -168,7 +168,13 @@ Plain-language definitions of maritime robotics terms, grouped by topic. Tip: on
 : A simulated maritime robotics competition based on Gazebo.
 
 **DAVE (Dave Aquatic Virtual Environment)**
-: An underwater vehicle simulation environment built on Gazebo. The ROS 2 version is now called POSIM.
+: An underwater vehicle simulation environment built on Gazebo.
+
+**POSIM (Platform for Ocean Simulation)**
+: An surface and underwater vehicle simulation environment built on Gazebo (Successor of DAVE).
+
+**POSIM (World-Wide-Web Platform for Ocean Simulation)**
+: WWW-POSIM is a ready-to-launch web and desktop application of POSIM for Windows, Linux, and MacOS.
 
 **RViz**
 : A visualization tool for ROS. Shows you what the robot "sees" - sensor data, camera images, point clouds, etc. Helpful for debugging.

@@ -13,9 +13,10 @@ Sea time is expensive and slow, so most marine robotics software is developed an
 flowchart TD
   START{"What do you need most?"}
   START -->|"ROS 2 integration,<br/>control and autonomy"| GZ{"Vehicle?"}
-  GZ -->|"Surface vehicle"| VRX["VRX<br/>(Gazebo Harmonic)"]
-  GZ -->|"BlueROV2 / ArduSub"| BR["bluerov2_ignition +<br/>ardupilot_gazebo"]
-  GZ -->|"Generic UUV with<br/>sonar and DVL"| POSIM["POSIM<br/>(DAVE on Gazebo Jetty)"]
+  GZ -->|"Surface vehicle"| SURF["VRX or POSIM<br/>(WAM-V / ArduRover)"]
+  GZ -->|"BlueROV2 / ArduSub SITL"| BR["POSIM or<br/>bluerov2_ignition + ardupilot_gazebo"]
+  GZ -->|"Underwater vehicle<br/>with sonar and DVL"| POSIM["POSIM<br/>(ROS 2 Lyrical + Gazebo Jetty)"]
+  START -->|"Ready-to-launch web<br/>or desktop application (Windows, MacOS)"| WWW["WWW-POSIM<br/>(powered by POSIM)"]
   START -->|"Hydrodynamics from geometry,<br/>manipulators, sonar"| SF["Stonefish +<br/>stonefish_ros2"]
   START -->|"Photo-realistic images<br/>for perception or ML"| ENG{"Engine preference?"}
   ENG -->|"Unreal Engine"| HO["HoloOcean · UNav-Sim"]
@@ -27,11 +28,13 @@ flowchart TD
 | Need | Good options | Why |
 |---|---|---|
 | Surface vehicle autonomy, competitions | VRX | Waves, wind, WAM-V model, RobotX tasks, ROS 2 Jazzy |
-| ArduSub software-in-the-loop | bluerov2_ignition, ardupilot_gazebo, Orca5 | Runs the real ArduSub firmware against Gazebo |
-| Underwater sonar and DVL in Gazebo | POSIM (DAVE), gz-sim DVL system | Maintained sensor plugins on current Gazebo |
+| ArduRover(Boat) software-in-the-loop | POSIM; wam-v + ardupilot_gazebo + mavros + qgroundcontrol | Runs the real ArduRover(boat) firmware against Gazebo and control with QGC |
+| ArduSub software-in-the-loop | POSIM; bluerov2_ignition + ardupilot_gazebo; Orca5 | Runs the real ArduSub firmware against Gazebo |
+| Underwater sonar and DVL in Gazebo | POSIM (DAVE), gz-sim DVL system | POSIM provides physics-based multibeam sonar and marine sensor simulation |
 | Accurate hydrodynamics and manipulation | Stonefish | Computes added mass and drag from geometry; models manipulators |
 | Camera and sonar images for learning | HoloOcean, OceanSim, UNav-Sim | Game-engine or RTX rendering; Python and ROS 2 bridges |
 | Large multi-vehicle scenes | MARUS 2, SMaRC Unity | Unity scenes with ROS 2 adapters |
+| Ready-to-launch marine robotics simulation | WWW-POSIM | Web and desktop application powered by POSIM, ROS2 interface with ArduPilot control, support Windows, Linux, MacOS |
 
 !!! warning "End-of-life platforms"
 
